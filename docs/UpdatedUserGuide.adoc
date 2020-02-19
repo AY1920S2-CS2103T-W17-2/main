@@ -33,7 +33,7 @@ image::Flow5.png[width="790"]
 e.g. typing *`help`* and pressing kbd:[Enter] will open the help window.
 .  Some example commands you can try:
 
-* *`list`* : Shows a list of contents of the current directory. 
+* *`list`* : Shows a list of contents of the current directory.
 * **`add`**`n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : adds a contact named `John Doe` to the Address Book.
 * **`delete`**`3` : deletes the 3rd contact shown in the current list
 * *`exit`* : exits the app
@@ -170,8 +170,8 @@ Examples: open -t CS2103_notes
 
 === Edit an existing note : `edit`
 
-Edits body paragraph of the current note. + 
-Format: `edit -b {New Title}` + 
+Edits body paragraph of the current note. +
+Format: `edit -b {New Title}` +
 Example: edit -b This is the new body paragraph
 
 === Find a note based on certain keywords : `search`
@@ -212,7 +212,7 @@ e.g. `find James Jake`
 * *Find* : `find KEYWORD [MORE_KEYWORDS]` +
 e.g. `find James Jake`
 
-== Demo/MarkUp 
+== Demo/MarkUp
 === Note Creation
 
 *  The current directory is highlighted at the side bar named "root"
@@ -248,7 +248,7 @@ image::Flow5.png[width="790"]
 +
 
 
-=== Navigation 
+=== Navigation
 
 *  `open {Note}` to navigate to that specific directory.
 *  User can use `tab` to autofill the command recommended by the command line.
