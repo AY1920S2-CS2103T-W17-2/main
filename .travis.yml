@@ -1,7 +1,5 @@
 language: java
-matrix:
-  include:
-    - jdk: openjdk11
+jdk: openjdk11
 
 script: >-
     ./config/travis/run-checks.sh &&
@@ -14,6 +12,8 @@ deploy:
   on:
     branch: master
 
+# Gradle-related files caching
+# See: https://docs.travis-ci.com/user/languages/java/#caching
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
