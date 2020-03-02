@@ -13,7 +13,7 @@ import seedu.address.model.person.NameContainsKeywordsPredicate;
 
 public class SearchCommandParserTest {
 
-    private FindCommandParser parser = new FindCommandParser();
+    private SearchCommandParser parser = new SearchCommandParser();
 
     @Test
     public void parse_emptyArg_throwsParseException() {
@@ -21,7 +21,7 @@ public class SearchCommandParserTest {
     }
 
     @Test
-    public void parse_validArgs_returnsFindCommand() {
+    public void parse_validArgs_returnsSearchCommand() {
         // no leading and trailing whitespaces
         SearchCommand expectedSearchCommand =
                 new SearchCommand(new NameContainsKeywordsPredicate(Arrays.asList("Alice", "Bob")));
