@@ -19,3 +19,10 @@ src/test/data/sandbox/
 
 # MacOS custom attributes files created by Finder
 .DS_Store
+
+# VSCode Java plugin generated files
+.classpath
+.project
+.settings
+bin
+
