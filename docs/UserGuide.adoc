@@ -18,7 +18,7 @@ By: `Team Notably`      Since: `Feb 2020`      Licence: `MIT`
 
 == Introduction
 
-Notably is for those who *prefer to use a desktop app for managing contacts*. More importantly, Notably is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Notably can get your notes taken down faster than traditional GUI apps.
+Notably is for those who *prefer to use a desktop app for managing notes*. More importantly, Notably is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Notably can get your notes taken down faster than traditional GUI apps.
 
 == Quick Start [Work in progress]
 
