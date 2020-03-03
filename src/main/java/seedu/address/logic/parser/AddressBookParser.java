@@ -69,5 +69,4 @@ public class AddressBookParser {
             throw new ParseException("Todo: action suggestion");
         }
     }
-
 }
