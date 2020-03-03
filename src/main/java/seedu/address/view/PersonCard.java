@@ -40,6 +40,8 @@ public class PersonCard extends ViewPart<Region> {
     private Label email;
     @FXML
     private FlowPane tags;
+    @FXML
+    private Label remark;
 
     public PersonCard(Person person, int displayedIndex) {
         super(FXML);
