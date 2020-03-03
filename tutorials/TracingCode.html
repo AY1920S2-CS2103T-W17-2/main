@@ -67,12 +67,12 @@ In this tutorial, you aim to find those omitted details so that you get a more i
 <p>As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution.
 For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement
 of the <code>main</code> method. In our case, we would want to begin the tracing at the very point where the App start processing
-user input i.e., somewhere in the UI component, and then trace through how the execution proceeds through the UI component.
+user input i.e., somewhere in the VIEW component, and then trace through how the execution proceeds through the VIEW component.
 However, the execution path through a GUI is often somewhat obscure due to various <em>event-driven mechanisms</em>
-used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the UI transfers
-control to the Logic component. According to the sequence diagram, the UI component yields control to the Logic component
+used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the VIEW transfers
+control to the Logic component. According to the sequence diagram, the VIEW component yields control to the Logic component
 through a method named <code>execute</code>. Searching through the code base for <code>execute()</code> yields a promising candidate in
-<code>seedu.address.ui.CommandBox.CommandExecutor</code>.</p>
+<code>seedu.address.view.CommandBox.CommandExecutor</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -417,4 +417,4 @@ handled?</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-19 11:30:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 05:32:53 UTC</div></div></div></body></html>

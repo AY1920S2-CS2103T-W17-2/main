@@ -25,7 +25,7 @@
 <li><a href="#make-use-of-code-remark-code">Make use of <code>Remark</code></a></li>
 </ul>
 </li>
-<li><a href="#add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI</a></li>
+<li><a href="#add-a-placeholder-element-for-remark-to-the-view">Add a placeholder element for remark to the VIEW</a></li>
 <li><a href="#modify-code-person-code-to-support-a-code-remark-code-field">Modify <code>Person</code> to support a <code>Remark</code> field</a>
 <ul class="sectlevel2">
 <li><a href="#modify-code-person-code">Modify <code>Person</code></a></li>
@@ -33,7 +33,7 @@
 </ul>
 </li>
 <li><a href="#updating-storage">Updating Storage</a></li>
-<li><a href="#finalizing-the-ui">Finalizing the UI</a></li>
+<li><a href="#finalizing-the-view">Finalizing the VIEW</a></li>
 <li><a href="#putting-everything-together">Putting everything together</a>
 <ul class="sectlevel2">
 <li><a href="#update-code-remarkcommand-code-and-code-remarkcommandparser-code">Update <code>RemarkCommand</code> and <code>RemarkCommandParser</code></a></li>
@@ -365,7 +365,7 @@ These should be relatively simple changes.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="add-a-placeholder-element-for-remark-to-the-ui"><a class="link" href="#add-a-placeholder-element-for-remark-to-the-ui">Add a placeholder element for remark to the UI</a></h2>
+<h2 id="add-a-placeholder-element-for-remark-to-the-view"><a class="link" href="#add-a-placeholder-element-for-remark-to-the-view">Add a placeholder element for remark to the VIEW</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Without getting too deep into <code>fxml</code>, let&#8217;s go on a 5 minute adventure to get some placeholder text to show up for each person.</p>
@@ -381,7 +381,7 @@ private Label remark;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>to <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe"><code>seedu.address.ui.PersonCard</code></a>.
+<p>to <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe"><code>seedu.address.view.PersonCard</code></a>.
 <code>@FXML</code> is an annotation that marks a private or protected field and makes it accessible to FXML.
 It might sound like Greek to you right now, don&#8217;t worry&#8201;&#8212;&#8201;we will get back to it later.</p>
 </div>
@@ -472,10 +472,10 @@ Not doing so will cause AddressBook to default to an empty address book!
 </div>
 </div>
 <div class="sect1">
-<h2 id="finalizing-the-ui"><a class="link" href="#finalizing-the-ui">Finalizing the UI</a></h2>
+<h2 id="finalizing-the-view"><a class="link" href="#finalizing-the-view">Finalizing the VIEW</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that we have finalized the <code>Person</code> class and its dependencies, we can now bind the <code>Remark</code> field to the UI.</p>
+<p>Now that we have finalized the <code>Person</code> class and its dependencies, we can now bind the <code>Remark</code> field to the VIEW.</p>
 </div>
 <div class="paragraph">
 <p>Just add <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/56d5cb662c31dd38b02f6a5301ba6ab3c667d6a3#diff-0c6b6abcfac8c205e075294f25e851fe">this one line of code!</a></p>
@@ -616,4 +616,4 @@ In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit 
 <p>This concludes the tutorial for adding a new <code>Command</code> to AddressBook.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-02-19 11:30:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 05:32:53 UTC</div></div></div></body></html>
