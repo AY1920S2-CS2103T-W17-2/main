@@ -261,7 +261,7 @@ Note how `Remark` has no constrains and thus does not require input validation.
 Let's change `RemarkCommand` and `RemarkCommandParser` to use the new `Remark` class instead of plain `String`.
 These should be relatively simple changes.
 
-== Add a placeholder element for remark to the UI
+== Add a placeholder element for remark to the VIEW
 
 Without getting too deep into `fxml`, let's go on a 5 minute adventure to get some placeholder text to show up for each person.
 
@@ -273,7 +273,7 @@ Simply add
 private Label remark;
 ```
 
-to link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe[`seedu.address.ui.PersonCard`].
+to link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe[`seedu.address.view.PersonCard`].
 `@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML.
 It might sound like Greek to you right now, don't worry -- we will get back to it later.
 
@@ -318,9 +318,9 @@ Not doing so will cause AddressBook to default to an empty address book!
 
 Check out link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/ce4f9b70f524d2395948861d80d57fda9ae6e82e#diff-07708562699e2436c717f3330bafae1e[this commit] to see what the changes entail.
 
-== Finalizing the UI
+== Finalizing the VIEW
 
-Now that we have finalized the `Person` class and its dependencies, we can now bind the `Remark` field to the UI.
+Now that we have finalized the `Person` class and its dependencies, we can now bind the `Remark` field to the VIEW.
 
 Just add link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/56d5cb662c31dd38b02f6a5301ba6ab3c667d6a3#diff-0c6b6abcfac8c205e075294f25e851fe[this one line of code!]
 [source, java]

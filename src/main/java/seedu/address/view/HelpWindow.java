@@ -1,4 +1,4 @@
-package seedu.address.ui;
+package seedu.address.view;
 
 import java.util.logging.Logger;
 
@@ -13,7 +13,7 @@ import seedu.address.commons.core.LogsCenter;
 /**
  * Controller for a help page
  */
-public class HelpWindow extends UiPart<Stage> {
+public class HelpWindow extends ViewPart<Stage> {
 
     public static final String USERGUIDE_URL = "https://se-education.org/addressbook-level3/UserGuide.html";
     public static final String HELP_MESSAGE = "Refer to the user guide: " + USERGUIDE_URL;
