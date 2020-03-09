@@ -1,7 +1,5 @@
 package com.notably.logic.parser;
 
-import static com.notably.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static com.notably.logic.parser.CommandParserTestUtil.assertParseFailure;
 import static com.notably.logic.parser.CommandParserTestUtil.assertParseSuccess;
 import static com.notably.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
 
@@ -23,10 +21,5 @@ public class DeleteCommandParserTest {
     @Test
     public void parse_validArgs_returnsDeleteCommand() {
         assertParseSuccess(parser, "1", new DeleteCommand(INDEX_FIRST_PERSON));
-    }
-
-    @Test
-    public void parse_invalidArgs_throwsParseException() {
-        assertParseFailure(parser, "a", String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE));
     }
 }

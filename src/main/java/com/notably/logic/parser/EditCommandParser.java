@@ -1,6 +1,5 @@
 package com.notably.logic.parser;
 
-import static com.notably.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static com.notably.logic.parser.CliSyntax.PREFIX_ADDRESS;
 import static com.notably.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static com.notably.logic.parser.CliSyntax.PREFIX_NAME;
@@ -39,7 +38,7 @@ public class EditCommandParser implements Parser<EditCommand> {
         try {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
-            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, EditCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format("", EditCommand.MESSAGE_USAGE), pe);
         }
 
         EditPersonDescriptor editPersonDescriptor = new EditPersonDescriptor();

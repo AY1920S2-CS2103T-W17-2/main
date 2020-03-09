@@ -1,7 +1,5 @@
 package com.notably.logic.parser;
 
-import static com.notably.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-
 import com.notably.commons.core.index.Index;
 import com.notably.logic.commands.DeleteCommand;
 import com.notably.logic.parser.exceptions.ParseException;
@@ -22,7 +20,7 @@ public class DeleteCommandParser implements Parser<DeleteCommand> {
             return new DeleteCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, DeleteCommand.MESSAGE_USAGE), pe);
+                    String.format("Todo: suggestion delete format", DeleteCommand.MESSAGE_USAGE), pe);
         }
     }
 

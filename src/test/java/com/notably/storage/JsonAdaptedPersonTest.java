@@ -12,6 +12,10 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 import com.notably.commons.exceptions.IllegalValueException;
+import com.notably.model.person.Address;
+import com.notably.model.person.Email;
+import com.notably.model.person.Name;
+import com.notably.model.person.Phone;
 
 public class JsonAdaptedPersonTest {
     private static final String INVALID_NAME = "R@chel";

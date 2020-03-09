@@ -1,20 +1,13 @@
 package com.notably.logic.parser;
 
-import static com.notably.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 import static com.notably.logic.commands.CommandTestUtil.ADDRESS_DESC_AMY;
 import static com.notably.logic.commands.CommandTestUtil.ADDRESS_DESC_BOB;
 import static com.notably.logic.commands.CommandTestUtil.EMAIL_DESC_AMY;
 import static com.notably.logic.commands.CommandTestUtil.EMAIL_DESC_BOB;
-import static com.notably.logic.commands.CommandTestUtil.INVALID_ADDRESS_DESC;
-import static com.notably.logic.commands.CommandTestUtil.INVALID_EMAIL_DESC;
-import static com.notably.logic.commands.CommandTestUtil.INVALID_NAME_DESC;
-import static com.notably.logic.commands.CommandTestUtil.INVALID_PHONE_DESC;
-import static com.notably.logic.commands.CommandTestUtil.INVALID_TAG_DESC;
 import static com.notably.logic.commands.CommandTestUtil.NAME_DESC_AMY;
 import static com.notably.logic.commands.CommandTestUtil.NAME_DESC_BOB;
 import static com.notably.logic.commands.CommandTestUtil.PHONE_DESC_AMY;
 import static com.notably.logic.commands.CommandTestUtil.PHONE_DESC_BOB;
-import static com.notably.logic.commands.CommandTestUtil.PREAMBLE_NON_EMPTY;
 import static com.notably.logic.commands.CommandTestUtil.PREAMBLE_WHITESPACE;
 import static com.notably.logic.commands.CommandTestUtil.TAG_DESC_FRIEND;
 import static com.notably.logic.commands.CommandTestUtil.TAG_DESC_HUSBAND;
@@ -32,7 +25,7 @@ import static com.notably.testutil.TypicalPersons.BOB;
 import org.junit.jupiter.api.Test;
 
 import com.notably.logic.commands.AddCommand;
-import com.notably.model.tag.Tag;
+import com.notably.model.person.Person;
 import com.notably.testutil.PersonBuilder;
 
 public class AddCommandParserTest {
@@ -79,7 +72,7 @@ public class AddCommandParserTest {
 
     @Test
     public void parse_compulsoryFieldMissing_failure() {
-        String expectedMessage = String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE);
+        String expectedMessage = String.format("Todo: field suggestion", AddCommand.MESSAGE_USAGE);
 
         // missing name prefix
         assertParseFailure(parser, VALID_NAME_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB,
@@ -100,37 +93,5 @@ public class AddCommandParserTest {
         // all prefixes missing
         assertParseFailure(parser, VALID_NAME_BOB + VALID_PHONE_BOB + VALID_EMAIL_BOB + VALID_ADDRESS_BOB,
                 expectedMessage);
-    }
-
-    @Test
-    public void parse_invalidValue_failure() {
-        // invalid name
-        assertParseFailure(parser, INVALID_NAME_DESC + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
-                + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, Name.MESSAGE_CONSTRAINTS);
-
-        // invalid phone
-        assertParseFailure(parser, NAME_DESC_BOB + INVALID_PHONE_DESC + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
-                + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, Phone.MESSAGE_CONSTRAINTS);
-
-        // invalid email
-        assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + INVALID_EMAIL_DESC + ADDRESS_DESC_BOB
-                + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, Email.MESSAGE_CONSTRAINTS);
-
-        // invalid address
-        assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + INVALID_ADDRESS_DESC
-                + TAG_DESC_HUSBAND + TAG_DESC_FRIEND, Address.MESSAGE_CONSTRAINTS);
-
-        // invalid tag
-        assertParseFailure(parser, NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB + ADDRESS_DESC_BOB
-                + INVALID_TAG_DESC + VALID_TAG_FRIEND, Tag.MESSAGE_CONSTRAINTS);
-
-        // two invalid values, only first invalid value reported
-        assertParseFailure(parser, INVALID_NAME_DESC + PHONE_DESC_BOB + EMAIL_DESC_BOB + INVALID_ADDRESS_DESC,
-                Name.MESSAGE_CONSTRAINTS);
-
-        // non-empty preamble
-        assertParseFailure(parser, PREAMBLE_NON_EMPTY + NAME_DESC_BOB + PHONE_DESC_BOB + EMAIL_DESC_BOB
-                + ADDRESS_DESC_BOB + TAG_DESC_HUSBAND + TAG_DESC_FRIEND,
-                String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
     }
 }
