@@ -44,12 +44,12 @@ Before we proceed, ensure that you have done the following:
 As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution.
 For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement
 of the `main` method. In our case, we would want to begin the tracing at the very point where the App start processing
-user input i.e., somewhere in the UI component, and then trace through how the execution proceeds through the UI component.
+user input i.e., somewhere in the VIEW component, and then trace through how the execution proceeds through the VIEW component.
 However, the execution path through a GUI is often somewhat obscure due to various _event-driven mechanisms_
-used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the UI transfers
-control to the Logic component. According to the sequence diagram, the UI component yields control to the Logic component
+used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the VIEW transfers
+control to the Logic component. According to the sequence diagram, the VIEW component yields control to the Logic component
 through a method named `execute`. Searching through the code base for `execute()` yields a promising candidate in
-`seedu.address.ui.CommandBox.CommandExecutor`.
+`com.notably.view.CommandBox.CommandExecutor`.
 
 .Using the `Search for target by name` feature. `Navigate` > `Symbol`.
 image::Execute.png[]
