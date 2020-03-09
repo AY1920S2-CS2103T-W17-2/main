@@ -26,3 +26,6 @@ src/test/data/sandbox/
 .settings
 bin
 
+# VS files
+/.vs/
+
