@@ -3,6 +3,11 @@ package com.notably.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.notably.model.person.Address;
+import com.notably.model.person.Email;
+import com.notably.model.person.Name;
+import com.notably.model.person.Person;
+import com.notably.model.person.Phone;
 import com.notably.model.tag.Tag;
 import com.notably.model.util.SampleDataUtil;
 

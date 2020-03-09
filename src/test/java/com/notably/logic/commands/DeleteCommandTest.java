@@ -11,19 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-<<<<<<< HEAD:src/test/java/com/notably/logic/commands/DeleteCommandTest.java
 import com.notably.commons.core.Messages;
 import com.notably.commons.core.index.Index;
 import com.notably.model.Model;
 import com.notably.model.ModelManager;
 import com.notably.model.UserPrefs;
-=======
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.model.Model;
-import seedu.address.model.ModelManager;
-import seedu.address.model.UserPrefs;
->>>>>>> main/master:src/test/java/seedu/address/logic/commands/DeleteCommandTest.java
+import com.notably.model.person.Person;
 
 /**
  * Contains integration tests (interaction with the Model, UndoCommand and RedoCommand) and unit tests for

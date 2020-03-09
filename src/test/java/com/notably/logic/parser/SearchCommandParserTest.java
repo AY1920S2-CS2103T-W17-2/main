@@ -1,15 +1,15 @@
-package seedu.address.logic.parser;
+package com.notably.logic.parser;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CommandParserTestUtil.assertParseFailure;
-import static seedu.address.logic.parser.CommandParserTestUtil.assertParseSuccess;
+import static com.notably.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static com.notably.logic.parser.CommandParserTestUtil.assertParseFailure;
+import static com.notably.logic.parser.CommandParserTestUtil.assertParseSuccess;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
-import seedu.address.logic.commands.SearchCommand;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
+import com.notably.logic.commands.SearchCommand;
+import com.notably.model.person.NameContainsKeywordsPredicate;
 
 public class SearchCommandParserTest {
 

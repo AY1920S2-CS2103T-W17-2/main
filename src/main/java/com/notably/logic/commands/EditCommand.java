@@ -19,6 +19,11 @@ import com.notably.commons.core.index.Index;
 import com.notably.commons.util.CollectionUtil;
 import com.notably.logic.commands.exceptions.CommandException;
 import com.notably.model.Model;
+import com.notably.model.person.Address;
+import com.notably.model.person.Email;
+import com.notably.model.person.Name;
+import com.notably.model.person.Person;
+import com.notably.model.person.Phone;
 import com.notably.model.tag.Tag;
 
 /**

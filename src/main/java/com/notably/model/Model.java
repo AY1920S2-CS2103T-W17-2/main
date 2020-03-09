@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.util.function.Predicate;
 
 import com.notably.commons.core.GuiSettings;
+import com.notably.model.person.Person;
 
 import javafx.collections.ObservableList;
 

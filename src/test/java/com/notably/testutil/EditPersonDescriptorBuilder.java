@@ -5,6 +5,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.notably.logic.commands.EditCommand.EditPersonDescriptor;
+import com.notably.model.person.Address;
+import com.notably.model.person.Email;
+import com.notably.model.person.Name;
+import com.notably.model.person.Person;
+import com.notably.model.person.Phone;
 import com.notably.model.tag.Tag;
 
 /**
