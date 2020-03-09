@@ -10,6 +10,7 @@ import java.util.Set;
 
 import com.notably.logic.commands.AddCommand;
 import com.notably.logic.commands.EditCommand.EditPersonDescriptor;
+import com.notably.model.person.Person;
 import com.notably.model.tag.Tag;
 
 /**

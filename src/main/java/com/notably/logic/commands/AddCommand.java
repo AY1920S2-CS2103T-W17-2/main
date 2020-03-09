@@ -9,6 +9,7 @@ import static java.util.Objects.requireNonNull;
 
 import com.notably.logic.commands.exceptions.CommandException;
 import com.notably.model.Model;
+import com.notably.model.person.Person;
 
 /**
  * Adds a person to the address book.
