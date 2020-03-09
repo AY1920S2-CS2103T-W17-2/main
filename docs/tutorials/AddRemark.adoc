@@ -36,9 +36,9 @@ We accomplish that by returning a `CommandResult` with an accompanying message.
 .RemarkCommand.java
 [source, java]
 ----
-package seedu.address.logic.commands;
+package com.notably.logic.commands;
 
-import seedu.address.model.Model;
+import com.notably.model.Model;
 
 /**
  * Changes the remark of an existing person in the address book.
@@ -110,7 +110,7 @@ While this is not a replacement for tests, it is an obvious way to tell if our c
 
 [source, java]
 ----
-import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
+import static com.notably.commons.util.CollectionUtil.requireAllNonNull;
 //...
 public class RemarkCommand extends Command {
     //...
@@ -160,7 +160,7 @@ Your code should look something like link:https://github.com/nus-cs2103-AY1920S1
 
 Now let's move on to writing a parser that will extract the index and remark from the input provided by the user.
 
-Create a `RemarkCommandParser` class in the `seedu.address.logic.parser` package.
+Create a `RemarkCommandParser` class in the `com.notably.logic.parser` package.
 The class must extend the `Parser` interface.
 
 .The relationship between Parser and RemarkCommandParser
@@ -251,7 +251,7 @@ That means we should add a `Remark` class so that we can use a `Remark` object t
 
 === Add a new `Remark` class
 
-Create a new `Remark` in `seedu.address.model.person`. Since a `Remark` is a field that is similar to `Address`, we can reuse a significant bit of code.
+Create a new `Remark` in `com.notably.model.person`. Since a `Remark` is a field that is similar to `Address`, we can reuse a significant bit of code.
 
 A copy-paste and search-replace later, you should have something like link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b7a47c50c8e5f0430d343a23d2863446b6ce9298#diff-af2f075d24dfcd333876f0fbce321f25[this].
 Note how `Remark` has no constrains and thus does not require input validation.
@@ -261,7 +261,7 @@ Note how `Remark` has no constrains and thus does not require input validation.
 Let's change `RemarkCommand` and `RemarkCommandParser` to use the new `Remark` class instead of plain `String`.
 These should be relatively simple changes.
 
-== Add a placeholder element for remark to the UI
+== Add a placeholder element for remark to the VIEW
 
 Without getting too deep into `fxml`, let's go on a 5 minute adventure to get some placeholder text to show up for each person.
 
@@ -273,7 +273,7 @@ Simply add
 private Label remark;
 ```
 
-to link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe[`seedu.address.ui.PersonCard`].
+to link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe[`com.notably.view.PersonCard`].
 `@FXML` is an annotation that marks a private or protected field and makes it accessible to FXML.
 It might sound like Greek to you right now, don't worry -- we will get back to it later.
 
@@ -318,9 +318,9 @@ Not doing so will cause AddressBook to default to an empty address book!
 
 Check out link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/ce4f9b70f524d2395948861d80d57fda9ae6e82e#diff-07708562699e2436c717f3330bafae1e[this commit] to see what the changes entail.
 
-== Finalizing the UI
+== Finalizing the VIEW
 
-Now that we have finalized the `Person` class and its dependencies, we can now bind the `Remark` field to the UI.
+Now that we have finalized the `Person` class and its dependencies, we can now bind the `Remark` field to the VIEW.
 
 Just add link:https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/56d5cb662c31dd38b02f6a5301ba6ab3c667d6a3#diff-0c6b6abcfac8c205e075294f25e851fe[this one line of code!]
 [source, java]

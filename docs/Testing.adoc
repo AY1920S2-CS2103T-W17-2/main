@@ -35,11 +35,11 @@ See <<UsingGradle#, UsingGradle.adoc>> for more info on how to run tests using G
 We have three types of tests:
 
 .  _Unit tests_ targeting the lowest level methods/classes. +
-e.g. `seedu.address.commons.StringUtilTest`
+e.g. `com.notably.commons.StringUtilTest`
 .  _Integration tests_ that are checking the integration of multiple code units (those code units are assumed to be working). +
-e.g. `seedu.address.storage.StorageManagerTest`
+e.g. `com.notably.storage.StorageManagerTest`
 .  Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together. +
-e.g. `seedu.address.logic.LogicManagerTest`
+e.g. `com.notably.logic.LogicManagerTest`
 
 
 == Troubleshooting Testing

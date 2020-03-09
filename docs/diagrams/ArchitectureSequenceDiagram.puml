@@ -2,15 +2,15 @@
 !include style.puml
 
 Actor User as user USER_COLOR
-Participant ":UI" as ui UI_COLOR
+Participant ":VIEW" as view UI_COLOR
 Participant ":Logic" as logic LOGIC_COLOR
 Participant ":Model" as model MODEL_COLOR
 Participant ":Storage" as storage STORAGE_COLOR
 
-user -[USER_COLOR]> ui : "delete 1"
-activate ui UI_COLOR
+user -[USER_COLOR]> view : "delete 1"
+activate view UI_COLOR
 
-ui -[UI_COLOR]> logic : execute("delete 1")
+view -[UI_COLOR]> logic : execute("delete 1")
 activate logic LOGIC_COLOR
 
 logic -[LOGIC_COLOR]> model : deletePerson(p)
@@ -29,9 +29,9 @@ deactivate storage
 storage --[STORAGE_COLOR]> logic
 deactivate storage
 
-logic --[LOGIC_COLOR]> ui
+logic --[LOGIC_COLOR]> view
 deactivate logic
 
-ui--[UI_COLOR]> user
-deactivate ui
+view--[UI_COLOR]> user
+deactivate view
 @enduml

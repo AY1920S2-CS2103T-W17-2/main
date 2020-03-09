@@ -37,7 +37,7 @@ Do not disable them. If you have disabled them, go to `File` > `Settings` > `Plu
 
 == Verifying the setup
 
-. Run the `seedu.address.Main` and try a few commands
+. Run the `com.notably.Main` and try a few commands
 . <<Testing#,Run the tests>> to ensure they all pass.
 
 == Configurations to do before writing code
