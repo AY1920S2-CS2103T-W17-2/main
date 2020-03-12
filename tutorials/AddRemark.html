@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Tutorial - Adding a new Command</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Tutorial - Adding a new Command</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Notably</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W17-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Tutorial - Adding a new Command</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div id="toc" class="toc">
 <div id="toctitle" class="title">Table of Contents</div>
@@ -83,9 +83,9 @@ We accomplish that by returning a <code>CommandResult</code> with an accompanyin
 <div class="listingblock">
 <div class="title">RemarkCommand.java</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">seedu.address.logic.commands</span>;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">package</span> <span class="namespace">com.notably.logic.commands</span>;
 
-<span class="keyword">import</span> <span class="include">seedu.address.model.Model</span>;
+<span class="keyword">import</span> <span class="include">com.notably.model.Model</span>;
 
 <span class="comment">/**
  * Changes the remark of an existing person in the address book.
@@ -178,7 +178,7 @@ While this is not a replacement for tests, it is an obvious way to tell if our c
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> <span class="include">static</span> <span class="include">seedu.address.commons.util.CollectionUtil.requireAllNonNull</span>;
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">import</span> <span class="include">static</span> <span class="include">com.notably.commons.util.CollectionUtil.requireAllNonNull</span>;
 <span class="comment">//...</span>
 <span class="directive">public</span> <span class="type">class</span> <span class="class">RemarkCommand</span> <span class="directive">extends</span> Command {
     <span class="comment">//...</span>
@@ -232,7 +232,7 @@ While this is not a replacement for tests, it is an obvious way to tell if our c
 <p>Now let&#8217;s move on to writing a parser that will extract the index and remark from the input provided by the user.</p>
 </div>
 <div class="paragraph">
-<p>Create a <code>RemarkCommandParser</code> class in the <code>seedu.address.logic.parser</code> package.
+<p>Create a <code>RemarkCommandParser</code> class in the <code>com.notably.logic.parser</code> package.
 The class must extend the <code>Parser</code> interface.</p>
 </div>
 <div class="imageblock">
@@ -348,7 +348,7 @@ That means we should add a <code>Remark</code> class so that we can use a <code>
 <div class="sect2">
 <h3 id="add-a-new-code-remark-code-class"><a class="link" href="#add-a-new-code-remark-code-class">Add a new <code>Remark</code> class</a></h3>
 <div class="paragraph">
-<p>Create a new <code>Remark</code> in <code>seedu.address.model.person</code>. Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
+<p>Create a new <code>Remark</code> in <code>com.notably.model.person</code>. Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
 </div>
 <div class="paragraph">
 <p>A copy-paste and search-replace later, you should have something like <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b7a47c50c8e5f0430d343a23d2863446b6ce9298#diff-af2f075d24dfcd333876f0fbce321f25">this</a>.
@@ -381,7 +381,7 @@ private Label remark;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>to <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe"><code>seedu.address.view.PersonCard</code></a>.
+<p>to <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-0c6b6abcfac8c205e075294f25e851fe"><code>com.notably.view.PersonCard</code></a>.
 <code>@FXML</code> is an annotation that marks a private or protected field and makes it accessible to FXML.
 It might sound like Greek to you right now, don&#8217;t worry&#8201;&#8212;&#8201;we will get back to it later.</p>
 </div>
@@ -616,4 +616,4 @@ In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit 
 <p>This concludes the tutorial for adding a new <code>Command</code> to AddressBook.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-09 12:28:48 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-12 03:38:06 UTC</div></div></div></body></html>
