@@ -4,13 +4,14 @@ import java.nio.file.Path;
 import java.util.function.Predicate;
 
 import com.notably.commons.core.GuiSettings;
+import com.notably.model.suggestion.SuggestionModel;
 
 import javafx.collections.ObservableList;
 
 /**
  * The API of the Model component.
  */
-public interface Model {
+public interface Model extends SuggestionModel {
     /** {@code Predicate} that always evaluate to true */
     Predicate<Object> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
 

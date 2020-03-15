@@ -10,7 +10,7 @@ import javafx.collections.ObservableList;
  * Represents the Suggestion Model instance.
  * The UI will directly interact with this model to display the suggestions result.
  */
-interface SuggestionModel {
+public interface SuggestionModel {
     /**
      * Gets the list of suggestions saved in the model.
      * @return The Observable List of suggested items.
