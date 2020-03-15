@@ -3,7 +3,7 @@ package com.notably.model.suggestion;
 /**
  * Represents the instance of the suggested item.
  */
-interface SuggestionItem {
+public interface SuggestionItem {
     /**
      * Gets a user-friendly text suggestion to be displayed to the user, e.g. "open -t root/cs2103".
      * @return The suggestion.
