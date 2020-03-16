@@ -1,4 +1,4 @@
-package com.notably.logic.suggestion;
+package com.notably.logic.suggestion.commands;
 
 import com.notably.model.Model;
 
