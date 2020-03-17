@@ -25,10 +25,11 @@ public class SearchSuggestionCommand implements SuggestionCommand {
         List<SuggestionItem> suggestions = new ArrayList<>();
 
         for (String suggestion : suggestionList) {
+            String displayText = "search " + suggestion;
             Runnable action = () -> {
-                model.setCommandInputText("search " + suggestion);
+                model.setCommandInputText(displayText);
             };
-            SuggestionItem suggestionItem = new SuggestionItemImpl(suggestion, action);
+            SuggestionItem suggestionItem = new SuggestionItemImpl(displayText, action);
             suggestions.add(suggestionItem);
         }
 
