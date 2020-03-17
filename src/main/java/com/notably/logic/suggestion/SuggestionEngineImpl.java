@@ -6,14 +6,18 @@ import com.notably.commons.core.path.AbsolutePath;
 import com.notably.commons.core.path.Path;
 import com.notably.commons.core.path.RelativePath;
 import com.notably.commons.core.path.exceptions.InvalidPathException;
+import com.notably.logic.suggestion.commands.ErrorSuggestionCommand;
 import com.notably.logic.suggestion.commands.OpenSuggestionCommand;
 import com.notably.logic.suggestion.commands.SearchSuggestionCommand;
 import com.notably.logic.suggestion.commands.SuggestionCommand;
 import com.notably.model.Model;
 
+/**
+ * The implementation class of Suggestion Engine.
+ */
 public class SuggestionEngineImpl implements SuggestionEngine {
-    String input;
-    Model model;
+    private String input;
+    private Model model;
 
     public SuggestionEngineImpl(String input, Model model) {
         this.input = input;
@@ -66,14 +70,14 @@ public class SuggestionEngineImpl implements SuggestionEngine {
 
         SuggestionCommand suggestionCommand;
         switch (command) {
-            case "open":
-                suggestionCommand = new OpenSuggestionCommand(path);
-                break;
-            case "search":
-                suggestionCommand = new SearchSuggestionCommand(path);
-                break;
-            default:
-                suggestionCommand = new ErrorSuggestionCommand();
+        case "open":
+            suggestionCommand = new OpenSuggestionCommand(path);
+            break;
+        case "search":
+            suggestionCommand = new SearchSuggestionCommand(path);
+            break;
+        default:
+            suggestionCommand = new ErrorSuggestionCommand();
         }
         return suggestionCommand;
     }
