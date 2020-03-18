@@ -39,7 +39,6 @@ public class Main {
                 options.add(scanner.next());
             }
 
-            System.out.println(options);
             System.out.println();
 
             CorrectionEngine<String> correctionEngine = new StringCorrectionEngine(options, 5);
