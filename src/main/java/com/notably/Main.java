@@ -1,6 +1,12 @@
 package com.notably;
 
-import javafx.application.Application;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.notably.logic.correction.CorrectionEngine;
+import com.notably.logic.correction.CorrectionResult;
+import com.notably.logic.correction.StringCorrectionEngine;
 
 /**
  * The main entry point to the application.
@@ -19,7 +25,40 @@ import javafx.application.Application;
  * to be the entry point of the application, we avoid this issue.
  */
 public class Main {
+    /**
+     *
+     */
     public static void main(String[] args) {
-        Application.launch(MainApp.class, args);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter number of options supplied: ");
+            int n = scanner.nextInt();
+
+            List<String> options = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                System.out.print(String.format("Enter option #%d: ", i + 1));
+                options.add(scanner.next());
+            }
+
+            System.out.println(options);
+            System.out.println();
+
+            CorrectionEngine<String> correctionEngine = new StringCorrectionEngine(options, 5);
+
+            while (true) {
+                System.out.print("Query: ");
+                String query = scanner.next();
+
+                CorrectionResult<String> result = correctionEngine.correct(query);
+                switch (result.getCorrectionStatus()) {
+                case UNCHANGED:
+                case CORRECTED:
+                    System.out.println("Corrected: " + result.getCorrectedItem().get());
+                    break;
+                case FAILED:
+                default:
+                    System.out.println("Failed to correct!");
+                }
+            }
+        }
     }
 }

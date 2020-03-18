@@ -47,7 +47,7 @@ public class CorrectionResult<T> {
      *
      * @return Corrected item, or {@code Optional.empty()} if there is none
      */
-    Optional<T> getCorrectedItem() {
+    public Optional<T> getCorrectedItem() {
         return Optional.ofNullable(correctedItem);
     }
 

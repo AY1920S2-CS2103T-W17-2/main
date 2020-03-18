@@ -3,7 +3,7 @@ package com.notably.logic.correction;
 /**
  * Represents a correction engine.
  */
-interface CorrectionEngine<T> {
+public interface CorrectionEngine<T> {
     /**
      * Corrects a given item.
      *
