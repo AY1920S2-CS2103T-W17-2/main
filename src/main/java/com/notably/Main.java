@@ -39,9 +39,12 @@ public class Main {
                 options.add(scanner.next());
             }
 
+            System.out.print("Enter correction threshold: ");
+            int threshold = scanner.nextInt();
+
             System.out.println();
 
-            CorrectionEngine<String> correctionEngine = new StringCorrectionEngine(options, 5);
+            CorrectionEngine<String> correctionEngine = new StringCorrectionEngine(options, threshold);
 
             while (true) {
                 System.out.print("Query: ");
