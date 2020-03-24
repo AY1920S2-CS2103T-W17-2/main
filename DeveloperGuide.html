@@ -181,34 +181,42 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect2">
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/LogicArchitectureDiagram.png" alt="LogicArchitectureDiagram">
 </div>
-<div class="title">Figure 4. Structure of the Logic Component</div>
+<div class="title">Figure 4. Architecture of Logic</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
 <a href="https://github.com/AY1920S2-CS2103T-W17-2/main//src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="paragraph">
+<p><code>Logic</code> consists of 3 subcomponents:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><a href="#Design-NotablyParser"><strong><code>NotablyParser</code></strong></a>: Main parser of the App, deals with user command execution.</p>
 </li>
 <li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+<p><a href="#Design-SuggestionEngine"><strong><code>SuggestionEngine</code></strong></a>: Deals with suggestions generation.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
+<p><a href="#Design-CorrectionEngine"><strong><code>CorrectionEngine</code></strong></a>: Deals with auto-correction.</p>
 </li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>View</code>.</p>
-</li>
-<li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>View</code> to perform certain actions, such as displaying help to the user.</p>
-</li>
-</ol>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="Design-NotablyParser"><a class="link" href="#Design-NotablyParser">2.3.1. NotabyParser component</a></h4>
+<div class="paragraph">
+<p>TODO: EDIT BELOW!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 5. Class Diagram of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
@@ -217,7 +225,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -232,13 +240,80 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="Design-SuggestionEngine"><a class="link" href="#Design-SuggestionEngine">2.3.2. SuggestionEngine component</a></h4>
+<div class="paragraph">
+<p>TODO: EDIT BELOW!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 7. Class Diagram of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 8. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Design-CorrectionEngine"><a class="link" href="#Design-CorrectionEngine">2.3.3. CorrectionEngine component</a></h4>
+<div class="paragraph">
+<p>TODO: EDIT BELOW!</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 9. Class Diagram of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
+</div>
+<div class="title">Figure 10. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 6. Structure of the Model Component</div>
+<div class="title">Figure 11. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main//src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -283,7 +358,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Storage Component</div>
+<div class="title">Figure 12. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main//src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -684,4 +759,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 15:53:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:12:53 UTC</div></div></div></body></html>
