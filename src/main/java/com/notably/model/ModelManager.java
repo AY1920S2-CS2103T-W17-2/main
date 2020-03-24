@@ -6,7 +6,6 @@ import static java.util.Objects.requireNonNull;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.logging.Logger;
 
 import com.notably.commons.core.GuiSettings;
@@ -24,46 +23,36 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.Property;
 import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 
-// TODO: to update according to our Model classes.
 /**
- * Represents the in-memory model of the address book data.
+ * Represents the in-memory model of the application data.
  */
 public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
 
-    private AddressBook addressBook;
     private UserPrefs userPrefs;
-    private FilteredList<Object> filteredPersons;
-    // TODO: set the model variables to final after removing the AB3 attributes.
     private SuggestionModel suggestionModel;
     private ViewStateModel viewStateModel;
     private BlockModel blockModel;
 
     /**
-     * Initializes a ModelManager with the given addressBook and userPrefs.
+     * Initializes a ModelManager with the given model parts.
      */
-    public ModelManager(ReadOnlyAddressBook addressBook, ReadOnlyUserPrefs userPrefs) {
-        super();
-        requireAllNonNull(addressBook, userPrefs);
+    public ModelManager(BlockModel blockModel, SuggestionModel suggestionModel, ViewStateModel viewStateModel,
+            ReadOnlyUserPrefs userPrefs) {
+        requireAllNonNull(blockModel, suggestionModel, viewStateModel, userPrefs);
 
-        logger.fine("Initializing with address book: " + addressBook + " and user prefs " + userPrefs);
-
-        this.addressBook = new AddressBook(addressBook);
-        this.userPrefs = new UserPrefs(userPrefs);
-        this.filteredPersons = null;
-    }
-
-    public ModelManager() {
-        this(new AddressBook(), new UserPrefs());
-    }
-
-    // TODO: to update constructor according to our Model classes.
-    public ModelManager(SuggestionModel suggestionModel, ViewStateModel viewStateModel, BlockModel blockModel) {
         this.suggestionModel = suggestionModel;
         this.viewStateModel = viewStateModel;
         this.blockModel = blockModel;
+        this.userPrefs = new UserPrefs(userPrefs);
+    }
+
+    /**
+     * Shorthand for initializing a {@link ModelManager} without {@link UserPrefs}.
+     */
+    public ModelManager(BlockModel blockModel, SuggestionModel suggestionModel, ViewStateModel viewStateModel) {
+        this(blockModel, suggestionModel, viewStateModel, new UserPrefs());
     }
 
     //=========== UserPrefs ==================================================================================
@@ -101,74 +90,8 @@ public class ModelManager implements Model {
         userPrefs.setAddressBookFilePath(addressBookFilePath);
     }
 
-    //=========== AddressBook ================================================================================
-
-    @Override
-    public void setAddressBook(ReadOnlyAddressBook addressBook) {
-        this.addressBook.resetData(addressBook);
-    }
-
-    @Override
-    public ReadOnlyAddressBook getAddressBook() {
-        return addressBook;
-    }
-
-    @Override
-    public void hasPerson(Object person) {
-    }
-
-    @Override
-    public void deletePerson(Object target) {
-    }
-
-    @Override
-    public void addPerson(Object person) {
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-    }
-
-    @Override
-    public void setPerson(Object target, Object editedPerson) {
-        requireAllNonNull(target, editedPerson);
-
-    }
-
-    //=========== Filtered Person List Accessors =============================================================
-
-    /**
-     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
-     * {@code versionedAddressBook}
-     */
-    @Override
-    public ObservableList<Object> getFilteredPersonList() {
-        return filteredPersons;
-    }
-
-    @Override
-    public void updateFilteredPersonList(Predicate<Object> predicate) {
-        requireNonNull(predicate);
-        filteredPersons.setPredicate(predicate);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        // short circuit if same object
-        if (obj == this) {
-            return true;
-        }
-
-        // instanceof handles nulls
-        if (!(obj instanceof ModelManager)) {
-            return false;
-        }
-
-        // state check
-        ModelManager other = (ModelManager) obj;
-        return addressBook.equals(other.addressBook)
-                && userPrefs.equals(other.userPrefs)
-                && filteredPersons.equals(other.filteredPersons);
-    }
-
     //=========== Suggestion Model =============================================================
+
     @Override
     public ObservableList<SuggestionItem> getSuggestions() {
         return suggestionModel.getSuggestions();
@@ -200,6 +123,7 @@ public class ModelManager implements Model {
     }
 
     //=========== ViewStateModel ==================================================================
+
     @Override
     public StringProperty inputProperty() {
         return viewStateModel.inputProperty();

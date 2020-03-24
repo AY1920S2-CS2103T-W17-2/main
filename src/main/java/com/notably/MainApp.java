@@ -13,13 +13,15 @@ import com.notably.commons.util.ConfigUtil;
 import com.notably.commons.util.StringUtil;
 import com.notably.logic.Logic;
 import com.notably.logic.LogicManager;
-import com.notably.model.AddressBook;
 import com.notably.model.Model;
 import com.notably.model.ModelManager;
-import com.notably.model.ReadOnlyAddressBook;
-import com.notably.model.ReadOnlyUserPrefs;
 import com.notably.model.UserPrefs;
-import com.notably.model.util.SampleDataUtil;
+import com.notably.model.block.BlockModel;
+import com.notably.model.block.BlockModelImpl;
+import com.notably.model.suggestion.SuggestionModel;
+import com.notably.model.suggestion.SuggestionModelImpl;
+import com.notably.model.viewstate.ViewStateModel;
+import com.notably.model.viewstate.ViewStateModelImpl;
 import com.notably.storage.AddressBookStorage;
 import com.notably.storage.JsonAddressBookStorage;
 import com.notably.storage.JsonUserPrefsStorage;
@@ -62,36 +64,15 @@ public class MainApp extends Application {
 
         initLogging(config);
 
-        model = initModelManager(storage, userPrefs);
+        // TODO: Initialize model from storage. Read AB3's initModelManager method for inspiration.
+        BlockModel blockModel = new BlockModelImpl();
+        SuggestionModel suggestionModel = new SuggestionModelImpl();
+        ViewStateModel viewStateModel = new ViewStateModelImpl();
+        model = new ModelManager(blockModel, suggestionModel, viewStateModel, userPrefs);
 
         logic = new LogicManager(model, storage);
 
         view = new ViewManager(logic);
-    }
-
-    /**
-     * Returns a {@code ModelManager} with the data from {@code storage}'s address book and {@code userPrefs}. <br>
-     * The data from the sample address book will be used instead if {@code storage}'s address book is not found,
-     * or an empty address book will be used instead if errors occur when reading {@code storage}'s address book.
-     */
-    private Model initModelManager(Storage storage, ReadOnlyUserPrefs userPrefs) {
-        Optional<ReadOnlyAddressBook> addressBookOptional;
-        ReadOnlyAddressBook initialData;
-        try {
-            addressBookOptional = storage.readAddressBook();
-            if (!addressBookOptional.isPresent()) {
-                logger.info("Data file not found. Will be starting with a sample AddressBook");
-            }
-            initialData = addressBookOptional.orElseGet(SampleDataUtil::getSampleAddressBook);
-        } catch (DataConversionException e) {
-            logger.warning("Data file not in the correct format. Will be starting with an empty AddressBook");
-            initialData = new AddressBook();
-        } catch (IOException e) {
-            logger.warning("Problem while reading from the file. Will be starting with an empty AddressBook");
-            initialData = new AddressBook();
-        }
-
-        return new ModelManager(initialData, userPrefs);
     }
 
     private void initLogging(Config config) {

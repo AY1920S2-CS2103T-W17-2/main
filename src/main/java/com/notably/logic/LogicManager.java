@@ -1,6 +1,5 @@
 package com.notably.logic;
 
-import java.io.IOException;
 import java.nio.file.Path;
 import java.util.logging.Logger;
 
@@ -10,7 +9,6 @@ import com.notably.logic.commands.exceptions.CommandException;
 import com.notably.logic.parser.NotablyParser;
 import com.notably.logic.parser.exceptions.ParseException;
 import com.notably.model.Model;
-import com.notably.model.ReadOnlyAddressBook;
 import com.notably.storage.Storage;
 
 
@@ -29,26 +27,13 @@ public class LogicManager implements Logic {
         this.model = model;
         this.storage = storage;
         notablyParser = new NotablyParser();
-
     }
 
     @Override
     public void execute(String commandText) throws CommandException, ParseException {
         logger.info("----------------[USER COMMAND][" + commandText + "]");
-        try {
-            storage.saveAddressBook(model.getAddressBook());
-        } catch (IOException ioe) {
-            throw new CommandException(FILE_OPS_ERROR_MESSAGE + ioe, ioe);
-        }
-    }
 
-    @Override
-    public ReadOnlyAddressBook getAddressBook() {
-        return model.getAddressBook();
-    }
-
-    @Override
-    public void getFilteredPersonList() {
+        // TODO: Save data to storage
     }
 
     @Override

@@ -3,12 +3,10 @@ package com.notably.testutil;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 import com.notably.commons.core.GuiSettings;
 import com.notably.commons.core.path.AbsolutePath;
 import com.notably.model.Model;
-import com.notably.model.ReadOnlyAddressBook;
 import com.notably.model.ReadOnlyUserPrefs;
 import com.notably.model.block.Block;
 import com.notably.model.block.BlockTree;
@@ -55,45 +53,6 @@ public class ModelStubBase implements Model {
         throw new UnsupportedOperationException();
     }
 
-    @Override
-    public void setAddressBook(ReadOnlyAddressBook addressBook) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public ReadOnlyAddressBook getAddressBook() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void hasPerson(Object person) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void deletePerson(Object target) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void addPerson(Object person) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void setPerson(Object target, Object editedPerson) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public ObservableList<Object> getFilteredPersonList() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void updateFilteredPersonList(Predicate<Object> predicate) {
-        throw new UnsupportedOperationException();
-    }
 
     @Override
     public ObservableList<SuggestionItem> getSuggestions() {
