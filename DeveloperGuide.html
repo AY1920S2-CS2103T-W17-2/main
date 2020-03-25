@@ -27,9 +27,8 @@
 <li><a href="#Implementation-CorrectionEngine">3.1. Correction Engine</a></li>
 <li><a href="#Implementation-SuggestionEngine">3.2. Suggestion Engine</a></li>
 <li><a href="#Implementation-Path">3.3. Paths</a></li>
-<li><a href="#Implementation-Parser">3.4. Parser</a></li>
-<li><a href="#Implementation-DataStructure">3.5. Tree Data Structure</a></li>
-<li><a href="#Implementation-UI">3.6. UI</a></li>
+<li><a href="#Implementation-DataStructure">3.4. Tree Data Structure</a></li>
+<li><a href="#Implementation-UI">3.5. UI</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -219,23 +218,36 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="sect3">
 <h4 id="Design-NotablyParser"><a class="link" href="#Design-NotablyParser">2.3.1. NotabyParser component</a></h4>
-<div class="paragraph">
-<p>TODO: EDIT BELOW!</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
 <div class="title">Figure 5. Class Diagram of the Logic Component</div>
 </div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>NotablyParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>List&lt;Command&gt;</code> object which is executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a Note).</p>
+</li>
+<li>
+<p>The updated model/data structure will automatically be reflected on to the <code>View</code>.</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete cs2103")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete -t cs2103</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -321,6 +333,9 @@ The lifeline for <code>OpenSuggestionCommandParser</code> should end at the dest
 </div>
 <div class="paragraph">
 <p>The <code>CorrectionEngine</code> component revolves around two <em>API</em> s, namely:</p>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -579,22 +594,93 @@ implemented as interfaces, in an attempt to make the design of the <code>Suggest
 <div class="sect2">
 <h3 id="Implementation-Path"><a class="link" href="#Implementation-Path">3.3. Paths</a></h3>
 <div class="paragraph">
-<p>TODO:Edit below</p>
+<p>Given below is the implementation detail of the Path feature and some alternative design considerations.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="Implementation-Parser"><a class="link" href="#Implementation-Parser">3.4. Parser</a></h3>
+<div class="sect3">
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.3.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>TODO:Edit below</p>
+<p>The <code>Path</code> interface represents the directory of a <code>Block</code> in our data structure. A path can exist in 2 forms namely :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>AbsolutePath</p>
+</li>
+<li>
+<p>RelativePath</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>An AbsolutePath is a path that takes its reference from the root <code>/</code> block.<br>
+While a RelativePath takes it reference from the current directory that is opened.</p>
+</div>
+<div class="paragraph">
+<p>Currently the user is given the freedom to provide any of the 2 forms when using the <code>open</code>, <code>delete</code> command.<br>
+Given the following DataStructure below.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PathExample1.png" alt="PathExample1">
+</div>
+<div class="title">Figure 13. DataStructure example to illustrate Path</div>
+</div>
+<div class="paragraph">
+<p>Using <code>AbsolutePath</code> <code>open /CS2101</code> and using <code>RelativePath</code> <code>open ../CS2101</code> would yield the same result Design Consideration.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">3.3.2. Design Consideration</a></h4>
+<div class="paragraph">
+<p><strong>Aspect: Implementation of <code>Path</code></strong> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1(Current choice): Have 2 separate class implementing <code>Path</code>, which is  <code>AbsolutePath</code> and <code>RelativePath</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More readable and OOP, each class can have their individual validity REGEX.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Implement a single class <code>PathImpl</code> and have a boolean flag <code>isAbsolute</code> to tell if
+its a Relative or Absolute path.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Aspect: Logical equivalence of <code>RelativePath</code></strong> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1(Current choice): Relative path <code>CS2103/../note1</code> would be equivalent to <code>note1</code>. This was deem to be</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More readable and OOP, each class can have their individual validity REGEX.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Relative path <code>CS2103/../note1</code> would not be logically equivalent to <code>note1</code>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-DataStructure"><a class="link" href="#Implementation-DataStructure">3.5. Tree Data Structure</a></h3>
+<h3 id="Implementation-DataStructure"><a class="link" href="#Implementation-DataStructure">3.4. Tree Data Structure</a></h3>
 <div class="paragraph">
 <p>Notably aims to provide end user a neat and well-organized workspace to store their notes. This is done by creating a tree structure; allowing users to create folder-like paths to organize their notes and group them into categories to their own liking.</p>
 </div>
 <div class="sect3">
-<h4 id="rationale-3"><a class="link" href="#rationale-3">3.5.1. Rationale</a></h4>
+<h4 id="rationale-3"><a class="link" href="#rationale-3">3.4.1. Rationale</a></h4>
 <div class="paragraph">
 <p>While this can be done with a linear data structure (a simple list), a linear list of notes would require more work to establish the relationship between groups of notes. A tree data structure supports this better, giving a clearer distinction while also establishing a form of hierarchy (as seen in the design example below).</p>
 </div>
@@ -603,7 +689,7 @@ implemented as interfaces, in an attempt to make the design of the <code>Suggest
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.5.2. Current Implementation</a></h4>
+<h4 id="current-implementation-4"><a class="link" href="#current-implementation-4">3.4.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>A custom tree data structure that supports observability has been implemented. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
 </div>
@@ -651,7 +737,7 @@ implemented as interfaces, in an attempt to make the design of the <code>Suggest
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.5.3. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.4.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure"><a class="link" href="#aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure">Aspect: <code>BlockTreeItem</code> vs Folders to represent path structure</a></h5>
 <div class="paragraph">
@@ -670,13 +756,13 @@ Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code>
 <div class="content">
 <img src="images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
 </div>
-<div class="title">Figure 13. Tree Data Structure Design Example</div>
+<div class="title">Figure 14. Tree Data Structure Design Example</div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-UI"><a class="link" href="#Implementation-UI">3.6. UI</a></h3>
+<h3 id="Implementation-UI"><a class="link" href="#Implementation-UI">3.5. UI</a></h3>
 <div class="paragraph">
 <p>TODO:Edit below</p>
 </div>
@@ -1013,4 +1099,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 04:24:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 04:49:48 UTC</div></div></div></body></html>
