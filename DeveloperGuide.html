@@ -252,23 +252,51 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 <div class="sect3">
 <h4 id="Design-SuggestionEngine"><a class="link" href="#Design-SuggestionEngine">2.3.2. SuggestionEngine component</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/SuggestionClassDiagram.png" alt="SuggestionClassDiagram">
+</div>
+<div class="title">Figure 7. Class Diagram of the Suggestion Engine Component (still WIP)</div>
+</div>
 <div class="paragraph">
-<p>TODO: EDIT BELOW!</p>
+<p><strong>API</strong> :
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/mainblob/master/src/main/java/com/notably/logic/suggestion/SuggestionEngine.java"><code>SuggestionEngine.java</code></a></p>
+</div>
+<div class="paragraph">
+<p><code>SuggestionEngine</code> gives users the meaning of the command they input and a list of notes suggestions that they want to
+open/ delete/ search/ edit.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>SuggestionEngineImpl</code> class, which implements <code>SuggestionEngine</code> interface, to parse the user command.</p>
+</li>
+<li>
+<p>According to the command the user inputs, <code>SuggestionEngineImpl</code> will create a <code>XYZSuggestionCommandParser</code> object
+which implements <code>SuggestionCommandParser</code> interface.</p>
+</li>
+<li>
+<p>This results in the creation of <code>XYZSuggestionCommand</code> object which implements <code>SuggestionCommand</code> interface.
+<code>XYZSuggestionCommand</code> is then executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. <code>open</code> command will set the response text in the model as
+"Open a note" and store a list of <code>SuggestionItem</code> in the model).</p>
+</li>
+<li>
+<p>The UI will then be able to retrieve the response text and list of <code>SuggestionItem</code> from the model to be displayed
+to the user.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> and <code>Suggestion</code> component for the <code>execute("open /")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/SuggestionSequenceDiagram.png" alt="SuggestionSequenceDiagram">
 </div>
-<div class="title">Figure 7. Class Diagram of the Logic Component</div>
-</div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
-</div>
-<div class="title">Figure 8. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 8. Interactions Inside the Logic and Suggestion Component for the <code>open /</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -277,7 +305,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+The lifeline for <code>OpenSuggestionCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </td>
 </tr>
 </table>
@@ -492,8 +520,60 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 <div class="sect2">
 <h3 id="Implementation-SuggestionEngine"><a class="link" href="#Implementation-SuggestionEngine">3.2. Suggestion Engine</a></h3>
+<div class="sect3">
+<h4 id="rationale-2"><a class="link" href="#rationale-2">3.2.1. Rationale</a></h4>
 <div class="paragraph">
-<p>TODO:Edit below</p>
+<p><code>SuggestionEngine</code> allows the users to traverse their notes conveniently, without having
+to remember the hierarchical structure of their notes. <code>SuggestionEngine</code> gives users the meaning of the command they input and a list of notes suggestions that they want to
+open/ delete/ search/ edit.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.2. Current implementation</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>SuggestionEngineImpl</code> class, which implements <code>SuggestionEngine</code> interface, to parse the user command.</p>
+</li>
+<li>
+<p>According to the command the user inputs, <code>SuggestionEngineImpl</code> will create a <code>XYZSuggestionCommandParser</code> object
+which implements <code>SuggestionCommandParser</code> interface.</p>
+</li>
+<li>
+<p>This results in the creation of <code>XYZSuggestionCommand</code> object which implements <code>SuggestionCommand</code> interface.
+<code>XYZSuggestionCommand</code> is then executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. <code>open</code> command will set the response text in the model as
+"Open a note" and store a list of <code>SuggestionItem</code> in the model).</p>
+</li>
+<li>
+<p>The UI will then be able to retrieve the response text and list of <code>SuggestionItem</code> from the model to be displayed
+to the user.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design considerations</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>SuggestionEngine</code> is segregated from <code>Parser</code> in order to differentiate the logic when the user has finished typing
+and pressed <code>enter</code> (which will be handled by <code>Parser</code>) in contrast to when the user presses <code>tab</code> to take in the
+suggestion item.</p>
+</li>
+<li>
+<p>In order to keep the App&#8217;s data flow unidirectional, <code>SuggestionEngine</code> will update the response text (which tells
+the user the meaning of his command) and the list of <code>SuggestionItem</code> into the <code>Model</code>. Thus, by not showing the
+response text and suggestions immediately to the UI, <code>SuggestionEngine</code> will not interfere with the <code>View</code> functionality.</p>
+</li>
+<li>
+<p><code>SuggestionEngine</code>, <code>SuggestionCommandParser</code>, <code>SuggestionCommand</code>, <code>SuggestionItem</code>, and <code>SuggestionModel</code> are
+implemented as interfaces, in an attempt to make the design of the <code>SuggestionEngine</code> component resilient to change.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -514,7 +594,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <p>Notably aims to provide end user a neat and well-organized workspace to store their notes. This is done by creating a tree structure; allowing users to create folder-like paths to organize their notes and group them into categories to their own liking.</p>
 </div>
 <div class="sect3">
-<h4 id="rationale-2"><a class="link" href="#rationale-2">3.5.1. Rationale</a></h4>
+<h4 id="rationale-3"><a class="link" href="#rationale-3">3.5.1. Rationale</a></h4>
 <div class="paragraph">
 <p>While this can be done with a linear data structure (a simple list), a linear list of notes would require more work to establish the relationship between groups of notes. A tree data structure supports this better, giving a clearer distinction while also establishing a form of hierarchy (as seen in the design example below).</p>
 </div>
@@ -523,7 +603,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.5.2. Current Implementation</a></h4>
+<h4 id="current-implementation-3"><a class="link" href="#current-implementation-3">3.5.2. Current Implementation</a></h4>
 <div class="paragraph">
 <p>A custom tree data structure that supports observability has been implemented. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
 </div>
@@ -571,7 +651,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.3. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.5.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure"><a class="link" href="#aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure">Aspect: <code>BlockTreeItem</code> vs Folders to represent path structure</a></h5>
 <div class="paragraph">
@@ -933,4 +1013,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 04:05:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 04:24:39 UTC</div></div></div></body></html>
