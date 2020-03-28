@@ -45,6 +45,7 @@ public class SearchSuggestionCommand implements SuggestionCommand {
     }
 
     /**
+<<<<<<< HEAD
      * Traverses the whole block tree to get the blocks which contains the keyword.
      * @param model The app's model.
      * @return List of SuggestionItem with a display text of the block's path and action of opening the block.
