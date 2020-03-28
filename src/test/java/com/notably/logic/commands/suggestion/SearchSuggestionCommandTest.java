@@ -76,6 +76,19 @@ public class SearchSuggestionCommandTest {
         Block lecture = new BlockImpl(new Title("Lecture"), toCs2103Week1LectureBody);
         model.setCurrentlyOpenBlock(toCs2103Week1);
         model.addBlockToCurrentPath(lecture);
+
+        // Add body to the blocks
+        model.setCurrentlyOpenBlock(toCs2103Week1Lecture);
+        model.updateCurrentlyOpenBlockBody(toCs2103Week1LectureBody);
+
+        model.setCurrentlyOpenBlock(toCs2103Week2);
+        model.updateCurrentlyOpenBlockBody(toCs2103Week2Body);
+
+        model.setCurrentlyOpenBlock(toCs2103Week3);
+        model.updateCurrentlyOpenBlockBody(toCs2103Week3Body);
+
+        model.setCurrentlyOpenBlock(toCs3230);
+        model.updateCurrentlyOpenBlockBody(toCs3230Body);
     }
 
     @Test
