@@ -45,52 +45,11 @@ public class SearchSuggestionCommand implements SuggestionCommand {
     }
 
     /**
-<<<<<<< HEAD
      * Traverses the whole block tree to get the blocks which contains the keyword.
      * @param model The app's model.
      * @return List of SuggestionItem with a display text of the block's path and action of opening the block.
      */
-<<<<<<< HEAD
     private List<SuggestionItem> traverseTree(Model model) {
-=======
-    private List<SuggestionItem> traverseTree(List<AbsolutePath> allPaths, Model model) {
-        BlockTree blockTree = model.getBlockTree();
-        List<SuggestionItem> suggestions = new ArrayList<>();
-
-        // Traverse through the whole block tree
-        for (AbsolutePath absolutePath : allPaths) {
-            BlockTreeItem blockTreeItem = blockTree.get(absolutePath);
-            String blockBody = blockTreeItem.getBody().getText();
-
-            /* If a blockBody contains the keywords, we create SuggestionItem by
-               counting the keywords' number of occurrences in the blockBody, setting display text, and setting action
-               to open that particular block when the user chooses that suggestion. */
-            String bodyWithRemovedPunctuation = blockBody.replaceAll("\\p{Punct}", "");
-            String bodyLowerCase = bodyWithRemovedPunctuation.toLowerCase();
-            if (bodyLowerCase.contains(keywords)) {
-                String[] blockBodies = bodyLowerCase.split(keywords, -1);
-                int frequency = blockBodies.length - 1;
-                String displayText = absolutePath.getStringRepresentation() + WHITE_SPACE + frequency;
-                Runnable action = () -> {
-                    OpenCommand openCommand = new OpenCommand(absolutePath);
-                    openCommand.execute(model);
-                };
-                SuggestionItem suggestionItem = new SuggestionItemImpl(displayText, action);
-                suggestions.add(suggestionItem);
-            }
-        }
-        return suggestions;
-    }
-
-    /**
-     * Generates all possible paths from the app's {@link BlockTree}
-     *
-     * @return List of all possible paths
-     */
-    private List<AbsolutePath> getAllPaths(Model model) {
-        List<AbsolutePath> possiblePaths = new ArrayList<>();
-
->>>>>>> Add SearchSuggestionCommandTest
         Queue<AbsolutePath> pathQueue = new LinkedList<>();
         pathQueue.offer(AbsolutePath.fromString("/"));
 
