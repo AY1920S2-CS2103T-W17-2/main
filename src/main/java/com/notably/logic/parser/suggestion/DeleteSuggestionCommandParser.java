@@ -31,7 +31,7 @@ public class DeleteSuggestionCommandParser implements SuggestionCommandParser<De
      * Parses user input in the context of the DeleteSuggestionCommand.
      * @param userInput The user's input.
      * @return A DeleteSuggestionCommand object with a corrected absolute path.
-     * @throws ParseException if the user input path cannot be found.
+     * @throws ParseException if the user input is in a wrong format and/ or path cannot be found.
      */
     @Override
     public DeleteSuggestionCommand parse(String userInput) throws ParseException {
