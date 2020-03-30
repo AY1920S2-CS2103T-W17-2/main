@@ -38,12 +38,17 @@ public class DeleteSuggestionCommandParser implements SuggestionCommandParser<De
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(userInput, PREFIX_TITLE);
 
+        String title;
         if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_TITLE)
                 || !argMultimap.getPreamble().isEmpty()) {
-            throw new ParseException(String.format("Invalid input"));
+            title = userInput.trim();
+            if (title.isEmpty()) {
+                throw new ParseException("Path cannot be empty");
+            }
+        } else {
+            title = argMultimap.getValue(PREFIX_TITLE).get();
         }
 
-        String title = argMultimap.getValue(PREFIX_TITLE).get();
         AbsolutePath uncorrectedPath = ParserUtil.createAbsolutePath(title, model.getCurrentlyOpenPath());
         Optional<AbsolutePath> correctedPath = correctionEngine.correct(uncorrectedPath).getCorrectedItem();
 
