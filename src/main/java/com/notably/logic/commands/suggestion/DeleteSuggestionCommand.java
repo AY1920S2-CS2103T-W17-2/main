@@ -16,8 +16,9 @@ import com.notably.model.suggestion.SuggestionItemImpl;
  */
 public class DeleteSuggestionCommand implements SuggestionCommand {
     public static final String COMMAND_WORD = "delete";
+    public static final String COMMAND_SHORTHAND = "d";
+
     private static final String RESPONSE_MESSAGE = "Delete a note";
-    private static final String COMMAND_SHORTHAND = "d";
 
     private AbsolutePath path;
     private String title;

@@ -20,8 +20,9 @@ import com.notably.model.suggestion.SuggestionItemImpl;
  */
 public class SearchSuggestionCommand implements SuggestionCommand {
     public static final String COMMAND_WORD = "search";
+    public static final String COMMAND_SHORTHAND = "s";
+
     private static final String RESPONSE_MESSAGE = "Search through all notes based on keyword";
-    private static final String COMMAND_SHORTHAND = "s";
 
     private String keyword;
 
