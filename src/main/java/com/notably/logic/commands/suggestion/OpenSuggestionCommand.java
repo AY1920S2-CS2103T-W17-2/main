@@ -17,6 +17,7 @@ import com.notably.model.suggestion.SuggestionItemImpl;
 public class OpenSuggestionCommand implements SuggestionCommand {
     public static final String COMMAND_WORD = "open";
     private static final String RESPONSE_MESSAGE = "Open a note";
+    private static final String COMMAND_SHORTHAND = "o";
 
     private AbsolutePath path;
     private String title;

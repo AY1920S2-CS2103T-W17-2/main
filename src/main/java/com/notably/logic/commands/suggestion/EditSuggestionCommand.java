@@ -10,6 +10,7 @@ import com.notably.model.Model;
 public class EditSuggestionCommand implements SuggestionCommand {
     public static final String COMMAND_WORD = "edit";
     private static final String RESPONSE_MESSAGE = "Edit a currently open note";
+    private static final String COMMAND_SHORTHAND = "e";
 
     @Override
     public void execute(Model model) {
