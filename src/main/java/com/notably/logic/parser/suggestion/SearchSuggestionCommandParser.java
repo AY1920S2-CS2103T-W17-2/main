@@ -23,9 +23,13 @@ public class SearchSuggestionCommandParser implements SuggestionCommandParser<Se
         ArgumentMultimap argMultimap =
                 ArgumentTokenizer.tokenize(userInput, PREFIX_SEARCH);
 
+        String title;
         if (!ParserUtil.arePrefixesPresent(argMultimap, PREFIX_SEARCH)
                 || !argMultimap.getPreamble().isEmpty()) {
-            throw new ParseException(String.format("Invalid input"));
+            title = userInput.trim();
+            if (title.isEmpty()) {
+                throw new ParseException("Keyword cannot be empty");
+            }
         }
 
         return new SearchSuggestionCommand(userInput);
