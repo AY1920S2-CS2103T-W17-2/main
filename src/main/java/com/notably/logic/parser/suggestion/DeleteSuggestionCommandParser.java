@@ -53,7 +53,7 @@ public class DeleteSuggestionCommandParser implements SuggestionCommandParser<De
         Optional<AbsolutePath> correctedPath = correctionEngine.correct(uncorrectedPath).getCorrectedItem();
 
         return correctedPath
-                .map(DeleteSuggestionCommand::new)
+                .map((AbsolutePath path) -> new DeleteSuggestionCommand(path, title))
                 .orElseThrow(() -> new ParseException("Invalid path"));
     }
 }
