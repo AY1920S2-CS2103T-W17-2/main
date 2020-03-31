@@ -20,22 +20,13 @@
 <li><a href="#edit-an-existing-note-code-edit-code">3.5. Edit an existing note: <code>edit</code></a></li>
 <li><a href="#find-a-note-based-on-certain-keywords-code-search-code">3.6. Find a note based on certain keywords: <code>search</code></a></li>
 <li><a href="#delete-a-note-code-delete-code">3.7. Delete a note: <code>delete</code></a></li>
-<li><a href="#export-a-note-code-export-code">3.8. Export a note: <code>export</code></a></li>
-<li><a href="#save-the-data">3.9. Save the data</a></li>
-<li><a href="#auto-suggestions">3.10. Auto suggestions</a></li>
-<li><a href="#auto-correct">3.11. Auto correct</a></li>
+<li><a href="#save-the-data">3.8. Save the data</a></li>
+<li><a href="#auto-suggestions">3.9. Auto suggestions</a></li>
+<li><a href="#auto-correct">3.10. Auto correct</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
 <li><a href="#command-summary">5. Command Summary</a></li>
-<li><a href="#demo-mock-up">6. Demo/Mock up</a>
-<ul class="sectlevel2">
-<li><a href="#note-creation">6.1. Note creation</a></li>
-<li><a href="#navigation">6.2. Navigation</a></li>
-<li><a href="#export-to-other-types">6.3. Export to other types</a></li>
-<li><a href="#search">6.4. Search</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -106,12 +97,20 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Notably will display the list of features and commands available as well as their uses.<br>
 Format: <code>help</code></p>
 </div>
+<div class="paragraph">
+<div class="title">Demo for the <code>help</code> command</div>
+<p><span class="image"><img src="images/demo/Help.png" alt="Help"></span></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="exit-the-program-code-exit-code"><a class="link" href="#exit-the-program-code-exit-code">3.2. Exit the program: <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>exit</code> command</div>
+<p><span class="image"><img src="images/demo/Exit.png" alt="Exit"></span></p>
 </div>
 </div>
 <div class="sect2">
@@ -121,6 +120,18 @@ Format: <code>exit</code></p>
 Format: <code>new -t TITLE [-b BODY] [-o]</code><br>
 Example: <code>new -t Notably -b Lorem ipsum dolor sit amer -o</code></p>
 </div>
+<div class="paragraph">
+<div class="title">Demo for the <code>new</code> command (with all parameters)</div>
+<p><span class="image"><img src="images/demo/New1.png" alt="New1"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>new</code> command (with only title parameter)</div>
+<p><span class="image"><img src="images/demo/New2.png" alt="New2"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>new</code> command (after new note creations)</div>
+<p><span class="image"><img src="images/demo/New3.png" alt="New3"></span></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="open-an-existing-note-code-open-code"><a class="link" href="#open-an-existing-note-code-open-code">3.4. Open an existing note: <code>open</code></a></h3>
@@ -128,6 +139,10 @@ Example: <code>new -t Notably -b Lorem ipsum dolor sit amer -o</code></p>
 <p>You can open an existing note by specifynig its title. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br>
 Format: <code>open [-t] TITLE</code><br>
 Example: <code>open -t Notably/CS2103</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>open</code> command (with suggestions)</div>
+<p><span class="image"><img src="images/demo/Open.png" alt="Open"></span></p>
 </div>
 </div>
 <div class="sect2">
@@ -137,6 +152,14 @@ Example: <code>open -t Notably/CS2103</code></p>
 Format: <code>edit -b BODY</code>
 Example: <code>edit -b This is the new body paragraph</code></p>
 </div>
+<div class="paragraph">
+<div class="title">Demo for the <code>edit</code> command</div>
+<p><span class="image"><img src="images/demo/Edit1.png" alt="Edit1"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>edit</code> command (after edit)</div>
+<p><span class="image"><img src="images/demo/Edit2.png" alt="Edit2"></span></p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">3.6. Find a note based on certain keywords: <code>search</code></a></h3>
@@ -144,6 +167,10 @@ Example: <code>edit -b This is the new body paragraph</code></p>
 <p>Searches all the notes saved in Notably for the keyword.<br>
 Format: <code>search [-s] KEYWORD</code><br>
 Example: <code>search -s CS2103</code></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>search</code> command</div>
+<p><span class="image"><img src="images/demo/Search.png" alt="Search"></span></p>
 </div>
 </div>
 <div class="sect2">
@@ -153,32 +180,40 @@ Example: <code>search -s CS2103</code></p>
 Format: <code>delete [-t] TITLE</code><br>
 Example: <code>delete -t Notably/CS2103</code></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="export-a-note-code-export-code"><a class="link" href="#export-a-note-code-export-code">3.8. Export a note: <code>export</code></a></h3>
 <div class="paragraph">
-<p>You can export a note into other formats.<br>
-Format: <code>export [-t] TYPE</code><br>
-Example: <code>export -t PDF</code></p>
+<div class="title">Demo for the <code>delete</code> command</div>
+<p><span class="image"><img src="images/demo/Delete1.png" alt="Delete1"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the <code>delete</code> command (after deletion)</div>
+<p><span class="image"><img src="images/demo/Delete2.png" alt="Delete2"></span></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="save-the-data"><a class="link" href="#save-the-data">3.9. Save the data</a></h3>
+<h3 id="save-the-data"><a class="link" href="#save-the-data">3.8. Save the data</a></h3>
 <div class="paragraph">
 <p>Notes data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">3.10. Auto suggestions</a></h3>
+<h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">3.9. Auto suggestions</a></h3>
 <div class="paragraph">
 <p>Suggestions will be provided as commands are being filled in. For clarity, see the mockups below.</p>
 </div>
+<div class="paragraph">
+<div class="title">Demo for the suggestions feature</div>
+<p><span class="image"><img src="images/demo/Suggestions.png" alt="Suggestions"></span></p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="auto-correct"><a class="link" href="#auto-correct">3.11. Auto correct</a></h3>
+<h3 id="auto-correct"><a class="link" href="#auto-correct">3.10. Auto correct</a></h3>
 <div class="paragraph">
 <p>Mistypes, as long as they are not too far away from available commands, will be accepted. This will give the user a more fluid typing experience.</p>
+</div>
+<div class="paragraph">
+<div class="title">Demo for the auto-correction feature</div>
+<p><span class="image"><img src="images/demo/Correction.png" alt="Correction"></span></p>
 </div>
 </div>
 </div>
@@ -219,9 +254,6 @@ There is no need to save manually.</p>
 <p><strong>Delete a note</strong>: <code>delete [-t] TITLE</code></p>
 </li>
 <li>
-<p><strong>Export a note</strong>: <code>export [-t] TYPE</code></p>
-</li>
-<li>
 <p><strong>Go back to the parent note</strong>: <code>open ../</code></p>
 </li>
 <li>
@@ -233,110 +265,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="demo-mock-up"><a class="link" href="#demo-mock-up">6. Demo/Mock up</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="note-creation"><a class="link" href="#note-creation">6.1. Note creation</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The current note is highlighted at the sidebar; it is titled "Root".</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Create1.png" alt="Create1" width="790">
-</div>
-</div>
-</li>
-<li>
-<p>Next, let&#8217;s create a new note with the command <code>new -t TITLE [-b BODY] [-o]</code>.</p>
-</li>
-<li>
-<p>The <code>-o</code> portion allows the user to change his/her directory to that of the newly created note. See Section 3.3 for more details.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Create2.png" alt="Create2" width="790">
-</div>
-</div>
-</li>
-<li>
-<p>Notably is now the current directory as highlighted in the sidebar.</p>
-</li>
-<li>
-<p>Next, let&#8217;s attempt to create another note titled "CS2103T"</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Create3.png" alt="Create3" width="790">
-</div>
-</div>
-</li>
-<li>
-<p>User can go back to the parent note with the command <code>open ../</code>.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Create4.png" alt="Create4" width="790">
-</div>
-</div>
-</li>
-<li>
-<p>We will end up in the note titled "Notably".</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Create5.png" alt="Create5" width="790">
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="navigation"><a class="link" href="#navigation">6.2. Navigation</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>open [-t] TITLE</code> to navigate to a specific directory.</p>
-</li>
-<li>
-<p>Users can use <kbd>Tab</kbd> key to autofill the command recommended by the command line.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Navigation.png" alt="Navigation" width="790">
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="export-to-other-types"><a class="link" href="#export-to-other-types">6.3. Export to other types</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Users can export notes to other types using the <code>export [-t] TYPE</code> command.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Export.png" alt="Export" width="790">
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="search"><a class="link" href="#search">6.4. Search</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Users can search for the note that contains a specific keyword by using the <code>search [-k] KEYWORD</code> command.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/Search.png" alt="Search" width="790">
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 15:20:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 15:42:49 UTC</div></div></div></body></html>
