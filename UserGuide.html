@@ -142,7 +142,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 </div>
-<div class="exampleblock">
+<div id="paths" class="exampleblock">
 <div class="content">
 <div class="paragraph">
 <p><strong>Paths</strong></p>
@@ -237,118 +237,42 @@ We cannot open or delete the parent of the root note because it does not exist. 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="view-help-code-help-code"><a class="link" href="#view-help-code-help-code">3.1. View help : <code>help</code></a></h3>
-<div class="paragraph">
-<p>Notably will display the list of features and commands available as well as their uses.<br>
-Format: <code>help</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>help</code> command</div>
-<p><span class="image"><img src="images/demo/Help.png" alt="Help"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="exit-the-program-code-exit-code"><a class="link" href="#exit-the-program-code-exit-code">3.2. Exit the program: <code>exit</code></a></h3>
-<div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>exit</code> command</div>
-<p><span class="image"><img src="images/demo/Exit.png" alt="Exit"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="create-a-new-note-code-new-code"><a class="link" href="#create-a-new-note-code-new-code">3.3. Create a new note: <code>new</code></a></h3>
-<div class="paragraph">
-<p>You can create a new note in your current working directory.<br>
-Format: <code>new -t TITLE [-b BODY] [-o]</code><br>
-Example: <code>new -t Notably -b Lorem ipsum dolor sit amer -o</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>new</code> command (with all parameters)</div>
-<p><span class="image"><img src="images/demo/New1.png" alt="New1"></span></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>new</code> command (with only title parameter)</div>
-<p><span class="image"><img src="images/demo/New2.png" alt="New2"></span></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>new</code> command (after new note creations)</div>
-<p><span class="image"><img src="images/demo/New3.png" alt="New3"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="open-an-existing-note-code-open-code"><a class="link" href="#open-an-existing-note-code-open-code">3.4. Open an existing note: <code>open</code></a></h3>
-<div class="paragraph">
-<p>You can open an existing note by specifynig its title. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br>
-Format: <code>open [-t] TITLE</code><br>
-Example: <code>open -t Notably/CS2103</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>open</code> command (with suggestions)</div>
-<p><span class="image"><img src="images/demo/Open.png" alt="Open"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="edit-an-existing-note-code-edit-code"><a class="link" href="#edit-an-existing-note-code-edit-code">3.5. Edit an existing note: <code>edit</code></a></h3>
-<div class="paragraph">
-<p>Edits body paragraph of the current note. This command replaces the current content of a note with the newly specified body.<br>
-Format: <code>edit -b BODY</code>
-Example: <code>edit -b This is the new body paragraph</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>edit</code> command</div>
-<p><span class="image"><img src="images/demo/Edit1.png" alt="Edit1"></span></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>edit</code> command (after edit)</div>
-<p><span class="image"><img src="images/demo/Edit2.png" alt="Edit2"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">3.6. Find a note based on certain keywords: <code>search</code></a></h3>
-<div class="paragraph">
-<p>Searches all the notes saved in Notably for the keyword.<br>
-Format: <code>search [-s] KEYWORD</code><br>
-Example: <code>search -s CS2103</code></p>
-</div>
-<div class="paragraph">
-<div class="title">Demo for the <code>search</code> command</div>
-<p><span class="image"><img src="images/demo/Search.png" alt="Search"></span></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">3.7. Delete a note: <code>delete</code></a></h3>
-<div class="paragraph">
-<p>If you no longer need a note, or accidentally create a wrong one, don&#8217;t worry. You can always delete your note. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br>
-Format: <code>delete [-t] TITLE</code><br>
-Example: <code>delete -t Notably/CS2103</code></p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Please keep in mind that deleting a note that contains other notes will cause the whole group of notes to be deleted. You can refer to the demo below for an illustration.
-</td>
-</tr>
-</table>
-</div>
-<div class="imageblock">
+<div id="Markdown" class="exampleblock">
 <div class="content">
-<img src="images/demo/Delete1.png" alt="Delete1">
+<div class="paragraph">
+<p><strong>Markdown</strong></p>
 </div>
-<div class="title">Figure 3. Demo for the delete command</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Notably supports basic GitHub Flavored Markdown (GFM) in the <code>BODY</code> content of a note</p>
+</li>
+<li>
+<p>Currently supported syntax of GitHub Flavored Markdown in Notably consists of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#atx-heading">ATX headings</a></p>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/#paragraph">Paragraphs</a></p>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a></p>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis (Simplified)</a></p>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a></p>
+</li>
+</ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/demo/Delete2.png" alt="Delete2">
-</div>
-<div class="title">Figure 4. Demo for the delete command (after deletion)</div>
+</li>
+<li>
+<p>Specifications for GFM are specified <a href="https://github.github.com/gfm/">here</a></p>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -357,37 +281,452 @@ Please keep in mind that deleting a note that contains other notes will cause th
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You can achieve the same result as above by using an <code>AbsolutePath</code> instead by executing <code>delete -t /Workspace/Notably</code>.
+The term <code>Markdown</code> as used in this document will be a shorthand for GitHub Flavored Markdown. However, it is worth noting that by definition, they are not the same.
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-help-code-help-code"><a class="link" href="#view-help-code-help-code">3.1. View help : <code>help</code></a></h3>
+<div class="paragraph">
+<p>If you can&#8217;t remember the commands or you are unsure about what a particular command does, type <code>help</code> and hit <kbd>Enter</kbd>. Notably will show you a list of the commands it has and what they do.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Help.png" alt="Help">
+</div>
+<div class="title">Figure 3. Demo for the <code>help</code> command</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit-the-program-code-exit-code"><a class="link" href="#exit-the-program-code-exit-code">3.2. Exit the program: <code>exit</code></a></h3>
+<div class="paragraph">
+<p>If you&#8217;re done with taking notes, use <code>exit</code> to close Notably straight from the command line.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exit</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Exit.png" alt="Exit">
+</div>
+<div class="title">Figure 4. Demo for the <code>exit</code> command</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-a-new-note-code-new-code"><a class="link" href="#create-a-new-note-code-new-code">3.3. Create a new note: <code>new</code></a></h3>
+<div class="paragraph">
+<p>If you want to add a new note to the current working directory (currently opened note), use the <code>new</code> command and specify the <code>TITLE</code> of the note.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>new -t TITLE [-b BODY] [-o]</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>TITLE</code> for the note MUST be specified.</p>
+</li>
+<li>
+<p>The <code>TITLE</code> for the note can only contain alphabets, numbers and whitespaces.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>BODY</code> of the note is optional.</p>
+</li>
+<li>
+<p>If the <code>BODY</code> is not specified, the note will have an empty <code>BODY</code>.</p>
+</li>
+<li>
+<p>The <code>BODY</code> can contain alphabets, numbers, symbols, whitespaces and also line breaks (with <code>\n</code>)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>BODY</code> can even contain MarkDown formatted content. For more information on Markdown in Notably, click <a href="#Markdown">here</a>.</p>
+</li>
+<li>
+<p>Use the optional <code>-o</code> flag to immediately open the note after creating it.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-creating-new-notes"><a class="link" href="#example-creating-new-notes">3.3.1. Example: Creating new notes</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s first create a note (with a <code>TITLE</code> and <code>BODY</code>), and open it immediately after. <a href="#New1">(Step 1)</a> Type this command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>new -t Notably -b The quick brown fox jumps over the lazy dog -o`</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now the currently open note is <code>Notably</code>. Let&#8217;s add create a note to the currently opened note, <a href="#New2">(Step 2)</a> with a <code>TITLE</code> only as follows:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>new -t CS2103T</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The new note <code>CS2103T</code> has been created succeessfully! <a href="#New3">(Step 3)</a><br></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Observe that the note <code>CS2103T</code> was not opened immediately</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="New1" class="imageblock">
+<div class="content">
+<img src="images/demo/New1.png" alt="Demo">
+</div>
+<div class="title">Figure 5. Step 1 - Demo for the <code>new</code> command (with all parameters and <code>open</code> flag)</div>
+</div>
+<div id="New2" class="imageblock">
+<div class="content">
+<img src="images/demo/New2.png" alt="New2">
+</div>
+<div class="title">Figure 6. Step 2 - Demo for the <code>new</code> command (with only title parameter)</div>
+</div>
+<div id="New3" class="imageblock">
+<div class="content">
+<img src="images/demo/New3.png" alt="New3">
+</div>
+<div class="title">Figure 7. Step 3 - Demo for the <code>new</code> command (after creating both notes)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="open-an-existing-note-code-open-code"><a class="link" href="#open-an-existing-note-code-open-code">3.4. Open an existing note: <code>open</code></a></h3>
+<div class="paragraph">
+<p>You can open an existing note by specifying its title (and optionally with its absolute or relative <a href="#paths">path</a>).<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>open [-t] [PATH/TO/]TITLE</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to save some keypresses, omit the optional <code>-t</code> flag. It still works fine!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-opening-a-note"><a class="link" href="#example-opening-a-note">3.4.1. Example: Opening a note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s open the note <code>Notably</code> that exists in the currently opened note <code>Workspace</code> <a href="#Open">(Step 1)</a> with the command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>open -t Notably</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Notably gives you some useful suggestions on other paths that are similar or related to your input!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="Open" class="imageblock">
+<div class="content">
+<img src="images/demo/Open.png" alt="Open">
+</div>
+<div class="title">Figure 8. Step 1 - Demo for the <code>open</code> command (with suggestions)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-an-existing-note-code-edit-code"><a class="link" href="#edit-an-existing-note-code-edit-code">3.5. Edit an existing note: <code>edit</code></a></h3>
+<div class="paragraph">
+<p>If you want to change the <code>BODY</code> content of a note, use the <code>edit</code> command. This command <strong>replaces</strong> the existing <code>BODY</code> content of the currently open note, with the new <code>BODY</code> content.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit -b BODY</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You are not allowed to <code>edit</code> the root note, i.e the currently opened path is <code>"/"</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-editing-the-currently-opened-note"><a class="link" href="#example-editing-the-currently-opened-note">3.5.1. Example: Editing the currently opened note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s replace the <code>BODY</code> content of the currently opened note <code>Workspace</code>, with "This is the new paragraph". This can be done with the command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>edit -b This is the new paragraph</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Edit1.png" alt="Edit1">
+</div>
+<div class="title">Figure 9. Demo for the <code>edit</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Edit2.png" alt="Edit2">
+</div>
+<div class="title">Figure 10. Demo for the <code>edit</code> command (after edit)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">3.6. Find a note based on certain keywords: <code>search</code></a></h3>
+<div class="paragraph">
+<p>If you need to look for a note that contain a specific keyword, use the <code>search</code> command and Notably when show you the result sorted by the number of matches in the note. <br>
+Format: <code>search [-s] KEYWORD</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>search</code> looks through <strong>all</strong> the notes that you have</p>
+</li>
+<li>
+<p>Partial matches work as well!</p>
+</li>
+<li>
+<p>Matches are case insensitive, meaning it will find the word no matter if it is in uppercase or lowercase or even mixed-case</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-searching-for-the-keyword-computer-science"><a class="link" href="#example-searching-for-the-keyword-computer-science">3.6.1. Example: Searching for the keyword "Computer science"</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s look through all the notes that we have saved, for the keyword "Computer science"<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>search -s Computer science</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Search.png" alt="Search">
+</div>
+<div class="title">Figure 11. Demo for the <code>search</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">3.7. Delete a note: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>If you no longer need a note, or you accidentally created a wrong note, don&#8217;t worry! You can always delete That note. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete [-t] [PATH/TO/]NOTE</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting a note will also delete its child notes. Be very careful! You can refer to the example below for an illustration</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-deleting-an-existing-note"><a class="link" href="#example-deleting-an-existing-note">3.7.1. Example: Deleting an existing note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s delete the <code>Notably</code> note using this command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>delete -t Notably</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>Another Note</code>, <code>CS2103</code> and <code>ST2334</code> are immediately deleted as well since they are child notes of <code>Notably</code></p>
+</li>
+<li>
+<p>The above example uses <code>RelativePath</code>. You can achieve the same result as above by using an <code>AbsolutePath</code> instead by executing <code>delete -t /Workspace/Notably</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Delete1.png" alt="Delete1">
+</div>
+<div class="title">Figure 12. Demo for the <code>delete</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Delete2.png" alt="Delete2">
+</div>
+<div class="title">Figure 13. Demo for the <code>delete</code> command (after deletion)</div>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="save-the-data"><a class="link" href="#save-the-data">3.8. Save the data</a></h3>
 <div class="paragraph">
 <p>Notes data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+There is no need for you to save manually.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">3.9. Auto suggestions</a></h3>
 <div class="paragraph">
-<p>Suggestions will be provided as commands are being filled in. For clarity, see the mockups below.</p>
+<p>As you type, Notably will provide you suggestions. You can then press <kbd>Tab</kbd> to select the first suggestion.</p>
 </div>
-<div class="paragraph">
-<div class="title">Demo for the suggestions feature</div>
-<p><span class="image"><img src="images/demo/Suggestions.png" alt="Suggestions"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Suggestions.png" alt="Suggestions">
+</div>
+<div class="title">Figure 14. Demo for the suggestions feature</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="auto-correct"><a class="link" href="#auto-correct">3.10. Auto correct</a></h3>
 <div class="paragraph">
-<p>Mistypes, as long as they are not too far away from available commands, will be accepted. This will give the user a more fluid typing experience.</p>
+<p>Even if you mistype, Notably tries its best to correct the typo automatically, as long as the mistyped input command is not too far away from Notably&#8217;s available commands. This provides you with a more fluid typing experience.</p>
 </div>
-<div class="paragraph">
-<div class="title">Demo for the auto-correction feature</div>
-<p><span class="image"><img src="images/demo/Correction.png" alt="Correction"></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Correction.png" alt="Correction">
+</div>
+<div class="title">Figure 15. Demo for the auto-correction feature</div>
 </div>
 </div>
 </div>
@@ -439,4 +778,4 @@ There is no need to save manually.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 12:22:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 19:36:16 UTC</div></div></div></body></html>
