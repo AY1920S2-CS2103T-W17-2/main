@@ -23,11 +23,11 @@
 <li><a href="#create-a-new-note-code-new-code">3.3. Create a new note: <code>new</code></a></li>
 <li><a href="#open-an-existing-note-code-open-code">3.4. Open an existing note: <code>open</code></a></li>
 <li><a href="#edit-an-existing-note-code-edit-code">3.5. Edit an existing note: <code>edit</code></a></li>
-<li><a href="#find-a-note-based-on-certain-keywords-code-search-code">3.6. Find a note based on certain keywords: <code>search</code></a></li>
-<li><a href="#delete-a-note-code-delete-code">3.7. Delete a note: <code>delete</code></a></li>
-<li><a href="#save-the-data">3.8. Save the data</a></li>
-<li><a href="#auto-suggestions">3.9. Auto suggestions</a></li>
-<li><a href="#auto-correct">3.10. Auto correct</a></li>
+<li><a href="#delete-a-note-code-delete-code">3.6. Delete a note: <code>delete</code></a></li>
+<li><a href="#save-the-data">3.7. Save the data</a></li>
+<li><a href="#auto-suggestions">3.8. Auto suggestions</a></li>
+<li><a href="#auto-correct">3.9. Auto correct</a></li>
+<li><a href="#coming-in-v2-0-find-a-note-based-on-certain-keywords-code-search-code">3.10. (Coming in v2.0) Find a note based on certain keywords: <code>search</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -48,9 +48,9 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/IntroToNotably.png" alt="IntroToNotably" width="900">
+<img src="images/Legends.png" alt="Legends" width="900">
 </div>
-<div class="title">Figure 1. Notably GUI quickguide</div>
+<div class="title">Figure 1. Notably GUI legends</div>
 </div>
 </div>
 <div class="sect2">
@@ -258,13 +258,13 @@ We cannot open or delete the parent of the root note because it does not exist. 
 <p><a href="https://github.github.com/gfm/#paragraph">Paragraphs</a></p>
 </li>
 <li>
-<p><a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a></p>
+<p>(Ordered list coming in v2.0) <a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a></p>
 </li>
 <li>
-<p><a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis (Simplified)</a></p>
+<p>(Coming in v2.0) <a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis (Simplified)</a></p>
 </li>
 <li>
-<p><a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a></p>
+<p>(Coming in v2.0) <a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a></p>
 </li>
 </ul>
 </div>
@@ -294,7 +294,7 @@ The term <code>Markdown</code> as used in this document will be a shorthand for 
 <p>If you can&#8217;t remember the commands or you are unsure about what a particular command does, type <code>help</code> and hit <kbd>Enter</kbd>. Notably will show you a list of the commands it has and what they do.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p><strong>Format:</strong> <code>help</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -309,7 +309,7 @@ The term <code>Markdown</code> as used in this document will be a shorthand for 
 <p>If you&#8217;re done with taking notes, use <code>exit</code> to close Notably straight from the command line.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>exit</code></p>
+<p><strong>Format:</strong> <code>exit</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -324,7 +324,7 @@ The term <code>Markdown</code> as used in this document will be a shorthand for 
 <p>If you want to add a new note to the current working directory (currently opened note), use the <code>new</code> command and specify the <code>TITLE</code> of the note.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>new -t TITLE [-b BODY] [-o]</code></p>
+<p><strong>Format:</strong> <code>new -t TITLE [-b BODY] [-o]</code></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -457,7 +457,7 @@ The term <code>Markdown</code> as used in this document will be a shorthand for 
 <p>You can open an existing note by specifying its title (and optionally with its absolute or relative <a href="#paths">path</a>).<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>open [-t] [PATH/TO/]TITLE</code><br></p>
+<p><strong>Format:</strong> <code>open [-t] [PATH/TO/]TITLE</code><br></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -523,7 +523,7 @@ The term <code>Markdown</code> as used in this document will be a shorthand for 
 <p>If you want to change the <code>BODY</code> content of a note, use the <code>edit</code> command. This command <strong>replaces</strong> the existing <code>BODY</code> content of the currently open note, with the new <code>BODY</code> content.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit -b BODY</code></p>
+<p><strong>Format:</strong> <code>edit -b BODY</code></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -572,64 +572,12 @@ The term <code>Markdown</code> as used in this document will be a shorthand for 
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">3.6. Find a note based on certain keywords: <code>search</code></a></h3>
-<div class="paragraph">
-<p>If you need to look for a note that contain a specific keyword, use the <code>search</code> command and Notably when show you the result sorted by the number of matches in the note. <br>
-Format: <code>search [-s] KEYWORD</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p><code>search</code> looks through <strong>all</strong> the notes that you have</p>
-</li>
-<li>
-<p>Partial matches work as well!</p>
-</li>
-<li>
-<p>Matches are case insensitive, meaning it will find the word no matter if it is in uppercase or lowercase or even mixed-case</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="example-searching-for-the-keyword-computer-science"><a class="link" href="#example-searching-for-the-keyword-computer-science">3.6.1. Example: Searching for the keyword "Computer science"</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Let&#8217;s look through all the notes that we have saved, for the keyword "Computer science"<br></p>
-<div class="literalblock">
-<div class="content">
-<pre>search -s Computer science</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/demo/Search.png" alt="Search">
-</div>
-<div class="title">Figure 11. Demo for the <code>search</code> command</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">3.7. Delete a note: <code>delete</code></a></h3>
+<h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">3.6. Delete a note: <code>delete</code></a></h3>
 <div class="paragraph">
 <p>If you no longer need a note, or you accidentally created a wrong note, don&#8217;t worry! You can always delete That note. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete [-t] [PATH/TO/]NOTE</code></p>
+<p><strong>Format:</strong> <code>delete [-t] [PATH/TO/]TITLE</code></p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -650,7 +598,7 @@ Format: <code>search [-s] KEYWORD</code></p>
 </table>
 </div>
 <div class="sect3">
-<h4 id="example-deleting-an-existing-note"><a class="link" href="#example-deleting-an-existing-note">3.7.1. Example: Deleting an existing note</a></h4>
+<h4 id="example-deleting-an-existing-note"><a class="link" href="#example-deleting-an-existing-note">3.6.1. Example: Deleting an existing note</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -688,25 +636,25 @@ Format: <code>search [-s] KEYWORD</code></p>
 <div class="content">
 <img src="images/demo/Delete1.png" alt="Delete1">
 </div>
-<div class="title">Figure 12. Demo for the <code>delete</code> command</div>
+<div class="title">Figure 11. Demo for the <code>delete</code> command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/demo/Delete2.png" alt="Delete2">
 </div>
-<div class="title">Figure 13. Demo for the <code>delete</code> command (after deletion)</div>
+<div class="title">Figure 12. Demo for the <code>delete</code> command (after deletion)</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="save-the-data"><a class="link" href="#save-the-data">3.8. Save the data</a></h3>
+<h3 id="save-the-data"><a class="link" href="#save-the-data">3.7. Save the data</a></h3>
 <div class="paragraph">
 <p>Notes data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need for you to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">3.9. Auto suggestions</a></h3>
+<h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">3.8. Auto suggestions</a></h3>
 <div class="paragraph">
 <p>As you type, Notably will provide you suggestions. You can then press <kbd>Tab</kbd> to select the first suggestion.</p>
 </div>
@@ -714,11 +662,11 @@ There is no need for you to save manually.</p>
 <div class="content">
 <img src="images/demo/Suggestions.png" alt="Suggestions">
 </div>
-<div class="title">Figure 14. Demo for the suggestions feature</div>
+<div class="title">Figure 13. Demo for the suggestions feature</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="auto-correct"><a class="link" href="#auto-correct">3.10. Auto correct</a></h3>
+<h3 id="auto-correct"><a class="link" href="#auto-correct">3.9. Auto correct</a></h3>
 <div class="paragraph">
 <p>Even if you mistype, Notably tries its best to correct the typo automatically, as long as the mistyped input command is not too far away from Notably&#8217;s available commands. This provides you with a more fluid typing experience.</p>
 </div>
@@ -726,7 +674,59 @@ There is no need for you to save manually.</p>
 <div class="content">
 <img src="images/demo/Correction.png" alt="Correction">
 </div>
-<div class="title">Figure 15. Demo for the auto-correction feature</div>
+<div class="title">Figure 14. Demo for the auto-correction feature</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="coming-in-v2-0-find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#coming-in-v2-0-find-a-note-based-on-certain-keywords-code-search-code">3.10. (Coming in v2.0) Find a note based on certain keywords: <code>search</code></a></h3>
+<div class="paragraph">
+<p>If you need to look for a note that contain a specific keyword, use the <code>search</code> command and Notably when show you the result sorted by the number of matches in the note. <br>
+<strong>Format:</strong> <code>search [-s] KEYWORD</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>search</code> looks through <strong>all</strong> the notes that you have</p>
+</li>
+<li>
+<p>Partial matches work as well!</p>
+</li>
+<li>
+<p>Matches are case insensitive, meaning it will find the word no matter if it is in uppercase or lowercase or even mixed-case</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-searching-for-the-keyword-computer-science"><a class="link" href="#example-searching-for-the-keyword-computer-science">3.10.1. Example: Searching for the keyword "Computer science"</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s look through all the notes that we have saved, for the keyword "Computer science"<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>search -s Computer science</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Search.png" alt="Search">
+</div>
+<div class="title">Figure 15. Demo for the <code>search</code> command</div>
+</div>
 </div>
 </div>
 </div>
@@ -755,27 +755,18 @@ There is no need for you to save manually.</p>
 <p><strong>Create a new note</strong>: <code>new -t TITLE [-b BODY] [-o]</code></p>
 </li>
 <li>
-<p><strong>Open an existing note</strong>: <code>open [-t] TITLE</code></p>
+<p><strong>Open an existing note</strong>: <code>open [-t] [PATH/TO/]TITLE</code></p>
 </li>
 <li>
 <p><strong>Edit an existing note</strong>: <code>edit -b BODY</code></p>
 </li>
 <li>
-<p><strong>Find a note based on certain keywords</strong>: <code>search [-s] KEYWORD</code></p>
+<p><strong>Delete a note</strong>: <code>delete [-t] [PATH/TO/]TITLE</code></p>
 </li>
 <li>
-<p><strong>Delete a note</strong>: <code>delete [-t] TITLE</code></p>
-</li>
-<li>
-<p><strong>Go back to the parent note</strong>: <code>open ../</code></p>
-</li>
-<li>
-<p><strong>Navigate to a specific directory</strong>: <code>open [-t] TITLE</code></p>
-</li>
-<li>
-<p><strong>Autofill</strong>: <kbd>Tab</kbd></p>
+<p><strong>(Coming in v2.0) Find a note based on certain keywords</strong>: <code>search [-s] KEYWORD</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 01:24:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 01:44:26 UTC</div></div></div></body></html>
