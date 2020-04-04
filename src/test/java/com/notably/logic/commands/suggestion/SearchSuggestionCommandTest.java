@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -93,10 +93,6 @@ public class SearchSuggestionCommandTest {
     public void execute_generateResponseCorrectly() {
         SearchSuggestionCommand searchSuggestionCommand = new SearchSuggestionCommand("fail");
         searchSuggestionCommand.execute(model);
-
-        // Test responseText
-        String expectedResponseText = "Search through all notes based on keyword";
-        assertEquals(Optional.of(expectedResponseText), model.responseTextProperty().getValue());
 
         // Expected suggestions
         List<SuggestionItem> expectedSuggestions = new ArrayList<>();

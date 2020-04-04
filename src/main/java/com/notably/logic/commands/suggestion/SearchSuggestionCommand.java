@@ -21,7 +21,6 @@ import com.notably.model.suggestion.SuggestionItemImpl;
  */
 public class SearchSuggestionCommand implements SuggestionCommand {
     public static final String COMMAND_WORD = "search";
-    private static final String RESPONSE_MESSAGE = "Search through all notes based on keyword";
 
     private String keyword;
 
@@ -34,9 +33,6 @@ public class SearchSuggestionCommand implements SuggestionCommand {
     public void execute(Model model) {
         // Nullity check
         Objects.requireNonNull(model);
-
-        // Set response text
-        model.setResponseText(RESPONSE_MESSAGE);
 
         // Set suggestions
         List<SuggestionItem> suggestions = traverseTree(model);
