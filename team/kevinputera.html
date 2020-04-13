@@ -1,0 +1,628 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Kevin Putera - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Notably</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W17-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Kevin Putera - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-notably"><a class="link" href="#project-notably">PROJECT: Notably</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Notably is for those who <strong>prefer to use a desktop app for managing notes</strong>. More importantly, Notably is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Notably can get your notes taken down faster than traditional GUI apps.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Added <strong>Notably&#8217;s auto correction functionality</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows Notably to understand mistyped commands from user, as long as it is within a certain configured threshold. This makes it possible for the user to type faster than before, as he/she does not need to worry about wrong spelling anymore.</p>
+</li>
+<li>
+<p>Justification: This feature improves user experience significantly, as it allows our users to type commands without worrying about wrong spelling any longer. This is really crucial, as Notably is a keyboard/CLI first note-taking application; most interactions are done via typing.</p>
+</li>
+<li>
+<p>Highlights:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This enhancement calls for good abstraction. Due to the fact that this component is used the suggestions generation and command parsing aspects of Notably, I had to come up with an abstraction that minimize code duplication and at the same time is flexible for future improvements.</p>
+</li>
+<li>
+<p>In addition, this feature requires calculating <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a>. This shows that I am able to incorporate and create suitable wrappers around complex algorithms to be used in a Software Engineering project.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Credits: The implementation of the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> algorithm is inspired by <a href="https://web.stanford.edu/class/cs124/lec/med.pdf" class="bare">https://web.stanford.edu/class/cs124/lec/med.pdf</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: Wrote <strong>Notably&#8217;s Markdown to HTML compiler</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows Notably to compile Markdown into HTML.</p>
+</li>
+<li>
+<p>Justification: This feature improves user experience significantly, as it allows our users to format their notes using the Markdown syntax. This is really crucial, as Notably is a keyboard/CLI first note-taking application; GUI-based text formatting solution would not work well.</p>
+</li>
+<li>
+<p>Highlights: This enhancement requires me to learn basic compilation techniques, such as tokenizing, parsing, and target code generation. Although Markdown is not a complex syntax, building a Markdown to HTML compiler following the techniques prove to be quite challenging.</p>
+</li>
+<li>
+<p>Credits: The implementation of the compiler is inspired by <a href="https://github.github.com/gfm/#appendix-a-parsing-strategy" class="bare">https://github.github.com/gfm/#appendix-a-parsing-strategy</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=kevinputera&amp;tabRepo=AY1920S2-CS2103T-W17-2%2Fmain%5Bmaster%5D">Functional code</a>] [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=kevinputera&amp;tabRepo=AY1920S2-CS2103T-W17-2%2Fmain%5Bmaster%5D">Test code</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Software architecture: Designed Notably&#8217;s overall architecture. In addition, I held a meeting with my teammates to get everyone on the same page about Notably&#8217;s overall architecture.</p>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/108">#108</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/116">#116</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/123">#123</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/134">#134</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/144">#144</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/150">#150</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/257">#257</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/385">#385</a></p>
+</li>
+<li>
+<p>Contributed to design discussions: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/issues/1">#1</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/issues/8">#8</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/issues/9">#9</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Integrated Codecov (code coverage analysis tool) into Notably&#8217;s development workflow (<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/386">#386</a>)</p>
+</li>
+<li>
+<p>Integrated Netlify into Notably&#8217;s development workflow</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="auto-correction"><a class="link" href="#auto-correction">Auto correction</a></h3>
+<div class="paragraph">
+<p>Notably will try its best to correct your mistypes automatically, as long as your mistyped inputs are not too far away from the understood commands. This provides you with a more fluid typing experience!</p>
+</div>
+<div class="paragraph">
+<p>Notably&#8217;s auto correction feature works on two aspects of your typing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>It auto corrects command names, where command names refers to <code>open</code>, <code>search</code>, <code>delete</code>, <code>edit</code>, and others. For example, Notably will correct the mistyped command name <code>opne</code> to <code>open</code>.</p>
+</li>
+<li>
+<p>It auto corrects the <code>Paths</code> of notes. For example, depending on the notes that exist in your database, Notably might correct <code>/Notaby</code> to <code>/Notably</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See the example below for more information.</p>
+</div>
+<div class="sect3">
+<h4 id="example-auto-correcting-user-input"><a class="link" href="#example-auto-correcting-user-input">Example: Auto correcting user input</a></h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Even though the user types in the command name <code>opne</code>, Notably is still able to recognise this as an <code>open</code> command.<br>
+In addition, the inputted <code>RelativePath</code> <code>Notaby</code> is understood by Notably, even though there&#8217;s no note in the database with the title <code>Notaby</code>. Instead, there exists a note in the database with the <code>RelativePath</code> <code>Notably</code>.<br>
+After corrections are done, a list of suggestions will be generated as if the user has inputted <code>open -t Notably</code>!
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Correction.png" alt="Correction">
+</div>
+<div class="title">Figure 1. Demo for the auto correction feature</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="markdown-github-flavored-markdown"><a class="link" href="#markdown-github-flavored-markdown">Markdown (GitHub Flavored Markdown)</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We use the term Markdown and GitHub Flavored Markdown interchangably in this document.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Notably supports basic <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> as the <code>BODY</code> content of a note.
+By supporting Markdown, we hope to enhance your typing experience even further. You can simply type your note in Markdown, and it&#8217;ll take care of displaying the content of your note in a nice layout for you.</p>
+</div>
+<div class="paragraph">
+<p>Currently supported syntax of GitHub Flavored Markdown in Notably consists of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#atx-heading">ATX headings</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Level 1 header
+## Level 2 header
+### Level 3 header
+#### Level 4 header
+##### Level 5 header
+###### Level 6 header</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a><br></p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Currently, only unordered lists are supported. In addition, only the hyphen <code>-</code> symbol is supported to be used as the list bullets.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>- List item
+- Another list item
+- A nested list item
+- A deeper nested list item
+- Last list item</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#paragraph">Paragraphs</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Proin dictum accumsan nunc sed feugiat.</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-writing-your-note-in-markdown"><a class="link" href="#example-writing-your-note-in-markdown">Example: Writing your note in Markdown</a></h4>
+<div class="paragraph">
+<p>For example, you might write your note as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Hello Notably
+
+Notably is for those who prefer to use a desktop app for managing notes.
+More importantly, Notably is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).
+
+## Getting started
+
+- Ensure you have Java `11` or above installed in your Computer.
+- Download the latest `notably.jar`
+- Double-click the file to start the app. The Application should start in a few seconds.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="coming-in-v2-0-more-complete-support-of-markdown-syntax"><a class="link" href="#coming-in-v2-0-more-complete-support-of-markdown-syntax">(Coming in v2.0) More complete support of Markdown syntax</a></h4>
+<div class="paragraph">
+<p>In our v2.0 release, we&#8217;ll be supporting the following additional Markdown syntax:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>*This text will get italicised*
+**This text will get bold**</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~~This text will get a strikethrough treatment~~</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 2. Architecture Diagram</div>
+</div>
+<div class="sect3">
+<h4 id="design-pattern-and-data-flow"><a class="link" href="#design-pattern-and-data-flow">Design pattern and data flow</a></h4>
+<div class="paragraph">
+<p>The App is built following the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller design pattern</a>.</p>
+</div>
+<div class="paragraph">
+<p>In addition, the App&#8217;s data flow is unidirectional. That is, all user interactions in <a href="#Design-View"><strong><code>View</code></strong></a> will trigger an appropriate handler in <a href="#Design-Logic"><strong><code>Logic</code></strong></a>, which in turn updates <a href="#Design-Model"><strong><code>Model</code></strong></a> and <a href="#Design-Storage"><strong><code>Storage</code></strong></a>.</p>
+</div>
+<div class="paragraph">
+<p>Any data/state changes in <a href="#Design-Model"><strong><code>Model</code></strong></a> will then propagate back to <a href="#Design-View"><strong><code>View</code></strong></a> automatically through <a href="https://docs.oracle.com/javafx/2/binding/jfxpub-binding.htm">JavaFX&#8217;s Property and Binding</a>. In other words, the <a href="https://en.wikipedia.org/wiki/Observer_pattern">Observer design pattern</a> is employed; <a href="#Design-Model"><strong><code>Model</code></strong></a> is the observable while <a href="#Design-View"><strong><code>View</code></strong></a> is the observer.</p>
+</div>
+<div class="paragraph">
+<p>In short, the App&#8217;s data flow can be summarized as:<br>
+<a href="#Design-View"><strong><code>View</code></strong></a> &#8594; <a href="#Design-Logic"><strong><code>Logic</code></strong></a> &#8594; <a href="#Design-Model"><strong><code>Model</code></strong></a> + <a href="#Design-Storage"><strong><code>Storage</code></strong></a> &#8594; <a href="#Design-View"><strong><code>View</code></strong></a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="architecture-level-components"><a class="link" href="#architecture-level-components">Architecture-level components</a></h4>
+<div class="paragraph">
+<p>Overall, the App consists of five main components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-View"><strong><code>View</code></strong></a>: View of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: Business logic of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: In-memory representation of the App&#8217;s data/state.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+<li>
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a>: A collection of classes used by multiple other components.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first four components, namely <a href="#Design-View"><strong><code>View</code></strong></a>, <a href="#Design-Logic"><strong><code>Logic</code></strong></a>, <a href="#Design-Model"><strong><code>Model</code></strong></a> and <a href="#Design-Storage"><strong><code>Storage</code></strong></a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the itself, e.g. <a href="{repoURL}/src/main/java/com/notably/logic/Logic.java"><code>Logic.java</code></a></p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class, e.g. <a href="{repoURL}/src/main/java/com/notably/logic/LogicManager.java"><code>LogicManager.java</code></a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following classes from <a href="#Design-Commons"><strong><code>Commons</code></strong></a> plays an important role at the architecture level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+<li>
+<p><a href="#Design-Compiler"><strong><code>Compiler</code></strong></a> : Used mainly by the <a href="#Design-View"><strong><code>View</code></strong></a> to compile Markdown to HTML for displaying notes.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-the-architecture-components-interact-with-each-other"><a class="link" href="#how-the-architecture-components-interact-with-each-other">How the architecture components interact with each other</a></h4>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>new -t Notably</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 3. Component interactions for the <code>new -t Notably</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LogicArchitectureDiagram.png" alt="LogicArchitectureDiagram">
+</div>
+<div class="title">Figure 4. Architecture of Logic</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="{repoURL}/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="paragraph">
+<p><code>Logic</code> consists of 3 subcomponents:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-NotablyParser"><strong><code>NotablyParser</code></strong></a>: Main parser of the App, deals with user command execution.</p>
+</li>
+<li>
+<p><a href="#Design-SuggestionEngine"><strong><code>SuggestionEngine</code></strong></a>: Deals with suggestions generation.</p>
+</li>
+<li>
+<p><a href="#Design-CorrectionEngine"><strong><code>CorrectionEngine</code></strong></a>: Deals with auto-correction.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="Design-CorrectionEngine"><a class="link" href="#Design-CorrectionEngine">CorrectionEngine</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CorrectionEngineClassDiagram.png" alt="CorrectionEngineClassDiagram">
+</div>
+<div class="title">Figure 5. Class Diagram of the CorrectionEngine Component</div>
+</div>
+<div class="paragraph">
+<p>The <code>CorrectionEngine</code> component revolves around two <em>API</em> s, namely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface, implemented by <a href="{repoURL}/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> and <a href="{repoURL}/src/main/java/com/notably/logic/correction/AbsolutePathCorrectionEngine.java"><code>AbsolutePathCorrectionEngine</code></a>. Concrete implementations of <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> are employed to correct an uncorrected user input.</p>
+</li>
+<li>
+<p>The <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> interface, implemented by <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/LevenshteinDistanceCalculator.java"><code>LevenshteinDistanceCalculator</code></a>. Concrete implementations of <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> are employed to calculate the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> between two strings.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <a href="{repoURL}/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> (one concrete implementation of <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a>) component for the <code>correct("uncorrected")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StringCorrectionEngineSequenceDiagram.png" alt="StringCorrectionEngineSequenceDiagram">
+</div>
+<div class="title">Figure 6. Interactions inside the StringCorrectionEngine component for the <code>correct("uncorrected")</code> call</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-CorrectionEngine"><a class="link" href="#Implementation-CorrectionEngine">Correction Engine</a></h3>
+<div class="sect3">
+<h4 id="rationale"><a class="link" href="#rationale">Rationale</a></h4>
+<div class="paragraph">
+<p><code>CorrectionEngine</code> is needed to enable auto-correction of user inputs, to deliver as good typing experience as possible.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current implementation</a></h4>
+<div class="paragraph">
+<p>The <code>CorrectionEngine</code> component revolves around two <em>API</em> s, namely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface, implemented by <a href="{repoURL}/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> and <a href="{repoURL}/src/main/java/com/notably/logic/correction/AbsolutePathCorrectionEngine.java"><code>AbsolutePathCorrectionEngine</code></a>. Concrete implementations of <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> are employed to correct an uncorrected user input.</p>
+</li>
+<li>
+<p>The <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> interface, implemented by <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/LevenshteinDistanceCalculator.java"><code>LevenshteinDistanceCalculator</code></a>. Concrete implementations of <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> are employed to calculate the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> between two strings.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Two concrete implementations of the <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface are, namely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="{repoURL}/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> class, which deals with the correction of plain strings.</p>
+</li>
+<li>
+<p>The <a href="{repoURL}/src/main/java/com/notably/logic/correction/AbsolutePathCorrectionEngine.java"><code>AbsolutePathCorrectionEngine</code></a> class, which deals with the correction of absolute paths. The absolute paths here refer to the address of the notes (or blocks, as we call it) that exist in the App.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>CorrectionEngine</code> is built as a standalone module that can be used by both <a href="#Implementation-SuggestionEngine"><strong><code>SuggestionEngine</code></strong></a> and <a href="#Implementation-Parser"><strong><code>Parser</code></strong></a>. This decision is made so that code duplication in relation to auto-correction is minimal.</p>
+</li>
+<li>
+<p>Both <a href="{repoURL}/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> and <a href="{repoURL}/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> are implemented as interfaces, in an attempt to make the design of the <code>CorrectionEngine</code> component resilient to change. This design enables us to leverage on the <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy pattern</a> to make our <code>CorrectionEngine</code> component more future-proof.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Compiler"><a class="link" href="#Design-Compiler">Compiler</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CompilerClassDiagram.png" alt="CompilerClassDiagram">
+</div>
+<div class="title">Figure 7. Class Diagram of the Compiler Component</div>
+</div>
+<div class="paragraph">
+<p>The <code>Compiler</code> component&#8217;s primary usage is to compile Markdown to HTML.
+Our <code>Compiler</code> component&#8217;s design is based off <a href="https://github.github.com/gfm/#appendix-a-parsing-strategy">the parsing strategy</a> explained in <a href="https://github.github.com/gfm">GitHub&#8217;s GFM Specification</a></p>
+</div>
+<div class="paragraph">
+<p>Mainly, the <code>Compiler</code> component consists of the following classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a>, which deals with the end-to-end job of compiling unprocessed Markdown to HTML.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/Parser.java"><code>Parser</code></a>, which deals with creating an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Sytax Tree</a> representation of an unprocessed Markdown.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>, which is an abstract class representing a node in a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>. All concrete implementations of nodes in a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> inherit from this class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The concrete implementations of the <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a> class consist of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/DocumentBlock.java"><code>DocumentBlock</code></a>, which represents the root of the Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/HeaderBlock.java"><code>HeaderBlock</code></a>, which represents a Markdown <a href="https://github.github.com/gfm/#atx-headings">ATX heading</a> component.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/ListBlock.java"><code>ListBlock</code></a>, which represents a Markdown unordered list.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/ListItemBlock.java"><code>ListItemBlock</code></a>, which represents a Markdown list item.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/ParagraphBlock.java"><code>ParagraphBlock</code></a>, which represents a Markdown paragraph.</p>
+</li>
+<li>
+<p><a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/TextBlock.java"><code>TextBlock</code></a>, which represents plain text in Markdown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Two of <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s <em>abstract</em> methods are particularly important:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/10267c0494bf7e58bd9c8e7f198bb7f9209631e2/src/main/java/com/notably/commons/compiler/parser/block/Block.java#L42"><code>Block#next</code></a>: This method should be implemented by each of <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation in such a way that accepts a single <code>String</code> line and evolve the current Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> further. That way, each of <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation only needs to care about processing the portion of the <code>String</code> line that is relevant to them, before delegating the rest to its children <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>s.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/10267c0494bf7e58bd9c8e7f198bb7f9209631e2/src/main/java/com/notably/commons/compiler/parser/block/Block.java#L49"><code>Block#toHtml</code></a>: This method should be implemented by each of <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation in such a way that it returns the HTML representation of the current <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>. That way, each of <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation only needs to care about generating its own HTML; the rest can be delegated to its children <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>s.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In short, our <a href="{repoURL}/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a> class will first call the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/10267c0494bf7e58bd9c8e7f198bb7f9209631e2/src/main/java/com/notably/commons/compiler/parser/Parser.java#L15-L23"><code>Parser#parse</code></a> method to generate a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>.
+After that, the <a href="{repoURL}/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a> class will transform the returned Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> into HTML by calling the root <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/block/DocumentBlock.java"><code>DocumentBlock</code></a>'s <code>toHtml</code> method (which will in turn invoke each of its children&#8217;s <code>toHtml</code> method).</p>
+</div>
+<div class="paragraph">
+<p>Given below is the <em>Sequence Diagram</em> for interactions within the <code>Compiler</code> component for the <code>compile(markdown)</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CompilerSequenceDiagram.png" alt="CompilerSequenceDiagram">
+</div>
+<div class="title">Figure 8. Interactions inside the Compiler component for the <code>compile(markdown)</code> call</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Compiler"><a class="link" href="#Implementation-Compiler">Compiler</a></h3>
+<div class="sect3">
+<h4 id="rationale-2"><a class="link" href="#rationale-2">Rationale</a></h4>
+<div class="paragraph">
+<p><code>Compiler</code> is needed to enable compilation of Markdown to HTML. By having an Markdown to HTML compiler, we can allow user to format their notes in Markdown, which enhances their note-editing experience tremendously.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">Current implementation</a></h4>
+<div class="paragraph">
+<p>The implementation of <code>Compiler</code> is highly inspired by <a href="https://github.github.com/gfm/#appendix-a-parsing-strategy">the parsing strategy</a> explained in <a href="https://github.github.com/gfm">GitHub&#8217;s GFM Specification</a>. Please read more from the specification for a more comprehensive explanation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design considerations</a></h4>
+<div class="paragraph">
+<p>Generally speaking, compilers usually consist of several main components, namely a tokenizer, a parser, and a generator. However, this is not the case in our design of the <a href="{repoURL}/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a> component:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Leveraging on the fact that Markdown&#8217;s syntax is not overly complicated, we decided not to fully adhere to the usual compiler design. Instead, we merged the tokenizer and parser section into our <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/Parser.java"><code>Parser</code></a> class. This <a href="{repoURL}/src/main/java/com/notably/commons/compiler/parser/Parser.java"><code>Parser</code></a> class thus deals converting raw Markdown string into a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>.</p>
+</li>
+<li>
+<p>In addition, we opted to not build a standalone generator component. Instead, we make it such that each node in our Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> supports a <code>toHtml</code> method, which returns the HTML representation of the tree starting from itself as a node. This way, we can leverage on OOP&#8217;s polymorphism to generate the HTML string out of our Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> a lot easier.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:09:22 UTC</div></div></div></body></html>
