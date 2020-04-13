@@ -40,8 +40,8 @@ by giving a list of suggestions of the notes that the users want to open or dele
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>SuggestionEngine</code> also provides a command input line auto-fill feature. When the user presses the <kbd>↓</kbd> button to select a suggestion, followed by
-<kbd>Enter</kbd>, the command input line will be auto-filled with the suggestion.</p>
+<p>The <code>SuggestionEngine</code> also provides a command input line auto-fill feature. When the user presses the <code>↓</code> (down arrow) button to select a suggestion, followed by
+<code>Enter</code>, the command input line will be auto-filled with the suggestion.</p>
 </li>
 <li>
 <p>It displays response text and suggestions (if any) for all available valid commands in Notably. The implementation was
@@ -79,8 +79,8 @@ if the user types <code>search lect</code> while actually intending to find the 
 contain the word "lecture".</p>
 </li>
 <li>
-<p>When the user presses the <kbd>↓</kbd> button to select the suggestion followed by <kbd>Enter</kbd>, the note chosen will immediately be opened.
-The command line input is also cleared after the user pressed <kbd>Enter</kbd> in order to not clutter the UI.</p>
+<p>When the user presses the <code>↓</code> (down arrow) button to select the suggestion followed by <code>Enter</code>, the note chosen will immediately be opened.
+The command line input is also cleared after the user pressed <code>Enter</code> in order to not clutter the UI.</p>
 </li>
 </ul>
 </div>
@@ -130,6 +130,9 @@ The command line input is also cleared after the user pressed <kbd>Enter</kbd> i
 </li>
 <li>
 <p>Updated the <code>SuggestionEngine</code> components in DG: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/484">#484</a></p>
+</li>
+<li>
+<p>Updated the Appendix-F for Manual Testing in DG: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/509">#509</a></p>
 </li>
 </ul>
 </div>
@@ -691,4 +694,226 @@ with the particular path or title that the user inputs.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:44:48 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix A: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+Expected: Shows the GUI with a set of sample Notes. The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-a-new-note"><a class="link" href="#add-a-new-note">Add a new Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a new Note to Notably without immediately opening that Note.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None of the child(ren) Note(s) of the currently opened Note has the same title as the new Note.<br>
+Moreover, the currently opened Note must be the directory where the user wants to store the new Note.</p>
+</li>
+<li>
+<p>Command: <code>new -t Notably</code><br>
+Expected: a new Note titled "Notably" is added to the currently opened Note.
+The currently opened Note (current working directory) remains the same (highlighted at the sidebar).</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a new Note to Notably and immediately opening that Note</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: None of the child(ren) Note(s) of the currently opened Note has the same title as the new Note.<br>
+Moreover, the currently opened Note must be the directory where the user wants to store the new Note.</p>
+</li>
+<li>
+<p>Command: <code>new -t Notably -o</code><br>
+Expected: a new Note titled "Notably" is added to the currently opened Note.
+The currently opened Note (current working directory) is now the newly created "Notably" note (highlighted at the sidebar).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="open-a-note"><a class="link" href="#open-a-note">Open a Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Opening a Note in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The Note that is about to be opened must not be the root Note.</p>
+</li>
+<li>
+<p>Command: <code>open [-t] Notably</code><br>
+Expected: The Note titled "Notably" will be opened, with its content being displayed in the UI. The label "Notably" at the sidebar
+will also be highlighted, to indicate that the Note is being opened.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-a-note"><a class="link" href="#delete-a-note">Delete a Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a Note in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The Note that is about to be deleted must not be the root Note.</p>
+</li>
+<li>
+<p>Command: <code>delete [-t] Notably</code><br>
+Expected: The Note titled "Notably" will be deleted. The other nested Notes inside the Note "Notably" will also be deleted.<br>
+The Note "Notably" will no longer be visible in the sidebar.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-a-note"><a class="link" href="#edit-a-note">Edit a Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a Note in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The Note that is about to be edited must not be the root Note.<br>
+The currently opened Note must be the Note that the user wants to edit.</p>
+</li>
+<li>
+<p>Command: <code>edit</code><br>
+Expected: An edit modal will pop up displaying your Note&#8217;s content in HTML format. The user can edit and save the Note by
+exiting that modal.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-for-a-note-based-on-a-keyword"><a class="link" href="#search-for-a-note-based-on-a-keyword">Search for a Note based on a keyword</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Searching for a note by using a keyword in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: -</p>
+</li>
+<li>
+<p>Command: <code>search [-s] hello</code><br>
+Expected: A list of suggestions will be displayed, sorted based on the number of keyword matches, i.e.
+the note having the highest number of "hello" in its body will be put at the top of the suggestion list.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="correct-command"><a class="link" href="#correct-command">Correct command</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Correct command word in user input.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There should exist a Note titled Notably.</p>
+</li>
+<li>
+<p>Command: 'delete [-t] Notably'</p>
+</li>
+<li>
+<p>Expected: The command is interpreted as a delete command by Notably.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Correct path in user input.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: There should exist a Note titled Notably.</p>
+</li>
+<li>
+<p>Command: 'delete [-t] Notbly'</p>
+</li>
+<li>
+<p>Expected: The command is interpreted as a delete command by Notably.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:45:08 UTC</div></div></div></body></html>
