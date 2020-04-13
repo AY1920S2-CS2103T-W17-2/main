@@ -1,0 +1,694 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Johanna - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Notably</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W17-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Johanna - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-notably"><a class="link" href="#project-notably">PROJECT: Notably</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Notably is a <strong>note-taking desktop app</strong>, optimized for those who <strong>prefer to work with a Command Line Interface (CLI)</strong>
+while still having the benefits of a Graphical User Interface (GUI). It aims to help NUS tech-savvy students
+to get their notes taken down <strong>faster than using traditional GUI apps</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: <strong>Suggestion Engine</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: <code>SuggestionEngine</code> actively gives users an updated list of suggestions of notes as the users key in their input.
+Furthermore, it displays a response text to enable users to understand the meaning behind their inputted command.</p>
+</li>
+<li>
+<p>Justification: <code>SuggestionEngine</code> plays a pivotal role in providing a seamless user experience.
+This feature is curated for our target users (NUS tech-savvy students) who often have a large number of notes and thus
+may find difficulty traversing all of their notes to get to a particular note. This is where <code>SuggestionEngine</code> comes in
+by giving a list of suggestions of the notes that the users want to open or delete, just by typing the first few characters of their intended note.</p>
+</li>
+<li>
+<p>Highlights:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>SuggestionEngine</code> also provides a command input line auto-fill feature. When the user presses the <kbd>↓</kbd> button to select a suggestion, followed by
+<kbd>Enter</kbd>, the command input line will be auto-filled with the suggestion.</p>
+</li>
+<li>
+<p>It displays response text and suggestions (if any) for all available valid commands in Notably. The implementation was
+quite challenging as different commands require different implementation.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: <strong>Search feature</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: The Search feature searches the occurrences of a keyword in all of the notes, and not just the currently
+opened one. It can also search for partial or incomplete word of the note&#8217;s content and count the number of times
+the keyword appears in the note. It then displays the list of suggestions of notes to the users with the most relevant
+search result at the top of the list.</p>
+</li>
+<li>
+<p>Justification: Students often remember a certain keyword from their note but can&#8217;t precisely remember where it is located.
+The Search feature thus gives the users convenience to find the relevant note, as suggestions are sorted based on the keyword&#8217;s highest number of occurrences.
+If the number of occurrences is the same, the suggestions listing will based on their respective positions in the hierarchical notes arrangement.</p>
+</li>
+<li>
+<p>Highlights:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The feature is complete as it traverses through all of the notes and can even search for incomplete words,
+hence giving the relevant suggestions to the user even before the user has finished typing. For instance,
+if the user types <code>search lect</code> while actually intending to find the word "lecture", Notably will still display the list of notes which
+contain the word "lecture".</p>
+</li>
+<li>
+<p>When the user presses the <kbd>↓</kbd> button to select the suggestion followed by <kbd>Enter</kbd>, the note chosen will immediately be opened.
+The command line input is also cleared after the user pressed <kbd>Enter</kbd> in order to not clutter the UI.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=johannagwan&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional code</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Maintained the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/issues">issue tracker</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote additional tests for existing features to increase coverage significantly:
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/428">#428</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/470">#470</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Wrote most parts of the README: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/51">#51</a></p>
+</li>
+<li>
+<p>Updated the Search and Auto-Suggestions feature in UG: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/461">#461</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/493">#493</a></p>
+</li>
+<li>
+<p>Updated the <code>SuggestionEngine</code> components in DG: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/484">#484</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments):
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/106">#106</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/127">#127</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/279">#279</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/291">#291</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/432">#432</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class:
+<a href="https://github.com/johannagwan/ped/issues/1">#1</a>,
+<a href="https://github.com/johannagwan/ped/issues/2">#2</a>,
+<a href="https://github.com/johannagwan/ped/issues/3">#3</a>,
+<a href="https://github.com/johannagwan/ped/issues/4">#4</a>,
+<a href="https://github.com/johannagwan/ped/issues/5">#5</a>,
+<a href="https://github.com/johannagwan/ped/issues/6">#6</a>,
+<a href="https://github.com/johannagwan/ped/issues/7">#7</a>,
+<a href="https://github.com/johannagwan/ped/issues/8">#8</a>,
+<a href="https://github.com/johannagwan/ped/issues/9">#9</a>,
+<a href="https://github.com/johannagwan/ped/issues/10">#10</a>,
+<a href="https://github.com/johannagwan/ped/issues/11">#11</a>,
+<a href="https://github.com/johannagwan/ped/issues/12">#12</a>,
+<a href="https://github.com/johannagwan/ped/issues/13">#13</a>,
+<a href="https://github.com/johannagwan/ped/issues/14">#14</a>,
+<a href="https://github.com/johannagwan/ped/issues/15">#15</a>,
+<a href="https://github.com/johannagwan/ped/issues/16">#16</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">Find a note based on certain keywords: <code>search</code></a></h3>
+<div class="paragraph">
+<p>If you need to look for a note that contains a specific keyword in its <strong>content</strong>, use the <code>search</code> command and Notably
+will show you the search results sorted by the number of matches in the note. The note with the highest number of match will be
+at the top of the list, so that you can access it faster.<br>
+<strong>Format:</strong> <code>search [-s] KEYWORD</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>search</code> looks through <strong>all</strong> the notes that you have</p>
+</li>
+<li>
+<p>Partial matches work as well! It means that when you have a set of notes containing the word "lecture" but no "lect" as a word on its own,
+you can just type <code>search lect</code> and Notably will still show you a list of notes containing the word "lecture", as "lect" is part of the word "lecture".</p>
+</li>
+<li>
+<p>Matches are case insensitive, meaning it will find the word no matter if it is in uppercase or lowercase or even mixed-case</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-searching-for-the-keyword-computer-science"><a class="link" href="#example-searching-for-the-keyword-computer-science">Example: Searching for the keyword "Computer science"</a></h4>
+<div class="paragraph">
+<p>Let&#8217;s look for the keyword "Computer science" if it exists in any of the notes that you have saved in Notably.<br></p>
+</div>
+<div class="paragraph">
+<p><code>search -s Computer science</code></p>
+</div>
+<div class="paragraph">
+<p>If the word "Computer science" exists, a list of suggestions will be generated. This list will be sorted in descending order
+of the number of matches, i.e. the note with the highest number of matches will be at the top of the list, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Search.png" alt="Search">
+</div>
+<div class="title">Figure 1. Demo for the <code>search</code> command: keyword found</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say the first option <code>/Workspace/Notably/CS2103/Project</code> is the note you are looking for. You may press <kbd>↓</kbd> and <kbd>Enter</kbd>
+to open the note. The figure below illustrates how the note chosen will be opened and the command line box is cleared.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Search1.png" alt="Search1">
+</div>
+<div class="title">Figure 2. Demo for the <code>search</code> command: open a note with the searched keyword</div>
+</div>
+<div class="paragraph">
+<p>If the keyword you are looking for does not exist in any of your notes, no suggestions will be generated, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions4.png" alt="Suggestions4">
+</div>
+<div class="title">Figure 3. Demo for the <code>search</code> command: keyword not found</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">Auto suggestions</a></h3>
+<div class="paragraph">
+<p>As you type, Notably will provide you with suggestions. You can press the keyboard <kbd>↓</kbd> button followed by <kbd>Enter</kbd> to select any suggestion in the list.</p>
+</div>
+<div class="paragraph">
+<p>For example, as you type <code>open -t Notably</code>, a list of suggestions will be generated as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions.png" alt="Suggestions">
+</div>
+<div class="title">Figure 4. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say you would like to choose the option <code>/Workspace/Notably/Another Note</code>. After pressing <kbd>↓</kbd> to reach that suggestion
+and pressing <kbd>Enter</kbd>, the command input line will be auto-filled by the suggestion, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions2.png" alt="Suggestions2">
+</div>
+<div class="title">Figure 5. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
+</div>
+<div class="paragraph">
+<p>If no suggestion list is generated for the command <code>open</code>, <code>delete</code> or <code>search</code>, it means the path, title, or keyword cannot be found
+anywhere in Notably, as seen in the figures below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions3.png" alt="Suggestions3">
+</div>
+<div class="title">Figure 6. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions4.png" alt="Suggestions4">
+</div>
+<div class="title">Figure 7. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
+</div>
+<div class="sect3">
+<h4 id="coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note"><a class="link" href="#coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note">(Coming in v2.0) Suggestion response text when opening or deleting a parent note</a></h4>
+<div class="paragraph">
+<p>Variations of path with <code>../</code> (e.g. <code>open ../</code>, <code>open Note/../Note</code>, etc.) will not generate a comprehensive response text.
+Currently, typing <code>open ../</code> will generate a response text of <code>Open a note titled "../"</code> instead of <code>Open a parent note</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="response-text"><a class="link" href="#response-text">Response text</a></h3>
+<div class="paragraph">
+<p>Notably also displays a response text which enables you to understand the meaning of the input you type and shows
+an error message when your input is invalid.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you type <code>open /CS</code>, the response text will indicates that you are trying to <code>Open a note titled "/CS"</code>,
+as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/ResponseText1.png" alt="ResponseText1">
+</div>
+<div class="title">Figure 8. Demo for the response text feature: open command</div>
+</div>
+<div class="paragraph">
+<p>On the other hand, if you key in an invalid command, the response text will display an error message as seen in the figure
+below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/ResponseText2.png" alt="ResponseText2">
+</div>
+<div class="title">Figure 9. Demo for the response text feature: invalid command</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="Design-SuggestionEngine"><a class="link" href="#Design-SuggestionEngine">SuggestionEngine</a></h4>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SuggestionClassDiagram.png" alt="SuggestionClassDiagram">
+</div>
+<div class="title">Figure 10. Class Diagram of the Suggestion Engine Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="{repoURL}/blob/master/src/main/java/com/notably/logic/suggestion/SuggestionEngine.java"><code>SuggestionEngine.java</code></a></p>
+</div>
+<div class="paragraph">
+<p><code>SuggestionEngine</code> gives users the meaning of the command they input and a list of notes suggestions that they want to
+open, delete, or search.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>SuggestionEngine</code> class, to handle the user input.</p>
+</li>
+<li>
+<p>According to the command the user inputs, <code>SuggestionEngine</code> will create a <code>XYZSuggestionArgHandler</code> or <code>ABCSuggestionHandler</code> object
+which implements <code>SuggestionArgHandler</code> and <code>SuggestionHandler</code> interface respectively. <code>XYZSuggestionArgHandler</code> are for commands that
+require argument parsing, i.e. <code>open</code>, <code>delete</code>, <code>search</code>, <code>new</code>, whereas <code>ABCSuggestionHandler</code> are for commands that do not require argument
+parsing, i.e. <code>edit</code>, <code>exit</code>, <code>help</code>.</p>
+</li>
+<li>
+<p>If <code>SuggestionArgHandler</code> object is created: the <code>responseText</code> in the <code>Model</code> will be updated. This case will also result in the
+creation of <code>XYZSuggestionGenerator</code> object (except for <code>new</code> command) which implements <code>SuggestionGenerator</code> interface.
+<code>XYZSuggestionGenerator</code> is then executed by the <code>SuggestionEngine</code>.</p>
+</li>
+<li>
+<p>If <code>SuggestionHandler</code> object is created: the <code>responseText</code> in the <code>Model</code> will be updated.</p>
+</li>
+<li>
+<p>The <code>Model</code> could be affected in 2 ways:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Update <code>responseText</code> of the <code>Model</code> (by the <code>SuggestionHandler</code> and <code>SuggestionArgHandler</code>): for instance, the input <code>open /</code> will set the <code>responseText</code> in the <code>Model</code> as
+"Open a note".</p>
+</li>
+<li>
+<p>Store a list of <code>SuggestionItem</code> in the <code>Model</code> (by the <code>SuggestionGenerator</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The UI will then be able to retrieve the <code>responseText</code> and list of <code>SuggestionItem</code> from the <code>Model</code> to be displayed
+to the user.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> and <code>Suggestion</code> component for the input <code>opne /a</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SuggestionSequenceDiagram.png" alt="SuggestionSequenceDiagram">
+</div>
+<div class="title">Figure 11. Interactions Inside the Logic and Suggestion Component for the input <code>opne /a</code></div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-SuggestionEngine"><a class="link" href="#Implementation-SuggestionEngine">Suggestion Engine</a></h3>
+<div class="sect3">
+<h4 id="rationale"><a class="link" href="#rationale">Rationale</a></h4>
+<div class="paragraph">
+<p><code>SuggestionEngine</code> allows the users to traverse their notes conveniently, without having
+to remember the hierarchical structure of their notes. <code>SuggestionEngine</code> gives users the meaning of the command they input and a list of notes suggestions that they want to
+open, delete, or search.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current implementation</a></h4>
+<table class="tableblock frame-all grid-all" style="width: 75%;">
+<colgroup>
+<col style="width: 28.395%;">
+<col style="width: 40.7407%;">
+<col style="width: 30.8643%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">SuggestionArgHandler</th>
+<th class="tableblock halign-left valign-top">SuggestionHandler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Purpose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Handles the arguments part of the user input and updates the <code>responseText</code> in the <code>Model</code> according to the user&#8217;s command input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates the <code>responseText</code> in the <code>Model</code> according to the user&#8217;s command input</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Commands</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>open</code>, <code>delete</code>, <code>search</code>, <code>new</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit</code>, <code>exit</code>, <code>help</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Suggestion Generation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes, by <code>SuggestionGenerator</code> (except for <code>new</code> command, since suggestions are generated based on the existing data in the app)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Logic</code> uses the <code>SuggestionEngine</code> class, to handle the user input.</p>
+</li>
+<li>
+<p>According to the command the user inputs, <code>SuggestionEngine</code> will create a <code>XYZSuggestionArgHandler</code> or <code>ABCSuggestionHandler</code> object
+which implements <code>SuggestionArgHandler</code> and <code>SuggestionHandler</code> interface respectively. <code>XYZSuggestionArgHandler</code> are for commands that
+require argument parsing, i.e. <code>open</code>, <code>delete</code>, <code>search</code>, <code>new</code>, whereas <code>ABCSuggestionHandler</code> are for commands that do not require argument
+parsing, i.e. <code>edit</code>, <code>exit</code>, <code>help</code>.</p>
+</li>
+<li>
+<p>If <code>SuggestionArgHandler</code> object is created: the <code>responseText</code> in the <code>Model</code> will be updated. This case will also result in the
+creation of <code>XYZSuggestionGenerator</code> object (except for <code>new</code> command) which implements <code>SuggestionGenerator</code> interface.
+<code>XYZSuggestionGenerator</code> is then executed by the <code>SuggestionEngine</code>.</p>
+</li>
+<li>
+<p>If <code>SuggestionHandler</code> object is created: the <code>responseText</code> in the <code>Model</code> will be updated.</p>
+</li>
+<li>
+<p>The <code>Model</code> could be affected in 2 ways:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Update <code>responseText</code> of the <code>Model</code> (by the <code>SuggestionHandler</code> and <code>SuggestionArgHandler</code>): for instance, the input <code>open /</code> will set the <code>responseText</code> in the <code>Model</code> as
+"Open a note".</p>
+</li>
+<li>
+<p>Store a list of <code>SuggestionItem</code> in the <code>Model</code> (by the <code>SuggestionGenerator</code>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The UI will then be able to retrieve the <code>responseText</code> and list of <code>SuggestionItem</code> from the <code>Model</code> to be displayed
+to the user.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect 1: Design with respect to the whole architecture</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>SuggestionEngine</code> is segregated from <code>Parser</code> in order to differentiate the logic when the user has finished typing
+and pressed <kbd>Enter</kbd> (which will be handled by <code>Parser</code>) in contrast to when the user presses the keyboard <kbd>down</kbd> button and <kbd>Enter</kbd> to take in the
+suggestion item.</p>
+</li>
+<li>
+<p>In order to keep the App&#8217;s data flow unidirectional, <code>SuggestionEngine</code> will update the <code>responseText</code> (which tells
+the user the meaning of his command) and the list of <code>SuggestionItem</code> into the <code>Model</code>. Thus, by not showing the
+<code>responseText</code> and suggestions immediately to the UI, <code>SuggestionEngine</code> will not interfere with the <code>View</code> functionality.</p>
+</li>
+<li>
+<p><code>SuggestionArgHandler</code>, <code>SuggestionHandler</code>, <code>SuggestionGenerator</code>, <code>SuggestionItem</code>, and <code>SuggestionModel</code> are
+implemented as interfaces, in an attempt to make the design of the <code>SuggestionEngine</code> component resilient to change.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Aspect 2: Implementation of suggestions generation</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1:</strong> Have a <code>SuggestionCommandParser</code> interface and <code>SuggestionCommand</code> interface to parse each of the
+command, update <code>responseText</code> in the <code>Model</code>, and give suggestions.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This provides a consistency for all the commands, where each command has a <code>XYZSuggestionCommandParser</code> and <code>XYZSuggestionCommand</code> class.</p>
+</li>
+<li>
+<p>Cons: The <code>SuggestionCommandParsers</code> of the commands that do not require parsing of user input (<code>edit</code>, <code>exit</code>, <code>help</code>) end up passing a <code>userInput</code>
+argument that is not being used anywhere, which makes this design unintuitive. Moreover, since the updating of the <code>responseText</code>
+in the <code>Model</code> can be done in each <code>SuggestionCommandParser</code>, the <code>SuggestionCommand`s of `edit</code>, <code>exit</code>, and <code>help</code> end up to be redundant.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2 (current choice):</strong> Create 2 separate interface to handle commands with input parsing and those without, and name it as a
+<code>SuggestionArgHandler</code> and <code>SuggestionHandler</code> respectively.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: This solves the cons discussed in Alternative 1, as this design gives a separate implementation for the commands with input
+parsing and those without. It does not force the <code>Handler</code> to parse the user input when there is no need to. The naming <code>Handler</code> also
+does not restrict the functionality of the interface and classes to just parse an input, but allows for a flexibility in executing other functionality
+such as updating the <code>responseText</code> in the <code>Model</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-search-notes-using-the-auto-suggestion-feature" class="discrete">Use case: Search notes using the Auto-suggestion feature</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User types in a keyword of a note&#8217;s content that he wants to open.</p>
+</li>
+<li>
+<p>Notably lists out the relevant search results, with the most relevant at the top of the list (based on the keyword&#8217;s
+number of occurrences in the note).</p>
+</li>
+<li>
+<p>User chooses one of the suggested notes.</p>
+</li>
+<li>
+<p>Notably opens the chosen note.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. No suggestion is being generated.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Notably displays a response text, indicating that the user is trying to search through all of the notes using that
+particular keyword.</p>
+</li>
+<li>
+<p>2a2. Since the empty suggestion conveys that the keyword cannot be found, the user enters a new data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Steps 2a1-2a2 are repeated until the data entered is correct. Use case resumes from Step 3.</p>
+</div>
+<h3 id="use-case-open-delete-notes-using-the-auto-suggestion-feature" class="discrete">Use case: Open/ Delete notes using the Auto-suggestion feature</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User types in an incomplete path or title of a note.</p>
+</li>
+<li>
+<p>Notably lists out suggestions of notes.</p>
+</li>
+<li>
+<p>User chooses one of the suggested notes.</p>
+</li>
+<li>
+<p>Notably opens/ deletes the chosen note.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Path or title contains invalid character(s) ( symbols <code>-</code> or <code>`</code>)</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Notably displays a response text, indicating that the path or title is invalid.</p>
+</li>
+<li>
+<p>1a2. User enters a new data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Steps 1a1-1a2 are repeated until the data entered is correct. Use case resumes from Step 2.</p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Path or title does not exist</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Notably displays a response text, indicating that the user is trying to open/ delete the note
+with the particular path or title that the user inputs.</p>
+</li>
+<li>
+<p>1b2. Notably does not generate any suggestions, which means the note cannot be found.</p>
+</li>
+<li>
+<p>1b3. User enters a new data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Steps 1b1-1b3 are repeated until the data entered is correct. Use case resumes from Step 2.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:13:35 UTC</div></div></div></body></html>
