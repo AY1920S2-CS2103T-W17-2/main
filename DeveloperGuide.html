@@ -44,7 +44,11 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#saving-data">F.2. Saving data</a></li>
+<li><a href="#add-a-new-note">F.2. Add a new Note</a></li>
+<li><a href="#open-a-note">F.3. Open a Note</a></li>
+<li><a href="#delete-a-note">F.4. Delete a Note</a></li>
+<li><a href="#edit-a-note">F.5. Edit a Note</a></li>
+<li><a href="#saving-data">F.6. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -1340,7 +1344,7 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
+Expected: Shows the GUI with a set of sample Notes. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
@@ -1361,12 +1365,114 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+<div class="sect2">
+<h3 id="add-a-new-note"><a class="link" href="#add-a-new-note">F.2. Add a new Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a new Note to Notably without jumping to that Note</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The current Note does not contain any child Note that has the same title.<br>
+You current opened Note must be the note you want you new Note to be contained.</p>
+</li>
+<li>
+<p>Command: <code>new -t Notably</code><br>
+Expected: new Note titled Notably added to the current Note.
+The current opened Note remain the same(highlighted in at sidebar)</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Adding a new Note to Notably and jump to that Note</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The current Note does not contain any child Note that has the same title.<br>
+The current opened Note must be the note you want you new Note to be contained.</p>
+</li>
+<li>
+<p>Command: <code>new -t CS2103T -o</code><br>
+Expected: new Note titled Notably added to the current Note.
+The current opened Note is changed to the new Note created.(highlighted in at sidebar)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.2. Saving data</a></h3>
+<h3 id="open-a-note"><a class="link" href="#open-a-note">F.3. Open a Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a Note in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The Note selected must not be the root Note.</p>
+</li>
+<li>
+<p>Command: <code>open -t Notably</code><br>
+Expected: The Note selected will be opened displaying its content of the Note and it will be highlighted in the sidebar.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-a-note"><a class="link" href="#delete-a-note">F.4. Delete a Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Delete a Note in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The Note selected must not be the root Note.</p>
+</li>
+<li>
+<p>Command: <code>delete -t Notably</code><br>
+Expected: The Note selected will be deleted, other Notes nested inside the selected Note will also be deleted.<br>
+The Note will no longer be visible in the sidebar.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-a-note"><a class="link" href="#edit-a-note">F.5. Edit a Note</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit a Note in Notably.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The Note selected must not be the root Note.<br>
+The current opened Note must be the Note you want to edit.</p>
+</li>
+<li>
+<p>Command: <code>edit -t Notably</code><br>
+Expected: A edit modal will pop up displaying your Note&#8217;s content in html format. You can exit and save the Note by
+exiting that modal.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.6. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1386,4 +1492,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:13:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:14:38 UTC</div></div></div></body></html>
