@@ -413,9 +413,6 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <li>
 <p>stores the state of the <code>help</code> modal being open, through HelpFlagModel</p>
 </li>
-<li>
-<p>stores the state of the current block&#8217;s <code>edit</code> modal being open, through BlockEditFlagModel</p>
-</li>
 </ul>
 </div>
 </li>
@@ -424,56 +421,6 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="Design-BlockModel"><a class="link" href="#Design-BlockModel">2.4.1. BlockModel component</a></h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/BlockModelClassDiagram.png" alt="BlockModelClassDiagram">
-</div>
-<div class="title">Figure 12. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/model/Model.java"><code>BlockModel.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>BlockModel</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores and directly manipulates the <code>BlockTree</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>contains a single <code>BlockTreeItem</code> as the <code>root</code>; the tree is built by adding chilren <code>BlockTreeItems</code> to the <code>root</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>each <code>BlockTreeItem</code> stores the reference to its parent and children <code>BlockTreeItems</code>, and its own content, through <code>TreeItem&lt;Block&gt;</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>stores its content, through <code>Block</code></p>
-<div class="ulist">
-<ul>
-<li>
-<p>contains the <code>Title</code> and <code>Body</code> content</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage</a></h3>
@@ -481,7 +428,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 13. Structure of the Storage Component</div>
+<div class="title">Figure 12. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -495,14 +442,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <p>can save <code>UserPref</code> objects in JSON format and read it back.</p>
 </li>
 <li>
-<p>can save Notably&#8217;s <code>BlockModel</code> data in JSON format and read it back.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>stores the <code>BlockTree</code> and also the path of the last opened <code>Block</code></p>
-</li>
-</ul>
-</div>
+<p>can save the Block data in JSON format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -519,7 +459,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <div class="content">
 <img src="images/CompilerClassDiagram.png" alt="CompilerClassDiagram">
 </div>
-<div class="title">Figure 14. Class Diagram of the Compiler Component</div>
+<div class="title">Figure 13. Class Diagram of the Compiler Component</div>
 </div>
 <div class="paragraph">
 <p>The <code>Compiler</code> component&#8217;s primary usage is to compile Markdown to HTML.
@@ -590,7 +530,7 @@ After that, the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/mas
 <div class="content">
 <img src="images/CompilerSequenceDiagram.png" alt="CompilerSequenceDiagram">
 </div>
-<div class="title">Figure 15. Interactions inside the Compiler component for the <code>compile(markdown)</code> call</div>
+<div class="title">Figure 14. Interactions inside the Compiler component for the <code>compile(markdown)</code> call</div>
 </div>
 </div>
 <div class="sect2">
@@ -924,7 +864,7 @@ Given the following DataStructure below.<br></p>
 <div class="content">
 <img src="images/PathExample1.png" alt="PathExample1">
 </div>
-<div class="title">Figure 16. DataStructure example to illustrate Path</div>
+<div class="title">Figure 15. DataStructure example to illustrate Path</div>
 </div>
 <div class="paragraph">
 <p>Using <code>AbsolutePath</code> <code>open /CS2101</code> and using <code>RelativePath</code> <code>open ../CS2101</code> would yield the same result Design Consideration.</p>
@@ -988,25 +928,19 @@ its a Relative or Absolute path.</p>
 <div class="paragraph">
 <p>On top of that, observability must be ensured so that the UI can update with any changes that happen on the tree (and its nodes) and also the data within each node.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
-</div>
-<div class="title">Figure 17. Tree Data Structure Design Example</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.2. Current Implementation</a></h4>
 <div class="paragraph">
-<p>A custom tree data structure that supports observability has been implemented. As seen <a href="#Design-BlockTree">here</a>, the <code>BlockModel</code> is the entry of point of manipulating the data tree. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
+<p>A custom tree data structure that supports observability has been implemented. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
 </div>
 <div class="paragraph">
-<p>To achieve this design, a <code>BlockTreeItem</code> needs to contain 3 primary components:</p>
+<p>Each BlockTreeItem contains 3 primary components:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>an Observable reference to its parent</p>
+<p>a reference to its parent</p>
 </li>
 <li>
 <p>an ObservableList of its children</p>
@@ -1025,9 +959,6 @@ its a Relative or Absolute path.</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>After multiple designs, the current implementation now has <code>BlockTreeItem</code> using an underlying <code>TreeItem&lt;Block&gt;</code> to handle the general behaviour of a tree node.</p>
 </div>
 <div class="paragraph">
 <p>When manipulating the <code>BlockTree</code>, the execution of any operation is always split in this order:</p>
@@ -1049,84 +980,24 @@ its a Relative or Absolute path.</p>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.3. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-using-javafx-s-code-treeitem-t-code-vs-implementing-a-code-blocktreeitem-code-from-scratch"><a class="link" href="#aspect-using-javafx-s-code-treeitem-t-code-vs-implementing-a-code-blocktreeitem-code-from-scratch">Aspect: Using JavaFX&#8217;s <code>TreeItem&lt;T&gt;</code> vs implementing a <code>BlockTreeItem</code> from scratch</a></h5>
-<div class="paragraph">
-<p>Current choice: Using JavaFX&#8217;s <code>TreeItem&lt;T&gt;</code></p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>seamless integration with JavaFX&#8217;s <code>TreeView</code> which is used in Notably&#8217;s sidebar to show the notes in a traditional file-browser-like manner</p>
-</li>
-<li>
-<p><code>TreeItem&lt;T&gt;</code> has the requirements of <code>BlockTreeItem&#8217;s</code> design already implemented to a usable extent</p>
-</li>
-<li>
-<p>conveniently handles underlying event handling required for <code>BlockTree</code> to be observable</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementation still requires wrapping and unwrapping of underlying <code>TreeItem&lt;T&gt;</code> to work with <code>TreeView</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
 <h5 id="aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure"><a class="link" href="#aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure">Aspect: <code>BlockTreeItem</code> vs Folders to represent path structure</a></h5>
 <div class="paragraph">
-<p>Current choice: <code>BlockTreeItem</code></p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>No need for an additional class. Having a separate <code>folder</code> object would also require a separate UI View since folders should not contain any block data.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Somewhat unconventional design. User might be unfamiliar with the intention on first use, without proper explanation</p>
-</li>
-</ul>
+<p>Current choice: <code>BlockTreeItem</code>
+Pros: No need for an additional class. Having a separate <code>folder</code> object would also require a separate UI View since folders should not contain any block data.
+Cons: Somewhat unconventional design. User might be unfamiliar with the intention on first use, without proper explanation</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="aspect-root-should-also-be-a-code-blocktreeitem-code"><a class="link" href="#aspect-root-should-also-be-a-code-blocktreeitem-code">Aspect: Root should also be a <code>BlockTreeItem</code></a></h5>
 <div class="paragraph">
-<p>Pros:</p>
+<p>Pros: Seamless transition to JSON storage
+Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code> does not contain any <code>Body</code> and is also unmodifiable</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Seamless transition to JSON storage</p>
-</li>
-</ul>
+<div class="imageblock">
+<div class="content">
+<img src="images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
 </div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Need to add constraint to ensure that the root <code>BlockTreeItem</code> does not contain any <code>Body</code> and is also unmodifiable</p>
-</li>
-</ul>
+<div class="title">Figure 16. Tree Data Structure Design Example</div>
 </div>
 </div>
 </div>
@@ -1645,4 +1516,4 @@ the note having the highest number of "hello" in its body will be put at the top
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:09:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:07:38 UTC</div></div></div></body></html>
