@@ -28,6 +28,7 @@
 <li><a href="#save-the-data">3.8. Save the data</a></li>
 <li><a href="#auto-suggestions">3.9. Auto suggestions</a></li>
 <li><a href="#auto-correct">3.10. Auto correct</a></li>
+<li><a href="#markdown-github-flavored-markdown">3.11. Markdown (GitHub Flavored Markdown)</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -231,57 +232,6 @@ Paths are used by the <code>open</code> and <code>delete</code> command
 </td>
 <td class="content">
 We cannot open or delete the parent of the root note because it does not exist. e.g <code>Delete /../</code> will result in an error.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div id="Markdown" class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Markdown</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Notably supports basic GitHub Flavored Markdown (GFM) in the <code>BODY</code> content of a note</p>
-</li>
-<li>
-<p>Currently supported syntax of GitHub Flavored Markdown in Notably consists of:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.github.com/gfm/#atx-heading">ATX headings</a></p>
-</li>
-<li>
-<p><a href="https://github.github.com/gfm/#paragraph">Paragraphs</a></p>
-</li>
-<li>
-<p>(Ordered list coming in v2.0) <a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a></p>
-</li>
-<li>
-<p>(Coming in v2.0) <a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis (Simplified)</a></p>
-</li>
-<li>
-<p>(Coming in v2.0) <a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Specifications for GFM are specified <a href="https://github.github.com/gfm/">here</a></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The term <code>Markdown</code> as used in this document will be a shorthand for GitHub Flavored Markdown. However, it is worth noting that by definition, they are not the same.
 </td>
 </tr>
 </table>
@@ -699,6 +649,116 @@ Currently, typing <code>open ../</code> will generate a response text of <code>O
 <div class="title">Figure 14. Demo for the auto-correction feature</div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="markdown-github-flavored-markdown"><a class="link" href="#markdown-github-flavored-markdown">3.11. Markdown (GitHub Flavored Markdown)</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We use the term Markdown and GitHub Flavored Markdown interchangably in this document.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Notably supports basic <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> as the <code>BODY</code> content of a note. By supporting Markdown, we hope to enhance your typing experience even further!</p>
+</div>
+<div class="paragraph">
+<p>Currently supported syntax of GitHub Flavored Markdown in Notably consists of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#atx-heading">ATX headings</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Level 1 header
+## Level 2 header
+### Level 3 header
+#### Level 4 header
+##### Level 5 header
+###### Level 6 header</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a><br></p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Currently, only unordered lists are supported. In addition, only the hyphen <code>-</code> symbol is supported to be used as the list bullets.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>- List item
+- Another list item
+  - A nested list item
+    - A deeper nested list item
+- Last list item</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#paragraph">Paragraphs</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Proin dictum accumsan nunc sed feugiat.</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="coming-in-v2-0-more-complete-support-of-markdown-syntax"><a class="link" href="#coming-in-v2-0-more-complete-support-of-markdown-syntax">3.11.1. (Coming in v2.0) More complete support of Markdown syntax</a></h4>
+<div class="paragraph">
+<p>In our v2.0 release, we&#8217;ll be supporting the following additional Markdown syntax:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>*This text will get italicised*
+**This text will get bold**</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~~This text will get a strikethrough treatment~~</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -739,4 +799,4 @@ Currently, typing <code>open ../</code> will generate a response text of <code>O
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:28:21 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:55:47 UTC</div></div></div></body></html>
