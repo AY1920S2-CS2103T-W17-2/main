@@ -1366,15 +1366,53 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Navigate to the specfied path</p>
+<p>Get the <code>currentlyOpenPath</code> from the BlockModel</p>
 </li>
 <li>
-<p>Open the block at the specified path</p>
-</li>
-<li>
-<p>Execute the operation on the block that is currently open</p>
+<p>BlockModel carries out the command required based on that <code>currentlyOpenPath</code></p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>An example of an operation is <code>new -t CS2103T</code>. To execute this, the following sequence occurs:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>NewCommandParser</code> creates the <code>Block</code> that has the title 'CS2103T' and a default empty body.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>Title</code> and <code>Body</code> objects are created as well</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>NewCommand</code> then calls the Model and in turn, the BlockModel to add this <code>Block</code> to the BlockTree</p>
+</li>
+<li>
+<p><code>BlockModel</code> first obtains the <code>currentlyOpenPath</code> to execute the operation on, i.e in this case, to add the new <code>Block</code> on the path</p>
+</li>
+<li>
+<p><code>BlockModel</code> calls <code>BlockTree</code> to add the <code>Block</code> to the <code>AbsolutePath</code> obtained from <code>BlockModel</code></p>
+</li>
+<li>
+<p><code>BlockTree</code> creates a <code>BlockTreeItem</code> using the <code>Block</code> parsed earlier.</p>
+</li>
+<li>
+<p>Subsequently, the underlying <code>TreeItem&lt;Block&gt;</code> is created and the <code>BlockTreeItem</code> is then added to the BlockTree.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is a sequence diagram that demonstrates this example</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TreeDataStructureSequenceDiagram.png" alt="TreeDataStructureSequenceDiagram">
+</div>
+<div class="title">Figure 30. Tree Data Structure SequenceDiagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1463,4 +1501,4 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:56:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:13:20 UTC</div></div></div></body></html>
