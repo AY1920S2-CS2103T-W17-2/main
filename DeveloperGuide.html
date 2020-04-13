@@ -1288,25 +1288,25 @@ its a Relative or Absolute path.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">search my notes by their content</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">I won’t have to remember the exact titles I had given my notes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I won’t have to remember the exact location and title of notes.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">impatient student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alias a path to a folder</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">do not have to memorise and type out the entire file structure when accessing a nested note</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">can view the relevant search results</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">so that I don’t need to worry about remembering the exact location and title of notes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">reliably type search commands(not error-prone)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">focus on searching my notes rather than ensuring my commands are exact</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">can quickly make changes to a note</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">so that I can update my notes with new information accurately while in class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">impatient student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alias a path to a folder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">do not have to memorise and type out the entire file structure when accessing a nested note</p></td>
 </tr>
 </tbody>
 </table>
@@ -1436,8 +1436,50 @@ with the particular path or title that the user inputs.</p>
 <div class="paragraph">
 <p>Steps 1b1-1b3 are repeated until the data entered is correct. Use case resumes from Step 2.</p>
 </div>
+<h3 id="use-case-quickly-edit-notes-using-the-edit-modal" class="discrete">Use case: Quickly Edit notes using the Edit Modal</h3>
 <div class="paragraph">
-<p>===</p>
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User invokes edit command by typing "edit" in the command box.</p>
+</li>
+<li>
+<p>Notably immediately opens an edit modal for the currently open note to allow for editing.</p>
+</li>
+<li>
+<p>User presses a keyboard shortcut ("ESC").</p>
+</li>
+<li>
+<p>Notably saves the user&#8217;s changes</p>
+</li>
+<li>
+<p>Notably closes the edit modal.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. User does not make any edits to the content of the note.</p>
+<div class="paragraph">
+<p>Proceed to 3 first, then resume use case from 5.</p>
+</div>
+</li>
+<li>
+<p>2b. User edits the content of the note.</p>
+<div class="paragraph">
+<p>Use case continues from 3.</p>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><em>{More to be added}</em></p>
@@ -1696,4 +1738,4 @@ the note having the highest number of "hello" in its body will be put at the top
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:46:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:47:51 UTC</div></div></div></body></html>
