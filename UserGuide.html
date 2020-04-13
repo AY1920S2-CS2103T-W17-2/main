@@ -29,7 +29,7 @@
 <li><a href="#auto-suggestions">3.9. Auto suggestions</a></li>
 <li><a href="#auto-correction">3.10. Auto correction</a></li>
 <li><a href="#response-text">3.11. Response text</a></li>
-<li><a href="#markdown-github-flavored-markdown">3.12. Markdown (GitHub Flavored Markdown)</a></li>
+<li><a href="#Markdown">3.12. Markdown (GitHub Flavored Markdown)</a></li>
 <li><a href="#sidebar">3.13. Sidebar</a></li>
 </ul>
 </li>
@@ -42,18 +42,65 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Notably is for those who <strong>prefer to use a desktop app for managing notes</strong>. More importantly, Notably is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Notably can get your notes taken down faster than traditional GUI apps.</p>
+<p>Notably is for those who <strong>prefer to use a desktop app for managing notes</strong>. More importantly, Notably is <strong>optimized
+for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User
+Interface (GUI). If you can type fast, Notably can get your notes taken down faster than traditional GUI apps.</p>
 </div>
 <div class="sect2">
 <h3 id="an-introduction-to-notably"><a class="link" href="#an-introduction-to-notably">1.1. An Introduction to Notably</a></h3>
 <div class="paragraph">
-<p>The image shown below highlights the different sections of Notably&#8217;s user interface:</p>
+<p>The following 3 diagrams (<a href="#Legends1">Figure 1</a>, <a href="#Legends2">Figure 2</a>, <a href="#Legends3">Figure 3</a>) highlight key
+sections of Notably&#8217;s user interface. Refer to the description below each diagram for more information.</p>
 </div>
-<div id="LegendsOpened" class="imageblock">
+<div id="Legends1" class="imageblock">
 <div class="content">
-<img src="images/Legends.png" alt="Legends" width="900">
+<img src="images/Legends1.png" alt="Legends1" width="800">
 </div>
 <div class="title">Figure 1. Notably GUI legends</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>As shown in the top-left hand corner of the diagram above, Notably&#8217;s Sidebar allows you to systematically organise your notes
+in a hierarchical manner.</p>
+</li>
+<li>
+<p>As shown in the centre of the diagram above, Notably allows you to view the content of your notes in a structured way.</p>
+</li>
+<li>
+<p>As shown in the top-centre of the diagram above, you can interact with Notably by typing certain commands.</p>
+</li>
+</ol>
+</div>
+<div id="Legends2" class="imageblock">
+<div class="content">
+<img src="images/Legends2.png" alt="Legends2" width="800">
+</div>
+<div class="title">Figure 2. Notably GUI legends (continued)</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>As highlighted in diagram above, Notably&#8217;s response text provides you with constant feedback and guidance with
+every keystroke.</p>
+</li>
+<li>
+<p>Notably helps you to find what you&#8217;re looking for by intelligently providing you with a list of suggestions.</p>
+</li>
+</ol>
+</div>
+<div id="Legends3" class="imageblock">
+<div class="content">
+<img src="images/Legends3.png" alt="Legends3" width="800">
+</div>
+<div class="title">Figure 3. Notably GUI legends (continued)</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>As shown in the diagram above, Notably allows you to edit and customise your notes in a fuss free manner.</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -160,7 +207,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>AbsolutePath (which takes reference from the root)</p>
+<p>AbsolutePath (which takes reference from the root, as shown in <a href="#PathExample1">Figure 2</a> below)</p>
 </li>
 <li>
 <p>RelativePath (which takes reference from the current note)</p>
@@ -241,11 +288,11 @@ Listed below are the notations used to define a <code>RelativePath</code>.</p>
 <div class="paragraph">
 <p>The picture below helps to illustrate the use of <code>RelativePath</code> and <code>AbsolutePath</code></p>
 </div>
-<div class="imageblock">
+<div id="PathExample1" class="imageblock">
 <div class="content">
 <img src="images/UGPathDiagram.png" alt="UGPathDiagram" width="790">
 </div>
-<div class="title">Figure 2. DataStructure example to illustrate Path</div>
+<div class="title">Figure 4. Example to illustrate Path</div>
 </div>
 <div class="paragraph">
 <p>The <code>AbsolutePath</code> <code>/Workspace/CS2101</code> is equivalent to <code>RelativePath</code> <code>../CS2101</code></p>
@@ -265,6 +312,19 @@ Paths are used by the <code>open</code> and <code>delete</code> command
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The Root simply serves as a way for Notably to hierarchically organise your notes. It will not be
+visible to you while you are using the application.
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -272,8 +332,8 @@ Paths are used by the <code>open</code> and <code>delete</code> command
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-We cannot open or delete the parent of the root note because it does not exist.
-Taking example from Figure 2 above, <code>Delete ../..</code> will result in an error.
+You cannot open or delete the root note. e.g <code>Delete /../</code> is invalid. An error message will be displayed to
+remind you of this.
 </td>
 </tr>
 </table>
@@ -283,16 +343,45 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="sect2">
 <h3 id="view-help-code-help-code"><a class="link" href="#view-help-code-help-code">3.1. View help : <code>help</code></a></h3>
 <div class="paragraph">
-<p>If you can&#8217;t remember the commands or you are unsure about what a particular command does, type <code>help</code> and hit <kbd>Enter</kbd>. Notably will show you a link to the list of the commands it has and what they do.<br></p>
+<p>If you can&#8217;t remember the commands or you are unsure about what a particular command does, type <code>help</code> and hit <kbd>Enter</kbd>.
+Figure 5 below shows you what this will look like on your screen.</p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>help</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/demo/Help.png" alt="Help">
+<img src="images/demo/Help1.png" alt="Help1">
 </div>
-<div class="title">Figure 3. Demo for the <code>help</code> command</div>
+<div class="title">Figure 5. Demo for the <code>help</code> command</div>
+</div>
+<div class="paragraph">
+<p>You will then see a Help window on your screen, as seen in Figure 4 below, which will include a summary of the commands and a link to Notably&#8217;s User Guide.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/demo/Help2.png" alt="Help2">
+</div>
+<div class="title">Figure 6. Demo for the <code>help</code> command (continued)</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>While the help window is open, you can hold the <kbd>Up</kbd> and <kbd>Down</kbd> keys to scroll through it&#8217;s contents. This is
+a more efficient solution than using your mouse!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -307,7 +396,7 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <img src="images/demo/Exit.png" alt="Exit">
 </div>
-<div class="title">Figure 4. Demo for the <code>exit</code> command</div>
+<div class="title">Figure 7. Demo for the <code>exit</code> command</div>
 </div>
 </div>
 <div class="sect2">
@@ -412,19 +501,19 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <img src="images/demo/PathDuplicates1.png" alt="PathDuplicates1">
 </div>
-<div class="title">Figure 5. INVALID as there are duplicate notes under <code>/Workspace/CS2103</code></div>
+<div class="title">Figure 8. INVALID as there are duplicate notes under <code>/Workspace/CS2103</code></div>
 </div>
 <div id="Duplicate2" class="imageblock">
 <div class="content">
 <img src="images/demo/PathDuplicates2.png" alt="PathDuplicates2">
 </div>
-<div class="title">Figure 6. VALID as they are not both directly under <code>/Workspace/CS2103</code></div>
+<div class="title">Figure 9. VALID as they are not both directly under <code>/Workspace/CS2103</code></div>
 </div>
 <div id="Duplicate3" class="imageblock">
 <div class="content">
 <img src="images/demo/PathDuplicates3.png" alt="PathDuplicates3">
 </div>
-<div class="title">Figure 7. VALID as one exists in <code>/Workspace/CS2103</code> and the other in <code>/Workspace/CS2101</code></div>
+<div class="title">Figure 10. VALID as one exists in <code>/Workspace/CS2103</code> and the other in <code>/Workspace/CS2101</code></div>
 </div>
 </li>
 </ul>
@@ -448,6 +537,9 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <pre>new -t CS2103T</pre>
 </div>
+</div>
+</li>
+</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -477,7 +569,8 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 </tr>
 </table>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>The new note <code>CS2103T</code> has been created successfully!</p>
 <div class="admonitionblock note">
@@ -512,29 +605,29 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <img src="images/demo/New1.png" alt="New1">
 </div>
-<div class="title">Figure 8. Step 1 - Create a new note with the title "Notably" (with the <code>-o</code> open flag)</div>
+<div class="title">Figure 11. Step 1 - Create a new note with the title "Notably" (with the <code>-o</code> open flag)</div>
 </div>
 <div id="New2" class="imageblock">
 <div class="content">
 <img src="images/demo/New2.png" alt="New2">
 </div>
-<div class="title">Figure 9. Step 2 - Create a new note with the title "CS2103T" (without the <code>-o</code> open flag)</div>
+<div class="title">Figure 12. Step 2 - Create a new note with the title "CS2103T" (without the <code>-o</code> open flag)</div>
 </div>
 <div id="New3" class="imageblock">
 <div class="content">
 <img src="images/demo/New3.png" alt="New3">
 </div>
-<div class="title">Figure 10. Step 3 - Final state after creating both notes</div>
+<div class="title">Figure 13. Step 3 - Final state after creating both notes</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="open-an-existing-note-code-open-code"><a class="link" href="#open-an-existing-note-code-open-code">3.4. Open an existing note: <code>open</code></a></h3>
 <div class="paragraph">
-<p>You can open an existing note by specifying its title (and optionally with its absolute or relative <a href="#paths">path</a>).<br></p>
+<p>You can open an existing note by specifying its absolute or relative <a href="#paths">path</a>).<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>open [-t] [PATH/TO/]TITLE</code><br></p>
+<p><strong>Format:</strong> <code>open [-t] AbsolutePath/Relativepath</code><br></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -590,15 +683,74 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <img src="images/demo/Open.png" alt="Open">
 </div>
-<div class="title">Figure 11. Step 1 - Demo for the <code>open</code> command (with suggestions)</div>
+<div class="title">Figure 14. Step 1 - Demo for the <code>open</code> command (with suggestions)</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="edit-an-existing-note-code-edit-code"><a class="link" href="#edit-an-existing-note-code-edit-code">3.5. Edit an existing note: <code>edit</code></a></h3>
 <div class="paragraph">
-<p>If you want to change the <code>BODY</code> content of the currently opened note, use the <code>edit</code> command. This command <strong>opens</strong> an editing window where you can update the existing <code>BODY</code> of the note.
-<strong>Format:</strong> <code>edit</code></p>
+<p>If you want to change the <code>BODY</code> content of the currently opened note, use the <code>edit</code> command. This command <strong>opens</strong> an editing window where you can update the existing <code>BODY</code> of the note.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>edit</code></p>
+</div>
+<div class="sect3">
+<h4 id="example-editing-the-currently-opened-note"><a class="link" href="#example-editing-the-currently-opened-note">3.5.1. Example: Editing the currently opened note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>As shown in <a href="#EditStep1">Step 1</a>, let&#8217;s update the <code>BODY</code> content of the currently opened note <code>Workspace</code> with the command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>edit</pre>
+</div>
+</div>
+</li>
+<li>
+<p>An Edit modal will appear on your screen, as shown in <a href="#EditStep2">Step 2</a>. You will now be able to edit the
+content of the currently open note.</p>
+</li>
+<li>
+<p>Once done, press <kbd>Esc</kbd> to close the modal. Any changes made to the content
+of the note are automatically saved when you do so.</p>
+</li>
+</ol>
+</div>
+<div id="EditStep1" class="imageblock">
+<div class="content">
+<img src="images/demo/Edit1.png" alt="Edit1">
+</div>
+<div class="title">Figure 15. Step 1 - Demo for the <code>edit</code> command (Typing the edit command)</div>
+</div>
+<div id="EditStep2" class="imageblock">
+<div class="content">
+<img src="images/demo/Edit2.png" alt="Edit2">
+</div>
+<div class="title">Figure 16. Step 2 - Demo for the <code>edit</code> command (Interacting with the Edit modal)</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Instead of editing a note in plain text, leverage Notably&#8217;s <a href="#Markdown">Markdown</a> feature to better organise
+the text in your note!</p>
+</li>
+<li>
+<p>You can copy and paste text in the edit modal, as per the conventional keyboard shortcuts <kbd>CMD/CTRL</kbd> + <kbd>c</kbd> and
+<kbd>CMD/CTRL</kbd> + <kbd>v</kbd> respectively.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -610,33 +762,13 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="ulist">
 <ul>
 <li>
-<p>You are not allowed to <code>edit</code> the root note, i.e the currently opened path is <code>"/"</code></p>
+<p>You are not allowed to <code>edit</code> the root note, i.e is the currently opened path is <code>"/"</code></p>
 </li>
 </ul>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="example-editing-the-currently-opened-note"><a class="link" href="#example-editing-the-currently-opened-note">3.5.1. Example: Editing the currently opened note</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Let&#8217;s update the <code>BODY</code> content of the currently opened note <code>Workspace</code> with the command:<br></p>
-<div class="literalblock">
-<div class="content">
-<pre>edit</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/demo/Edit.png" alt="Edit">
-</div>
-<div class="title">Figure 12. Demo for the <code>edit</code> command</div>
 </div>
 </div>
 </div>
@@ -786,13 +918,13 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <img src="images/demo/Delete1.png" alt="Delete1">
 </div>
-<div class="title">Figure 13. Step 1 - Key in the example command</div>
+<div class="title">Figure 17. Step 1 - Key in the example command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/demo/Delete2.png" alt="Delete2">
 </div>
-<div class="title">Figure 14. Final state after deletion</div>
+<div class="title">Figure 18. Final state after deletion</div>
 </div>
 </li>
 </ol>
@@ -852,13 +984,13 @@ Taking example from Figure 2 above, <code>Delete ../..</code> will result in an 
 <div class="content">
 <img src="images/demo/Delete3.png" alt="Delete3">
 </div>
-<div class="title">Figure 15. Step 1 - Key in the example command</div>
+<div class="title">Figure 19. Step 1 - Key in the example command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/demo/Delete2.png" alt="Delete2">
 </div>
-<div class="title">Figure 16. Final state after deletion</div>
+<div class="title">Figure 20. Final state after deletion</div>
 </div>
 </li>
 </ol>
@@ -914,7 +1046,7 @@ of the number of matches, i.e. the note with the highest number of matches will 
 <div class="content">
 <img src="images/demo/Search.png" alt="Search">
 </div>
-<div class="title">Figure 17. Demo for the <code>search</code> command: keyword found</div>
+<div class="title">Figure 21. Demo for the <code>search</code> command: keyword found</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s say the first option <code>/Workspace/Notably/CS2103/Project</code> is the note you are looking for. You may press <kbd>↓</kbd> and <kbd>Enter</kbd>
@@ -924,7 +1056,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="images/demo/Search1.png" alt="Search1">
 </div>
-<div class="title">Figure 18. Demo for the <code>search</code> command: open a note with the searched keyword</div>
+<div class="title">Figure 22. Demo for the <code>search</code> command: open a note with the searched keyword</div>
 </div>
 <div class="paragraph">
 <p>If the keyword you are looking for does not exist in any of your notes, no suggestions will be generated, as seen in the figure below.</p>
@@ -933,7 +1065,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="images/demo/Suggestions4.png" alt="Suggestions4">
 </div>
-<div class="title">Figure 19. Demo for the <code>search</code> command: keyword not found</div>
+<div class="title">Figure 23. Demo for the <code>search</code> command: keyword not found</div>
 </div>
 </div>
 </div>
@@ -958,7 +1090,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="images/demo/Suggestions.png" alt="Suggestions">
 </div>
-<div class="title">Figure 20. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
+<div class="title">Figure 24. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s say you would like to choose the option <code>/Workspace/Notably/Another Note</code>. After pressing <kbd>↓</kbd> to reach that suggestion
@@ -968,7 +1100,7 @@ and pressing <kbd>Enter</kbd>, the command input line will be auto-filled by the
 <div class="content">
 <img src="images/demo/Suggestions2.png" alt="Suggestions2">
 </div>
-<div class="title">Figure 21. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
+<div class="title">Figure 25. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
 </div>
 <div class="paragraph">
 <p>If no suggestion list is generated for the command <code>open</code>, <code>delete</code> or <code>search</code>, it means the path, title, or keyword cannot be found
@@ -978,13 +1110,13 @@ anywhere in Notably, as seen in the figures below.</p>
 <div class="content">
 <img src="images/demo/Suggestions3.png" alt="Suggestions3">
 </div>
-<div class="title">Figure 22. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
+<div class="title">Figure 26. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/demo/Suggestions4.png" alt="Suggestions4">
 </div>
-<div class="title">Figure 23. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
+<div class="title">Figure 27. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
 </div>
 <div class="sect3">
 <h4 id="coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note"><a class="link" href="#coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note">3.9.1. (Coming in v2.0) Suggestion response text when opening or deleting a parent note</a></h4>
@@ -1035,7 +1167,7 @@ After corrections are done, a list of suggestions will be generated as if the us
 <div class="content">
 <img src="images/demo/Correction.png" alt="Correction">
 </div>
-<div class="title">Figure 24. Demo for the auto correction feature</div>
+<div class="title">Figure 28. Demo for the auto correction feature</div>
 </div>
 </div>
 </div>
@@ -1053,7 +1185,7 @@ as seen in the figure below.</p>
 <div class="content">
 <img src="images/demo/ResponseText1.png" alt="ResponseText1">
 </div>
-<div class="title">Figure 25. Demo for the response text feature: open command</div>
+<div class="title">Figure 29. Demo for the response text feature: open command</div>
 </div>
 <div class="paragraph">
 <p>On the other hand, if you key in an invalid command, the response text will display an error message as seen in the figure
@@ -1063,11 +1195,11 @@ below.</p>
 <div class="content">
 <img src="images/demo/ResponseText2.png" alt="ResponseText2">
 </div>
-<div class="title">Figure 26. Demo for the response text feature: invalid command</div>
+<div class="title">Figure 30. Demo for the response text feature: invalid command</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="markdown-github-flavored-markdown"><a class="link" href="#markdown-github-flavored-markdown">3.12. Markdown (GitHub Flavored Markdown)</a></h3>
+<h3 id="Markdown"><a class="link" href="#Markdown">3.12. Markdown (GitHub Flavored Markdown)</a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1127,8 +1259,8 @@ Currently, only unordered lists are supported. In addition, only the hyphen <cod
 <div class="content">
 <pre>- List item
 - Another list item
-  - A nested list item
-    - A deeper nested list item
+- A nested list item
+- A deeper nested list item
 - Last list item</pre>
 </div>
 </div>
@@ -1254,13 +1386,13 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="content">
 <img src="images/demo/Sidebar.png" alt="Sidebar">
 </div>
-<div class="title">Figure 27. Before and after opening a level 2 note</div>
+<div class="title">Figure 31. Before and after opening a level 2 note</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/demo/Sidebar2.png" alt="Sidebar2">
 </div>
-<div class="title">Figure 28. Before and after opening a level 3 note</div>
+<div class="title">Figure 32. Before and after opening a level 3 note</div>
 </div>
 </div>
 </div>
@@ -1289,13 +1421,13 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <p><strong>Create a new note</strong>: <code>new -t TITLE [-o]</code></p>
 </li>
 <li>
-<p><strong>Open an existing note</strong>: <code>open [-t] [PATH/TO/]TITLE</code></p>
+<p><strong>Open an existing note</strong>: <code>open [-t] AbsolutePath/Relativepath</code></p>
 </li>
 <li>
 <p><strong>Opens an editing window to edit the currently opened note</strong>: <code>edit</code></p>
 </li>
 <li>
-<p><strong>Delete a note</strong>: <code>delete [-t] [PATH/TO/]TITLE</code></p>
+<p><strong>Delete a note</strong>: <code>delete [-t] AbsolutePath/Relativepath</code></p>
 </li>
 <li>
 <p><strong>Find a note based on certain keywords</strong>: <code>search [-s] KEYWORD</code></p>
@@ -1303,4 +1435,4 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:01:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:13:00 UTC</div></div></div></body></html>

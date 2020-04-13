@@ -269,6 +269,9 @@
 <pre>new -t CS2103T</pre>
 </div>
 </div>
+</li>
+</ol>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -297,7 +300,8 @@
 </tr>
 </table>
 </div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>The new note <code>CS2103T</code> has been created successfully!</p>
 <div class="admonitionblock note">
@@ -351,10 +355,10 @@
 <div class="sect2">
 <h3 id="open-an-existing-note-code-open-code"><a class="link" href="#open-an-existing-note-code-open-code">Open an existing note: <code>open</code></a></h3>
 <div class="paragraph">
-<p>You can open an existing note by specifying its title (and optionally with its absolute or relative <a href="#paths">path</a>).<br></p>
+<p>You can open an existing note by specifying its absolute or relative <a href="#paths">path</a>).<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>open [-t] [PATH/TO/]TITLE</code><br></p>
+<p><strong>Format:</strong> <code>open [-t] AbsolutePath/Relativepath</code><br></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -417,8 +421,67 @@
 <div class="sect2">
 <h3 id="edit-an-existing-note-code-edit-code"><a class="link" href="#edit-an-existing-note-code-edit-code">Edit an existing note: <code>edit</code></a></h3>
 <div class="paragraph">
-<p>If you want to change the <code>BODY</code> content of the currently opened note, use the <code>edit</code> command. This command <strong>opens</strong> an editing window where you can update the existing <code>BODY</code> of the note.
-<strong>Format:</strong> <code>edit</code></p>
+<p>If you want to change the <code>BODY</code> content of the currently opened note, use the <code>edit</code> command. This command <strong>opens</strong> an editing window where you can update the existing <code>BODY</code> of the note.</p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>edit</code></p>
+</div>
+<div class="sect3">
+<h4 id="example-editing-the-currently-opened-note"><a class="link" href="#example-editing-the-currently-opened-note">Example: Editing the currently opened note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>As shown in <a href="#EditStep1">Step 1</a>, let&#8217;s update the <code>BODY</code> content of the currently opened note <code>Workspace</code> with the command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>edit</pre>
+</div>
+</div>
+</li>
+<li>
+<p>An Edit modal will appear on your screen, as shown in <a href="#EditStep2">Step 2</a>. You will now be able to edit the
+content of the currently open note.</p>
+</li>
+<li>
+<p>Once done, press <kbd>Esc</kbd> to close the modal. Any changes made to the content
+of the note are automatically saved when you do so.</p>
+</li>
+</ol>
+</div>
+<div id="EditStep1" class="imageblock">
+<div class="content">
+<img src="../images/demo/Edit1.png" alt="Edit1">
+</div>
+<div class="title">Figure 8. Step 1 - Demo for the <code>edit</code> command (Typing the edit command)</div>
+</div>
+<div id="EditStep2" class="imageblock">
+<div class="content">
+<img src="../images/demo/Edit2.png" alt="Edit2">
+</div>
+<div class="title">Figure 9. Step 2 - Demo for the <code>edit</code> command (Interacting with the Edit modal)</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Instead of editing a note in plain text, leverage Notably&#8217;s <a href="#Markdown">Markdown</a> feature to better organise
+the text in your note!</p>
+</li>
+<li>
+<p>You can copy and paste text in the edit modal, as per the conventional keyboard shortcuts <kbd>CMD/CTRL</kbd> + <kbd>c</kbd> and
+<kbd>CMD/CTRL</kbd> + <kbd>v</kbd> respectively.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -430,33 +493,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>You are not allowed to <code>edit</code> the root note, i.e the currently opened path is <code>"/"</code></p>
+<p>You are not allowed to <code>edit</code> the root note, i.e is the currently opened path is <code>"/"</code></p>
 </li>
 </ul>
 </div>
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="example-editing-the-currently-opened-note"><a class="link" href="#example-editing-the-currently-opened-note">Example: Editing the currently opened note</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Let&#8217;s update the <code>BODY</code> content of the currently opened note <code>Workspace</code> with the command:<br></p>
-<div class="literalblock">
-<div class="content">
-<pre>edit</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/demo/Edit.png" alt="Edit">
-</div>
-<div class="title">Figure 8. Demo for the <code>edit</code> command</div>
 </div>
 </div>
 </div>
@@ -606,13 +649,13 @@
 <div class="content">
 <img src="../images/demo/Delete1.png" alt="Delete1">
 </div>
-<div class="title">Figure 9. Step 1 - Key in the example command</div>
+<div class="title">Figure 10. Step 1 - Key in the example command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Delete2.png" alt="Delete2">
 </div>
-<div class="title">Figure 10. Final state after deletion</div>
+<div class="title">Figure 11. Final state after deletion</div>
 </div>
 </li>
 </ol>
@@ -672,13 +715,13 @@
 <div class="content">
 <img src="../images/demo/Delete3.png" alt="Delete3">
 </div>
-<div class="title">Figure 11. Step 1 - Key in the example command</div>
+<div class="title">Figure 12. Step 1 - Key in the example command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Delete2.png" alt="Delete2">
 </div>
-<div class="title">Figure 12. Final state after deletion</div>
+<div class="title">Figure 13. Final state after deletion</div>
 </div>
 </li>
 </ol>
@@ -734,7 +777,7 @@ of the number of matches, i.e. the note with the highest number of matches will 
 <div class="content">
 <img src="../images/demo/Search.png" alt="Search">
 </div>
-<div class="title">Figure 13. Demo for the <code>search</code> command: keyword found</div>
+<div class="title">Figure 14. Demo for the <code>search</code> command: keyword found</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s say the first option <code>/Workspace/Notably/CS2103/Project</code> is the note you are looking for. You may press <kbd>↓</kbd> and <kbd>Enter</kbd>
@@ -744,7 +787,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="../images/demo/Search1.png" alt="Search1">
 </div>
-<div class="title">Figure 14. Demo for the <code>search</code> command: open a note with the searched keyword</div>
+<div class="title">Figure 15. Demo for the <code>search</code> command: open a note with the searched keyword</div>
 </div>
 <div class="paragraph">
 <p>If the keyword you are looking for does not exist in any of your notes, no suggestions will be generated, as seen in the figure below.</p>
@@ -753,7 +796,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="../images/demo/Suggestions4.png" alt="Suggestions4">
 </div>
-<div class="title">Figure 15. Demo for the <code>search</code> command: keyword not found</div>
+<div class="title">Figure 16. Demo for the <code>search</code> command: keyword not found</div>
 </div>
 </div>
 </div>
@@ -778,7 +821,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="../images/demo/Suggestions.png" alt="Suggestions">
 </div>
-<div class="title">Figure 16. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
+<div class="title">Figure 17. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s say you would like to choose the option <code>/Workspace/Notably/Another Note</code>. After pressing <kbd>↓</kbd> to reach that suggestion
@@ -788,7 +831,7 @@ and pressing <kbd>Enter</kbd>, the command input line will be auto-filled by the
 <div class="content">
 <img src="../images/demo/Suggestions2.png" alt="Suggestions2">
 </div>
-<div class="title">Figure 17. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
+<div class="title">Figure 18. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
 </div>
 <div class="paragraph">
 <p>If no suggestion list is generated for the command <code>open</code>, <code>delete</code> or <code>search</code>, it means the path, title, or keyword cannot be found
@@ -798,13 +841,13 @@ anywhere in Notably, as seen in the figures below.</p>
 <div class="content">
 <img src="../images/demo/Suggestions3.png" alt="Suggestions3">
 </div>
-<div class="title">Figure 18. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
+<div class="title">Figure 19. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Suggestions4.png" alt="Suggestions4">
 </div>
-<div class="title">Figure 19. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
+<div class="title">Figure 20. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
 </div>
 <div class="sect3">
 <h4 id="coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note"><a class="link" href="#coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note">(Coming in v2.0) Suggestion response text when opening or deleting a parent note</a></h4>
@@ -855,7 +898,7 @@ After corrections are done, a list of suggestions will be generated as if the us
 <div class="content">
 <img src="../images/demo/Correction.png" alt="Correction">
 </div>
-<div class="title">Figure 20. Demo for the auto correction feature</div>
+<div class="title">Figure 21. Demo for the auto correction feature</div>
 </div>
 </div>
 </div>
@@ -873,7 +916,7 @@ as seen in the figure below.</p>
 <div class="content">
 <img src="../images/demo/ResponseText1.png" alt="ResponseText1">
 </div>
-<div class="title">Figure 21. Demo for the response text feature: open command</div>
+<div class="title">Figure 22. Demo for the response text feature: open command</div>
 </div>
 <div class="paragraph">
 <p>On the other hand, if you key in an invalid command, the response text will display an error message as seen in the figure
@@ -883,11 +926,11 @@ below.</p>
 <div class="content">
 <img src="../images/demo/ResponseText2.png" alt="ResponseText2">
 </div>
-<div class="title">Figure 22. Demo for the response text feature: invalid command</div>
+<div class="title">Figure 23. Demo for the response text feature: invalid command</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="markdown-github-flavored-markdown"><a class="link" href="#markdown-github-flavored-markdown">Markdown (GitHub Flavored Markdown)</a></h3>
+<h3 id="Markdown"><a class="link" href="#Markdown">Markdown (GitHub Flavored Markdown)</a></h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -947,8 +990,8 @@ Currently, only unordered lists are supported. In addition, only the hyphen <cod
 <div class="content">
 <pre>- List item
 - Another list item
-  - A nested list item
-    - A deeper nested list item
+- A nested list item
+- A deeper nested list item
 - Last list item</pre>
 </div>
 </div>
@@ -1074,13 +1117,13 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="content">
 <img src="../images/demo/Sidebar.png" alt="Sidebar">
 </div>
-<div class="title">Figure 23. Before and after opening a level 2 note</div>
+<div class="title">Figure 24. Before and after opening a level 2 note</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Sidebar2.png" alt="Sidebar2">
 </div>
-<div class="title">Figure 24. Before and after opening a level 3 note</div>
+<div class="title">Figure 25. Before and after opening a level 3 note</div>
 </div>
 </div>
 </div>
@@ -1109,13 +1152,13 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <p><strong>Create a new note</strong>: <code>new -t TITLE [-o]</code></p>
 </li>
 <li>
-<p><strong>Open an existing note</strong>: <code>open [-t] [PATH/TO/]TITLE</code></p>
+<p><strong>Open an existing note</strong>: <code>open [-t] AbsolutePath/Relativepath</code></p>
 </li>
 <li>
 <p><strong>Opens an editing window to edit the currently opened note</strong>: <code>edit</code></p>
 </li>
 <li>
-<p><strong>Delete a note</strong>: <code>delete [-t] [PATH/TO/]TITLE</code></p>
+<p><strong>Delete a note</strong>: <code>delete [-t] AbsolutePath/Relativepath</code></p>
 </li>
 <li>
 <p><strong>Find a note based on certain keywords</strong>: <code>search [-s] KEYWORD</code></p>
@@ -1143,7 +1186,7 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="content">
 <img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 25. Structure of the Model Component</div>
+<div class="title">Figure 26. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/model/Model.java"><code>Model.java</code></a></p>
@@ -1184,7 +1227,7 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="content">
 <img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 26. Structure of the Storage Component</div>
+<div class="title">Figure 27. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -1285,10 +1328,10 @@ Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code>
 <div class="content">
 <img src="../images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
 </div>
-<div class="title">Figure 27. Tree Data Structure Design Example</div>
+<div class="title">Figure 28. Tree Data Structure Design Example</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:01:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:13:00 UTC</div></div></div></body></html>
