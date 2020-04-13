@@ -13,21 +13,23 @@
 <li><a href="#design">2. Design</a>
 <ul class="sectlevel2">
 <li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-View">2.2. View component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
-<li><a href="#logging">2.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">2.8. Configuration</a></li>
+<li><a href="#Design-View">2.2. View</a></li>
+<li><a href="#Design-Logic">2.3. Logic</a></li>
+<li><a href="#Design-Model">2.4. Model</a></li>
+<li><a href="#Design-Storage">2.5. Storage</a></li>
+<li><a href="#Design-Commons">2.6. Commons</a></li>
+<li><a href="#Design-Compiler">2.7. Compiler</a></li>
+<li><a href="#logging">2.8. Logging</a></li>
+<li><a href="#Design-Configuration">2.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#Implementation-CorrectionEngine">3.1. Correction Engine</a></li>
-<li><a href="#Implementation-SuggestionEngine">3.2. Suggestion Engine</a></li>
+<li><a href="#Implementation-SuggestionEngine">3.1. Suggestion Engine</a></li>
+<li><a href="#Implementation-CorrectionEngine">3.2. Correction Engine</a></li>
 <li><a href="#Implementation-Path">3.3. Paths</a></li>
 <li><a href="#Implementation-DataStructure">3.4. Tree Data Structure</a></li>
+<li><a href="#Implementation-Compiler">3.5. Compiler</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -65,7 +67,7 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/docs/diagrams/">diagrams</a> folder.
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/docs/diagrams/">diagrams</a> folder.
 Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
 </td>
 </tr>
@@ -125,10 +127,10 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 <div class="ulist">
 <ul>
 <li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the itself, e.g. <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/Logic.java"><code>Logic.java</code></a></p>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the itself, e.g. <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/Logic.java"><code>Logic.java</code></a></p>
 </li>
 <li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class, e.g. <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/LogicManager.java"><code>LogicManager.java</code></a></p>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class, e.g. <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/LogicManager.java"><code>LogicManager.java</code></a></p>
 </li>
 </ul>
 </div>
@@ -160,7 +162,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-View"><a class="link" href="#Design-View">2.2. View component</a></h3>
+<h3 id="Design-View"><a class="link" href="#Design-View">2.2. View</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -168,13 +170,13 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 <div class="title">Figure 3. Structure of the View Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/seedu/address/view/View.java"><code>View.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/seedu/address/view/View.java"><code>View.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The View consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>SuggestionsList</code>, <code>SideBarTree</code>, <code>HelpModal</code>, <code>BlockContent</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>ViewPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>View</code> component uses JavaFx framework. The layout of these View parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/seedu/address/view/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>View</code> component uses JavaFx framework. The layout of these View parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/seedu/address/view/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>View</code> component,</p>
@@ -191,7 +193,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/LogicArchitectureDiagram.png" alt="LogicArchitectureDiagram">
@@ -200,7 +202,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="paragraph">
 <p><code>Logic</code> consists of 3 subcomponents:</p>
@@ -219,7 +221,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </ul>
 </div>
 <div class="sect3">
-<h4 id="Design-NotablyParser"><a class="link" href="#Design-NotablyParser">2.3.1. NotabyParser component</a></h4>
+<h4 id="Design-NotablyParser"><a class="link" href="#Design-NotablyParser">2.3.1. NotabyParser</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -265,7 +267,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect3">
-<h4 id="Design-SuggestionEngine"><a class="link" href="#Design-SuggestionEngine">2.3.2. SuggestionEngine component</a></h4>
+<h4 id="Design-SuggestionEngine"><a class="link" href="#Design-SuggestionEngine">2.3.2. SuggestionEngine</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/SuggestionClassDiagram.png" alt="SuggestionClassDiagram">
@@ -274,7 +276,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/master/src/main/java/com/notably/logic/suggestion/SuggestionEngine.java"><code>SuggestionEngine.java</code></a></p>
+<a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/blob/master/src/main/java/com/notably/logic/suggestion/SuggestionEngine.java"><code>SuggestionEngine.java</code></a></p>
 </div>
 <div class="paragraph">
 <p><code>SuggestionEngine</code> gives users the meaning of the command they input and a list of notes suggestions that they want to
@@ -342,7 +344,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 </div>
 </div>
 <div class="sect3">
-<h4 id="Design-CorrectionEngine"><a class="link" href="#Design-CorrectionEngine">2.3.3. CorrectionEngine component</a></h4>
+<h4 id="Design-CorrectionEngine"><a class="link" href="#Design-CorrectionEngine">2.3.3. CorrectionEngine</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/CorrectionEngineClassDiagram.png" alt="CorrectionEngineClassDiagram">
@@ -352,21 +354,18 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <div class="paragraph">
 <p>The <code>CorrectionEngine</code> component revolves around two <em>API</em> s, namely:</p>
 </div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface, implemented by <code>StringCorrectionEngine</code> and <code>AbsolutePathCorrectionEngine</code>. Concrete implementations of <code>CorrectionEngine</code> are employed to correct an uncorrected user input.</p>
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface, implemented by <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/AbsolutePathCorrectionEngine.java"><code>AbsolutePathCorrectionEngine</code></a>. Concrete implementations of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> are employed to correct an uncorrected user input.</p>
 </li>
 <li>
-<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> interface, implemented by <code>LevenshteinDistanceCalculator</code>. Concrete implementations of <code>EditDistanceCalculator</code> are employed to calculate the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> between two strings.</p>
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> interface, implemented by <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/LevenshteinDistanceCalculator.java"><code>LevenshteinDistanceCalculator</code></a>. Concrete implementations of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> are employed to calculate the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> between two strings.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>StringCorrectionEngine</code> (one concrete implementation of <code>CorrectionEngine</code>) component for the <code>correct("uncorrected")</code> API call.</p>
+<p>Given below is the Sequence Diagram for interactions within the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> (one concrete implementation of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a>) component for the <code>correct("uncorrected")</code> API call.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -377,7 +376,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -385,7 +384,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <div class="title">Figure 11. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -418,7 +417,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -426,7 +425,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <div class="title">Figure 12. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -443,20 +442,100 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Commons</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>com.notably.commons</code> package.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">2.7. Logging</a></h3>
+<h3 id="Design-Compiler"><a class="link" href="#Design-Compiler">2.7. Compiler</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/CompilerClassDiagram.png" alt="CompilerClassDiagram">
+</div>
+<div class="title">Figure 13. Class Diagram of the Compiler Component</div>
+</div>
+<div class="paragraph">
+<p>The <code>Compiler</code> component&#8217;s primary usage is to compile Markdown to HTML.
+Our <code>Compiler</code> component&#8217;s design is based off <a href="https://github.github.com/gfm/#appendix-a-parsing-strategy">the parsing strategy</a> explained in <a href="https://github.github.com/gfm">GitHub&#8217;s GFM Specification</a></p>
+</div>
+<div class="paragraph">
+<p>Mainly, the <code>Compiler</code> component consists of the following classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a>, which deals with the end-to-end job of compiling unprocessed Markdown to HTML.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/Parser.java"><code>Parser</code></a>, which deals with creating an <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Sytax Tree</a> representation of an unprocessed Markdown.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>, which is an abstract class representing a node in a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>. All concrete implementations of nodes in a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> inherit from this class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The concrete implementations of the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a> class consist of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/DocumentBlock.java"><code>DocumentBlock</code></a>, which represents the root of the Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/HeaderBlock.java"><code>HeaderBlock</code></a>, which represents a Markdown <a href="https://github.github.com/gfm/#atx-headings">ATX heading</a> component.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/ListBlock.java"><code>ListBlock</code></a>, which represents a Markdown unordered list.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/ListItemBlock.java"><code>ListItemBlock</code></a>, which represents a Markdown list item.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/ParagraphBlock.java"><code>ParagraphBlock</code></a>, which represents a Markdown paragraph.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/TextBlock.java"><code>TextBlock</code></a>, which represents plain text in Markdown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Two of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s <em>abstract</em> methods are particularly important:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/10267c0494bf7e58bd9c8e7f198bb7f9209631e2/src/main/java/com/notably/commons/compiler/parser/block/Block.java#L42"><code>Block#next</code></a>: This method should be implemented by each of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation in such a way that accepts a single <code>String</code> line and evolve the current Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> further. That way, each of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation only needs to care about processing the portion of the <code>String</code> line that is relevant to them, before delegating the rest to its children <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>s.</p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/10267c0494bf7e58bd9c8e7f198bb7f9209631e2/src/main/java/com/notably/commons/compiler/parser/block/Block.java#L49"><code>Block#toHtml</code></a>: This method should be implemented by each of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation in such a way that it returns the HTML representation of the current <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>. That way, each of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>'s implementation only needs to care about generating its own HTML; the rest can be delegated to its children <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/Block.java"><code>Block</code></a>s.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In short, our <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a> class will first call the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/blob/10267c0494bf7e58bd9c8e7f198bb7f9209631e2/src/main/java/com/notably/commons/compiler/parser/Parser.java#L15-L23"><code>Parser#parse</code></a> method to generate a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>.
+After that, the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a> class will transform the returned Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> into HTML by calling the root <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/block/DocumentBlock.java"><code>DocumentBlock</code></a>'s <code>toHtml</code> method (which will in turn invoke each of its children&#8217;s <code>toHtml</code> method).</p>
+</div>
+<div class="paragraph">
+<p>Given below is the <em>Sequence Diagram</em> for interactions within the <code>Compiler</code> component for the <code>compile(markdown)</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CompilerSequenceDiagram.png" alt="CompilerSequenceDiagram">
+</div>
+<div class="title">Figure 14. Interactions inside the Compiler component for the <code>compile(markdown)</code> call</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">2.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 2.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Design-Configuration">Section 2.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -487,7 +566,7 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">2.8. Configuration</a></h3>
+<h3 id="Design-Configuration"><a class="link" href="#Design-Configuration">2.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -501,60 +580,9 @@ The lifeline for <code>OpenSuggestionArgHandler</code> should end at the destroy
 <p>This section describes the details on how features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="Implementation-CorrectionEngine"><a class="link" href="#Implementation-CorrectionEngine">3.1. Correction Engine</a></h3>
+<h3 id="Implementation-SuggestionEngine"><a class="link" href="#Implementation-SuggestionEngine">3.1. Suggestion Engine</a></h3>
 <div class="sect3">
 <h4 id="rationale"><a class="link" href="#rationale">3.1.1. Rationale</a></h4>
-<div class="paragraph">
-<p><code>CorrectionEngine</code> is needed to enable auto-correction of user inputs, to deliver as good typing experience as possible.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.2. Current implementation</a></h4>
-<div class="paragraph">
-<p><code>CorrectionEngine</code> revolves around two <em>API</em> s, namely:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface, implemented by <code>StringCorrectionEngine</code> and <code>AbsolutePathCorrectionEngine</code>. Concrete implementations of <code>CorrectionEngine</code> are employed to correct an uncorrected user input.</p>
-</li>
-<li>
-<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> interface, implemented by <code>LevenshteinDistanceCalculator</code>. Concrete implementations of <code>EditDistanceCalculator</code> are employed to calculate the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> between two strings.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Two concrete implementations of the <code>CorrectionEngine</code> interface are, namely:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <code>StringCorrectionEngine</code> class, which deals with the correction of plain strings.</p>
-</li>
-<li>
-<p>The <code>AbsolutePathCorrectionEngine</code> class, which deals with the correction of absolute paths. The absolute paths here refer to the address of the notes (or blocks, as we call it) that exist in the App.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.3. Design considerations</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>CorrectionEngine</code> is built as a standalone module that can be used by both <a href="#Implementation-SuggestionEngine"><strong><code>SuggestionEngine</code></strong></a> and <a href="#Implementation-Parser"><strong><code>Parser</code></strong></a>. This decision is made so that code duplication in relation to auto-correction is minimal.</p>
-</li>
-<li>
-<p>Both <code>CorrectionEngine</code> and <code>EditDistanceCalculator</code> are implemented as interfaces, in an attempt to make the design of the <code>CorrectionEngine</code> component resilient to change. This design enables us to leverage on the <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy pattern</a> to make our <code>CorrectionEngine</code> component more future-proof.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Implementation-SuggestionEngine"><a class="link" href="#Implementation-SuggestionEngine">3.2. Suggestion Engine</a></h3>
-<div class="sect3">
-<h4 id="rationale-2"><a class="link" href="#rationale-2">3.2.1. Rationale</a></h4>
 <div class="paragraph">
 <p><code>SuggestionEngine</code> allows the users to traverse their notes conveniently, without having
 to remember the hierarchical structure of their notes. <code>SuggestionEngine</code> gives users the meaning of the command they input and a list of notes suggestions that they want to
@@ -562,7 +590,7 @@ open, delete, or search.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.2. Current implementation</a></h4>
+<h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.2. Current implementation</a></h4>
 <table class="tableblock frame-all grid-all" style="width: 75%;">
 <colgroup>
 <col style="width: 28.395%;">
@@ -635,7 +663,7 @@ to the user.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.3. Design considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect 1: Design with respect to the whole architecture</strong></p>
 </div>
@@ -697,6 +725,57 @@ such as updating the <code>responseText</code> in the <code>Model</code>.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="Implementation-CorrectionEngine"><a class="link" href="#Implementation-CorrectionEngine">3.2. Correction Engine</a></h3>
+<div class="sect3">
+<h4 id="rationale-2"><a class="link" href="#rationale-2">3.2.1. Rationale</a></h4>
+<div class="paragraph">
+<p><code>CorrectionEngine</code> is needed to enable auto-correction of user inputs, to deliver as good typing experience as possible.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-2"><a class="link" href="#current-implementation-2">3.2.2. Current implementation</a></h4>
+<div class="paragraph">
+<p>The <code>CorrectionEngine</code> component revolves around two <em>API</em> s, namely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface, implemented by <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/AbsolutePathCorrectionEngine.java"><code>AbsolutePathCorrectionEngine</code></a>. Concrete implementations of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> are employed to correct an uncorrected user input.</p>
+</li>
+<li>
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> interface, implemented by <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/LevenshteinDistanceCalculator.java"><code>LevenshteinDistanceCalculator</code></a>. Concrete implementations of <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> are employed to calculate the <a href="https://en.wikipedia.org/wiki/Edit_distance">edit distance</a> between two strings.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Two concrete implementations of the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> interface are, namely:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/StringCorrectionEngine.java"><code>StringCorrectionEngine</code></a> class, which deals with the correction of plain strings.</p>
+</li>
+<li>
+<p>The <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/AbsolutePathCorrectionEngine.java"><code>AbsolutePathCorrectionEngine</code></a> class, which deals with the correction of absolute paths. The absolute paths here refer to the address of the notes (or blocks, as we call it) that exist in the App.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design considerations</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>CorrectionEngine</code> is built as a standalone module that can be used by both <a href="#Implementation-SuggestionEngine"><strong><code>SuggestionEngine</code></strong></a> and <a href="#Implementation-Parser"><strong><code>Parser</code></strong></a>. This decision is made so that code duplication in relation to auto-correction is minimal.</p>
+</li>
+<li>
+<p>Both <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/CorrectionEngine.java"><code>CorrectionEngine</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/logic/correction/distance/EditDistanceCalculator.java"><code>EditDistanceCalculator</code></a> are implemented as interfaces, in an attempt to make the design of the <code>CorrectionEngine</code> component resilient to change. This design enables us to leverage on the <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy pattern</a> to make our <code>CorrectionEngine</code> component more future-proof.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="Implementation-Path"><a class="link" href="#Implementation-Path">3.3. Paths</a></h3>
 <div class="paragraph">
 <p>Given below is the implementation detail of the Path feature and some alternative design considerations.</p>
@@ -728,7 +807,7 @@ Given the following DataStructure below.<br></p>
 <div class="content">
 <img src="images/PathExample1.png" alt="PathExample1">
 </div>
-<div class="title">Figure 13. DataStructure example to illustrate Path</div>
+<div class="title">Figure 15. DataStructure example to illustrate Path</div>
 </div>
 <div class="paragraph">
 <p>Using <code>AbsolutePath</code> <code>open /CS2101</code> and using <code>RelativePath</code> <code>open ../CS2101</code> would yield the same result Design Consideration.</p>
@@ -861,8 +940,39 @@ Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code>
 <div class="content">
 <img src="images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
 </div>
-<div class="title">Figure 14. Tree Data Structure Design Example</div>
+<div class="title">Figure 16. Tree Data Structure Design Example</div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-Compiler"><a class="link" href="#Implementation-Compiler">3.5. Compiler</a></h3>
+<div class="sect3">
+<h4 id="rationale-4"><a class="link" href="#rationale-4">3.5.1. Rationale</a></h4>
+<div class="paragraph">
+<p><code>Compiler</code> is needed to enable compilation of Markdown to HTML. By having an Markdown to HTML compiler, we can allow user to format their notes in Markdown, which enhances their note-editing experience tremendously.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation-5"><a class="link" href="#current-implementation-5">3.5.2. Current implementation</a></h4>
+<div class="paragraph">
+<p>The implementation of <code>Compiler</code> is highly inspired by <a href="https://github.github.com/gfm/#appendix-a-parsing-strategy">the parsing strategy</a> explained in <a href="https://github.github.com/gfm">GitHub&#8217;s GFM Specification</a>. Please read more from the specification for a more comprehensive explanation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.3. Design considerations</a></h4>
+<div class="paragraph">
+<p>Generally speaking, compilers usually consist of several main components, namely a tokenizer, a parser, and a generator. However, this is not the case in our design of the <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/Compiler.java"><code>Compiler</code></a> component:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Leveraging on the fact that Markdown&#8217;s syntax is not overly complicated, we decided not to fully adhere to the usual compiler design. Instead, we merged the tokenizer and parser section into our <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/Parser.java"><code>Parser</code></a> class. This <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/tree/master/src/main/java/com/notably/commons/compiler/parser/Parser.java"><code>Parser</code></a> class thus deals converting raw Markdown string into a Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a>.</p>
+</li>
+<li>
+<p>In addition, we opted to not build a standalone generator component. Instead, we make it such that each node in our Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> supports a <code>toHtml</code> method, which returns the HTML representation of the tree starting from itself as a node. This way, we can leverage on OOP&#8217;s polymorphism to generate the HTML string out of our Markdown <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree">Abstract Syntax Tree</a> a lot easier.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -982,9 +1092,6 @@ Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1111,12 +1218,6 @@ with the particular path or title that the user inputs.</p>
 <div class="paragraph">
 <p>Steps 1b1-1b3 are repeated until the data entered is correct. Use case resumes from Step 2.</p>
 </div>
-<div class="paragraph">
-<p>===</p>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1134,9 +1235,6 @@ with the particular path or title that the user inputs.</p>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -1230,4 +1328,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:14:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:53:56 UTC</div></div></div></body></html>
