@@ -131,27 +131,43 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="create-a-new-note-code-new-code"><a class="link" href="#create-a-new-note-code-new-code">Create a new note: <code>new</code></a></h3>
+<h3 id="create"><a class="link" href="#create">Create a new note: <code>new</code></a></h3>
 <div class="paragraph">
-<p>If you want to add a new note to the current working directory (currently opened note), use the <code>new</code> command and specify the <code>TITLE</code> of the note.<br></p>
+<p>If you want to add a new note (to the path of the currently open note), use the <code>new</code> command and specify the <code>TITLE</code> of the note.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>new -t TITLE [-o]</code></p>
 </div>
-<div id="TitleValidity" class="admonitionblock important">
+<div id="TitleValidity" class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 <div class="ulist">
 <ul>
 <li>
+<p>Don&#8217;t forget the <code>-t</code> flag!</p>
+</li>
+<li>
 <p>The <code>TITLE</code> for the note MUST be specified.</p>
 </li>
 <li>
-<p>The <code>TITLE</code> for the note can only contain alphabets, numbers, symbols (except ` and -) and whitespaces.</p>
+<p>The <code>TITLE</code> for the note can only contain alphabets, numbers, symbols (except / and -) and whitespaces.</p>
+</li>
+<li>
+<p>The <code>TITLE</code> for the note cannot begin with whitespaces or the period <code>.</code> characer.</p>
+</li>
+<li>
+<p>Duplicate notes are not allowed under the same note.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This is explained <a href="#duplicateNotes">here</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -171,6 +187,19 @@
 <li>
 <p>Use the optional <code>-o</code> flag to immediately open the note after creating it.</p>
 </li>
+<li>
+<p>Leaving out the <code>-o</code> open flag can be useful if you want to create multiple notes quickly for future use, but you don&#8217;t need to edit them right away!</p>
+</li>
+<li>
+<p>Want to save some time? Use the <code>n</code> shorthand instead of <code>new</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>n -t TITLE [-o]</code></p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </td>
@@ -178,11 +207,55 @@
 </table>
 </div>
 <div class="sect3">
+<h4 id="duplicateNotes"><a class="link" href="#duplicateNotes">Creating duplicate notes</a></h4>
+<div class="paragraph">
+<p>Creating duplicate notes are not allowed as mentioned <a href="#create">3.3</a>. What are considered duplicate notes?<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Two notes are considered duplicates IF their <code>TITLEs</code> are the same while ignore their case. For example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Hello</code>, <code>hello</code>, <code>HELLO</code> and <code>HeLLo</code> are considered duplicates</p>
+</li>
+<li>
+<p><code>hello world!</code>, <code>helloworld!</code> and <code>helloworld@</code> are <strong>not</strong> considered duplicates, because whitespaces and allowed symbols are not ignored</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Two notes are considered duplicate IF they have the same <code>TITLE</code> under the <strong>same note</strong>. This can be seen in the following diagrams below:</p>
+<div id="Duplicate1" class="imageblock">
+<div class="content">
+<img src="../images/demo/PathDuplicates1.png" alt="PathDuplicates1">
+</div>
+<div class="title">Figure 1. INVALID as there are duplicate notes under <code>/Workspace/CS2103</code></div>
+</div>
+<div id="Duplicate2" class="imageblock">
+<div class="content">
+<img src="../images/demo/PathDuplicates2.png" alt="PathDuplicates2">
+</div>
+<div class="title">Figure 2. VALID as they are not both directly under <code>/Workspace/CS2103</code></div>
+</div>
+<div id="Duplicate3" class="imageblock">
+<div class="content">
+<img src="../images/demo/PathDuplicates3.png" alt="PathDuplicates3">
+</div>
+<div class="title">Figure 3. VALID as one exists in <code>/Workspace/CS2103</code> and the other in <code>/Workspace/CS2101</code></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
 <h4 id="example-creating-new-notes"><a class="link" href="#example-creating-new-notes">Example: Creating new notes</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Let&#8217;s first create a note (with a <code>TITLE</code>), and open it immediately after. <a href="#New1">(Step 1)</a> Type this command:<br></p>
+<p>Let&#8217;s first create a note (with a <code>TITLE</code>), and open it immediately after. Type this command:<br></p>
 <div class="literalblock">
 <div class="content">
 <pre>new -t Notably -o</pre>
@@ -190,17 +263,11 @@
 </div>
 </li>
 <li>
-<p>Now the currently open note is <code>Notably</code>. Let&#8217;s add create a note to the currently opened note, <a href="#New2">(Step 2)</a> with a <code>TITLE</code> only as follows:<br></p>
+<p>Due to the <code>-o</code> flag, the currently open note is now <code>Notably</code> (as seen in the sidebar). Let&#8217;s add a new note to the currently opened note, <a href="#New2">(Step 2)</a> with a <code>TITLE</code> as follows:<br></p>
 <div class="literalblock">
 <div class="content">
 <pre>new -t CS2103T</pre>
 </div>
-</div>
-</li>
-<li>
-<p>The new note <code>CS2103T</code> has been created successfully! <a href="#New3">(Step 3)</a><br></p>
-</li>
-</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -209,30 +276,75 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Observe that the note <code>CS2103T</code> was not opened immediately</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Observe that the (Absolute) Path to the currently open note is now changed from <code>/Workspace</code> in <a href="#New1">step 1</a> to <code>/WorkspaceNotably</code> in  <a href="#New2">step 2</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Not sure where to see this path? Check it out <a href="#LegendsClosed">here</a></p>
+</li>
+<li>
+<p>Not sure what Absolute Paths are or why the new note is created in this way? Check it out <a href="#paths">here</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </td>
 </tr>
 </table>
 </div>
+</li>
+<li>
+<p>The new note <code>CS2103T</code> has been created successfully!</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Observe that the note <code>CS2103T</code> was not opened immediately as seen in <a href="#New3">step 3</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>This is because the <code>-o</code> open flag was not specified, so the note <code>CS2103T</code> was created without opening it immediately.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
 <div id="New1" class="imageblock">
 <div class="content">
-<img src="../images/demo/New1.png" alt="Demo">
+<img src="../images/demo/New1.png" alt="New1">
 </div>
-<div class="title">Figure 1. Step 1 - Demo for the <code>new</code> command (with the <code>open</code> flag)</div>
+<div class="title">Figure 4. Step 1 - Create a new note with the title "Notably" (with the <code>-o</code> open flag)</div>
 </div>
 <div id="New2" class="imageblock">
 <div class="content">
 <img src="../images/demo/New2.png" alt="New2">
 </div>
-<div class="title">Figure 2. Step 2 - Demo for the <code>new</code> command (without the <code>open</code> flag)</div>
+<div class="title">Figure 5. Step 2 - Create a new note with the title "CS2103T" (without the <code>-o</code> open flag)</div>
 </div>
 <div id="New3" class="imageblock">
 <div class="content">
 <img src="../images/demo/New3.png" alt="New3">
 </div>
-<div class="title">Figure 3. Step 3 - Demo for the <code>new</code> command (after creating both notes)</div>
+<div class="title">Figure 6. Step 3 - Final state after creating both notes</div>
 </div>
 </div>
 </div>
@@ -298,7 +410,7 @@
 <div class="content">
 <img src="../images/demo/Open.png" alt="Open">
 </div>
-<div class="title">Figure 4. Step 1 - Demo for the <code>open</code> command (with suggestions)</div>
+<div class="title">Figure 7. Step 1 - Demo for the <code>open</code> command (with suggestions)</div>
 </div>
 </div>
 </div>
@@ -344,17 +456,35 @@
 <div class="content">
 <img src="../images/demo/Edit.png" alt="Edit">
 </div>
-<div class="title">Figure 5. Demo for the <code>edit</code> command</div>
+<div class="title">Figure 8. Demo for the <code>edit</code> command</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">Delete a note: <code>delete</code></a></h3>
 <div class="paragraph">
-<p>If you no longer need a note, or you accidentally created a wrong note, don&#8217;t worry! You can always delete That note. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br></p>
+<p>If you no longer need a note, or if you have accidentally created a wrong note, don&#8217;t worry! You can always delete that note.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>delete [-t] [PATH/TO/]TITLE</code></p>
+<p><strong>Format:</strong> <code>delete [-t] AbsolutePath/RelativePath</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Requires prior understanding of <code>AbsolutePath</code> and <code>RelativePath</code>. You can refer <a href="#paths">here</a> for an explanation</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -368,6 +498,44 @@
 <li>
 <p>Deleting a note will also delete its child notes. Be very careful! You can refer to the example below for an illustration</p>
 </li>
+<li>
+<p>Deleting the root note (i.e. <code>delete /</code>) is prohibited.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can delete the currently open note using the command <code>delete .</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Refer to <a href="#deleteCurrent">example 3.6.2</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Want to save some time? Drop the optional <code>-t</code> flag and use the <code>d</code> shorthand instead of <code>delete</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>d AbsolutePath/RelativePath</code></p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </td>
@@ -375,7 +543,7 @@
 </table>
 </div>
 <div class="sect3">
-<h4 id="example-deleting-an-existing-note"><a class="link" href="#example-deleting-an-existing-note">Example: Deleting an existing note</a></h4>
+<h4 id="example-deleting-a-note-under-the-currently-open-note"><a class="link" href="#example-deleting-a-note-under-the-currently-open-note">Example: Deleting a note under the currently open note</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -384,9 +552,6 @@
 <div class="content">
 <pre>delete -t Notably</pre>
 </div>
-</div>
-</li>
-</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -398,10 +563,38 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code>Another Note</code>, <code>CS2103</code> and <code>ST2334</code> are immediately deleted as well since they are child notes of <code>Notably</code></p>
+<p>The currently open note is <code>Workspace</code></p>
 </li>
 <li>
 <p>The above example uses <code>RelativePath</code>. You can achieve the same result as above by using an <code>AbsolutePath</code> instead by executing <code>delete -t /Workspace/Notably</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Not sure about <code>AbsolutePath</code> and <code>RelativePath</code>? You can refer <a href="#paths">here</a> for a clearer explanation</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The note with the title <code>Notably</code> is deleted successfully since it exists!</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>Another Note</code>, <code>CS2103</code> and <code>ST2334</code> are immediately deleted as well since they are notes under <code>Notably</code></p>
 </li>
 </ul>
 </div>
@@ -413,13 +606,82 @@
 <div class="content">
 <img src="../images/demo/Delete1.png" alt="Delete1">
 </div>
-<div class="title">Figure 6. Demo for the <code>delete</code> command</div>
+<div class="title">Figure 9. Step 1 - Key in the example command</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Delete2.png" alt="Delete2">
 </div>
-<div class="title">Figure 7. Demo for the <code>delete</code> command (after deletion)</div>
+<div class="title">Figure 10. Final state after deletion</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleteCurrent"><a class="link" href="#deleteCurrent">Deleting the currently open note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In this example, <code>Notably</code> is the currently open note. Let&#8217;s delete it using the command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>delete .</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>.</code> in the command is a <code>RelativePath</code> that points to the path of the currently open note</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><code>Notably</code> note is deleted and the currently open note is now <code>Workspace</code></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This will change the currently open note to the deleted note&#8217;s parent note</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete3.png" alt="Delete3">
+</div>
+<div class="title">Figure 11. Step 1 - Key in the example command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete2.png" alt="Delete2">
+</div>
+<div class="title">Figure 12. Final state after deletion</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -472,7 +734,7 @@ of the number of matches, i.e. the note with the highest number of matches will 
 <div class="content">
 <img src="../images/demo/Search.png" alt="Search">
 </div>
-<div class="title">Figure 8. Demo for the <code>search</code> command: keyword found</div>
+<div class="title">Figure 13. Demo for the <code>search</code> command: keyword found</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s say the first option <code>/Workspace/Notably/CS2103/Project</code> is the note you are looking for. You may press <kbd>↓</kbd> and <kbd>Enter</kbd>
@@ -482,7 +744,7 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="../images/demo/Search1.png" alt="Search1">
 </div>
-<div class="title">Figure 9. Demo for the <code>search</code> command: open a note with the searched keyword</div>
+<div class="title">Figure 14. Demo for the <code>search</code> command: open a note with the searched keyword</div>
 </div>
 <div class="paragraph">
 <p>If the keyword you are looking for does not exist in any of your notes, no suggestions will be generated, as seen in the figure below.</p>
@@ -491,15 +753,17 @@ to open the note. The figure below illustrates how the note chosen will be opene
 <div class="content">
 <img src="../images/demo/Suggestions4.png" alt="Suggestions4">
 </div>
-<div class="title">Figure 10. Demo for the <code>search</code> command: keyword not found</div>
+<div class="title">Figure 15. Demo for the <code>search</code> command: keyword not found</div>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="save-the-data"><a class="link" href="#save-the-data">Save the data</a></h3>
 <div class="paragraph">
-<p>Notes data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need for you to save manually.</p>
+<p>Your notes are saved in the hard disk automatically after any command that changes the data. There is no need for you to save manually!<br></p>
+</div>
+<div class="paragraph">
+<p>Also, your currently opened note and window size (of Notably) is also saved every time it changes so that you can continue where you left off the next time you start Notably!</p>
 </div>
 </div>
 <div class="sect2">
@@ -514,7 +778,7 @@ There is no need for you to save manually.</p>
 <div class="content">
 <img src="../images/demo/Suggestions.png" alt="Suggestions">
 </div>
-<div class="title">Figure 11. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
+<div class="title">Figure 16. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s say you would like to choose the option <code>/Workspace/Notably/Another Note</code>. After pressing <kbd>↓</kbd> to reach that suggestion
@@ -524,7 +788,7 @@ and pressing <kbd>Enter</kbd>, the command input line will be auto-filled by the
 <div class="content">
 <img src="../images/demo/Suggestions2.png" alt="Suggestions2">
 </div>
-<div class="title">Figure 12. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
+<div class="title">Figure 17. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
 </div>
 <div class="paragraph">
 <p>If no suggestion list is generated for the command <code>open</code>, <code>delete</code> or <code>search</code>, it means the path, title, or keyword cannot be found
@@ -534,13 +798,13 @@ anywhere in Notably, as seen in the figures below.</p>
 <div class="content">
 <img src="../images/demo/Suggestions3.png" alt="Suggestions3">
 </div>
-<div class="title">Figure 13. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
+<div class="title">Figure 18. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Suggestions4.png" alt="Suggestions4">
 </div>
-<div class="title">Figure 14. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
+<div class="title">Figure 19. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
 </div>
 <div class="sect3">
 <h4 id="coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note"><a class="link" href="#coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note">(Coming in v2.0) Suggestion response text when opening or deleting a parent note</a></h4>
@@ -591,7 +855,7 @@ After corrections are done, a list of suggestions will be generated as if the us
 <div class="content">
 <img src="../images/demo/Correction.png" alt="Correction">
 </div>
-<div class="title">Figure 15. Demo for the auto correction feature</div>
+<div class="title">Figure 20. Demo for the auto correction feature</div>
 </div>
 </div>
 </div>
@@ -609,7 +873,7 @@ as seen in the figure below.</p>
 <div class="content">
 <img src="../images/demo/ResponseText1.png" alt="ResponseText1">
 </div>
-<div class="title">Figure 16. Demo for the response text feature: open command</div>
+<div class="title">Figure 21. Demo for the response text feature: open command</div>
 </div>
 <div class="paragraph">
 <p>On the other hand, if you key in an invalid command, the response text will display an error message as seen in the figure
@@ -619,7 +883,7 @@ below.</p>
 <div class="content">
 <img src="../images/demo/ResponseText2.png" alt="ResponseText2">
 </div>
-<div class="title">Figure 17. Demo for the response text feature: invalid command</div>
+<div class="title">Figure 22. Demo for the response text feature: invalid command</div>
 </div>
 </div>
 <div class="sect2">
@@ -753,6 +1017,72 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="sidebar"><a class="link" href="#sidebar">Sidebar</a></h3>
+<div class="paragraph">
+<p>The sidebar is where you can see your notes in a neatly organised way, reminiscent of a file browser in an Operating System.<br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The sidebar only shows up to 3 levels of notes at a single time.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The 3 levels will compromise of the:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>currently open note and its siblings</p>
+</li>
+<li>
+<p>its parent note</p>
+</li>
+<li>
+<p>its children notes</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>This will be demonstrated in the following diagrams, with <code>Workspace</code> as the level 1 note</p>
+<div class="ulist">
+<ul>
+<li>
+<p>There is no level 0 note (root) that is displayed in the sidebar</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Sidebar.png" alt="Sidebar">
+</div>
+<div class="title">Figure 23. Before and after opening a level 2 note</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Sidebar2.png" alt="Sidebar2">
+</div>
+<div class="title">Figure 24. Before and after opening a level 3 note</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -813,7 +1143,7 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="content">
 <img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 18. Structure of the Model Component</div>
+<div class="title">Figure 25. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/model/Model.java"><code>Model.java</code></a></p>
@@ -854,7 +1184,7 @@ More importantly, Notably is optimized for those who prefer to work with a Comma
 <div class="content">
 <img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 19. Structure of the Storage Component</div>
+<div class="title">Figure 26. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -955,10 +1285,10 @@ Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code>
 <div class="content">
 <img src="../images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
 </div>
-<div class="title">Figure 20. Tree Data Structure Design Example</div>
+<div class="title">Figure 27. Tree Data Structure Design Example</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:53:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:01:29 UTC</div></div></div></body></html>
