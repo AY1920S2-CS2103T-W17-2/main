@@ -426,7 +426,9 @@
 <div class="sect2">
 <h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">Find a note based on certain keywords: <code>search</code></a></h3>
 <div class="paragraph">
-<p>If you need to look for a note that contain a specific keyword, use the <code>search</code> command and Notably when show you the result sorted by the number of matches in the note. <br>
+<p>If you need to look for a note that contains a specific keyword in its <strong>content</strong>, use the <code>search</code> command and Notably
+will show you the search results sorted by the number of matches in the note. The note with the highest number of match will be
+at the top of the list, so that you can access it faster.<br>
 <strong>Format:</strong> <code>search [-s] KEYWORD</code></p>
 </div>
 <div class="admonitionblock note">
@@ -442,7 +444,8 @@
 <p><code>search</code> looks through <strong>all</strong> the notes that you have</p>
 </li>
 <li>
-<p>Partial matches work as well!</p>
+<p>Partial matches work as well! It means that when you have a set of notes containing the word "lecture" but no "lect" as a word on its own,
+you can just type <code>search lect</code> and Notably will still show you a list of notes containing the word "lecture", as "lect" is part of the word "lecture".</p>
 </li>
 <li>
 <p>Matches are case insensitive, meaning it will find the word no matter if it is in uppercase or lowercase or even mixed-case</p>
@@ -455,21 +458,40 @@
 </div>
 <div class="sect3">
 <h4 id="example-searching-for-the-keyword-computer-science"><a class="link" href="#example-searching-for-the-keyword-computer-science">Example: Searching for the keyword "Computer science"</a></h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Let&#8217;s look through all the notes that we have saved, for the keyword "Computer science"<br></p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Let&#8217;s look for the keyword "Computer science" if it exists in any of the notes that you have saved in Notably.<br></p>
 </div>
 <div class="paragraph">
-<p>search -s Computer science</p>
+<p><code>search -s Computer science</code></p>
+</div>
+<div class="paragraph">
+<p>If the word "Computer science" exists, a list of suggestions will be generated. This list will be sorted in descending order
+of the number of matches, i.e. the note with the highest number of matches will be at the top of the list, as seen in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Search.png" alt="Search">
 </div>
-<div class="title">Figure 8. Demo for the <code>search</code> command</div>
+<div class="title">Figure 8. Demo for the <code>search</code> command: keyword found</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say the first option <code>/Workspace/Notably/CS2103/Project</code> is the note you are looking for. You may press <kbd>↓</kbd> and <kbd>Enter</kbd>
+to open the note. The figure below illustrates how the note chosen will be opened and the command line box is cleared.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Search1.png" alt="Search1">
+</div>
+<div class="title">Figure 9. Demo for the <code>search</code> command: open a note with the searched keyword</div>
+</div>
+<div class="paragraph">
+<p>If the keyword you are looking for does not exist in any of your notes, no suggestions will be generated, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions4.png" alt="Suggestions4">
+</div>
+<div class="title">Figure 10. Demo for the <code>search</code> command: keyword not found</div>
 </div>
 </div>
 </div>
@@ -483,13 +505,42 @@ There is no need for you to save manually.</p>
 <div class="sect2">
 <h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">Auto suggestions</a></h3>
 <div class="paragraph">
-<p>As you type, Notably will provide you suggestions. You can then press <kbd>Enter</kbd> to select the first suggestion.</p>
+<p>As you type, Notably will provide you with suggestions. You can press the keyboard <kbd>↓</kbd> button followed by <kbd>Enter</kbd> to select any suggestion in the list.</p>
+</div>
+<div class="paragraph">
+<p>For example, as you type <code>open -t Notably</code>, a list of suggestions will be generated as seen in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/demo/Suggestions.png" alt="Suggestions">
 </div>
-<div class="title">Figure 9. Demo for the suggestions feature</div>
+<div class="title">Figure 11. Demo for the suggestions feature: Suggestions are generated as the user keys in his input</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say you would like to choose the option <code>/Workspace/Notably/Another Note</code>. After pressing <kbd>↓</kbd> to reach that suggestion
+and pressing <kbd>Enter</kbd>, the command input line will be auto-filled by the suggestion, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions2.png" alt="Suggestions2">
+</div>
+<div class="title">Figure 12. Demo for the suggestions feature: The user input is auto-completed when the user selects a suggestion</div>
+</div>
+<div class="paragraph">
+<p>If no suggestion list is generated for the command <code>open</code>, <code>delete</code> or <code>search</code>, it means the path, title, or keyword cannot be found
+anywhere in Notably, as seen in the figures below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions3.png" alt="Suggestions3">
+</div>
+<div class="title">Figure 13. Demo for the suggestions feature: The user inputs a path/ title that does not exist in his Notably app, thus no suggestion list is generated</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions4.png" alt="Suggestions4">
+</div>
+<div class="title">Figure 14. Demo for the suggestions feature: The user inputs a keyword that does not exist in any of his notes, thus no suggestion list is generated</div>
 </div>
 <div class="sect3">
 <h4 id="coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note"><a class="link" href="#coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note">(Coming in v2.0) Suggestion response text when opening or deleting a parent note</a></h4>
@@ -508,11 +559,39 @@ Currently, typing <code>open ../</code> will generate a response text of <code>O
 <div class="content">
 <img src="../images/demo/Correction.png" alt="Correction">
 </div>
-<div class="title">Figure 10. Demo for the auto-correction feature</div>
+<div class="title">Figure 15. Demo for the auto-correction feature</div>
 </div>
+<div class="paragraph">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+=== Response text
+Notably also displays a response text which enables you to understand the meaning of the input you type and shows
+an error message when your input is invalid.</p>
 </div>
-<div class="sect2">
-<h3 id="markdown-github-flavored-markdown"><a class="link" href="#markdown-github-flavored-markdown">Markdown (GitHub Flavored Markdown)</a></h3>
+<div class="paragraph">
+<p>For example, if you type <code>open /CS</code>, the response text will indicates that you are trying to <code>Open a note titled "/CS"</code>,
+as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/ResponseText1.png" alt="ResponseText1">
+</div>
+<div class="title">Figure 16. Demo for the response text feature: open command</div>
+</div>
+<div class="paragraph">
+<p>On the other hand, if you key in an invalid command, the response text will display an error message as seen in the figure
+below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/ResponseText2.png" alt="ResponseText2">
+</div>
+<div class="title">Figure 17. Demo for the response text feature: invalid command</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>=== Markdown (GitHub Flavored Markdown)</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -589,8 +668,9 @@ Currently, only unordered lists are supported. In addition, only the hyphen <cod
 Proin dictum accumsan nunc sed feugiat.</pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="coming-in-v2-0-more-complete-support-of-markdown-syntax"><a class="link" href="#coming-in-v2-0-more-complete-support-of-markdown-syntax">(Coming in v2.0) More complete support of Markdown syntax</a></h4>
+<div class="paragraph">
+<p>==== (Coming in v2.0) More complete support of Markdown syntax</p>
+</div>
 <div class="paragraph">
 <p>In our v2.0 release, we&#8217;ll be supporting the following additional Markdown syntax:</p>
 </div>
@@ -619,22 +699,19 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 <pre>~~This text will get a strikethrough treatment~~</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>&gt;&gt;&gt;&gt;&gt;&gt;&gt; master</p>
 </div>
+<div class="paragraph">
+<p>== FAQ</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Notably folder.</p>
 </div>
+<div class="paragraph">
+<p>== Command Summary</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -660,11 +737,9 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== Contributions to the Developer Guide</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
-<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 100%;">
@@ -675,13 +750,14 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<div id="Design-Model" class="paragraph">
+<p>=== Model component</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 11. Structure of the Model Component</div>
+<div class="title">Figure 18. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/model/Model.java"><code>Model.java</code></a></p>
@@ -715,14 +791,14 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 </li>
 </ul>
 </div>
+<div id="Design-Storage" class="paragraph">
+<p>=== Storage component</p>
 </div>
-<div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 12. Structure of the Storage Component</div>
+<div class="title">Figure 19. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -740,25 +816,20 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 </li>
 </ul>
 </div>
+<div id="Implementation-DataStructure" class="paragraph">
+<p>=== Tree Data Structure
+Notably aims to provide end user a neat and well-organized workspace to store their notes. This is done by creating a tree structure; allowing users to create folder-like paths to organize their notes and group them into categories to their own liking.</p>
 </div>
-<div class="sect2">
-<h3 id="Implementation-DataStructure"><a class="link" href="#Implementation-DataStructure">Tree Data Structure</a></h3>
 <div class="paragraph">
-<p>Notably aims to provide end user a neat and well-organized workspace to store their notes. This is done by creating a tree structure; allowing users to create folder-like paths to organize their notes and group them into categories to their own liking.</p>
-</div>
-<div class="sect3">
-<h4 id="rationale"><a class="link" href="#rationale">Rationale</a></h4>
-<div class="paragraph">
-<p>While this can be done with a linear data structure (a simple list), a linear list of notes would require more work to establish the relationship between groups of notes. A tree data structure supports this better, giving a clearer distinction while also establishing a form of hierarchy (as seen in the design example below).</p>
+<p>==== Rationale
+While this can be done with a linear data structure (a simple list), a linear list of notes would require more work to establish the relationship between groups of notes. A tree data structure supports this better, giving a clearer distinction while also establishing a form of hierarchy (as seen in the design example below).</p>
 </div>
 <div class="paragraph">
 <p>On top of that, observability must be ensured so that the UI can update with any changes that happen on the tree (and its nodes) and also the data within each node.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
 <div class="paragraph">
-<p>A custom tree data structure that supports observability has been implemented. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
+<p>==== Current Implementation
+A custom tree data structure that supports observability has been implemented. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
 </div>
 <div class="paragraph">
 <p>Each BlockTreeItem contains 3 primary components:</p>
@@ -802,31 +873,26 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure"><a class="link" href="#aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure">Aspect: <code>BlockTreeItem</code> vs Folders to represent path structure</a></h5>
 <div class="paragraph">
-<p>Current choice: <code>BlockTreeItem</code>
+<p>==== Design Considerations
+===== Aspect: <code>BlockTreeItem</code> vs Folders to represent path structure
+Current choice: <code>BlockTreeItem</code>
 Pros: No need for an additional class. Having a separate <code>folder</code> object would also require a separate UI View since folders should not contain any block data.
 Cons: Somewhat unconventional design. User might be unfamiliar with the intention on first use, without proper explanation</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="aspect-root-should-also-be-a-code-blocktreeitem-code"><a class="link" href="#aspect-root-should-also-be-a-code-blocktreeitem-code">Aspect: Root should also be a <code>BlockTreeItem</code></a></h5>
 <div class="paragraph">
-<p>Pros: Seamless transition to JSON storage
+<p>===== Aspect: Root should also be a <code>BlockTreeItem</code>
+Pros: Seamless transition to JSON storage
 Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code> does not contain any <code>Body</code> and is also unmodifiable</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
 </div>
-<div class="title">Figure 13. Tree Data Structure Design Example</div>
+<div class="title">Figure 20. Tree Data Structure Design Example</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:40:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:43:17 UTC</div></div></div></body></html>
