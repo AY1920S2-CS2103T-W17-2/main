@@ -1,0 +1,832 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Firzan Armani - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Notably</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W17-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Firzan Armani - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-notably"><a class="link" href="#project-notably">PROJECT: Notably</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Notably is for those who prefer to use a desktop app for managing notes. More importantly, Notably is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, Notably can get your notes taken down faster than traditional GUI apps.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added a <strong>tree data structure</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: allows the user to store their notes in a hierarchical form, similar to that of a file-folder structure in an Operating System</p>
+</li>
+<li>
+<p>Justification: This feature allows for a more organised storage and access of notes. The design is based on the practice of users organising their physical notes in sections and divisions for clarity. A note (or referred to internally as a <code>Block</code>) also doubles as a folder, allowing for a recursive data structure using only notes. As a result, this design has an added advantage of allowing for efficient navigation with the use of <code>Paths</code>.</p>
+</li>
+<li>
+<p>Highlights: This enhancement is a complete rewrite of the data model while maintaining some design considerations from the previous iteration AB3. It required a lot of careful consideration about its design since it is the core feature of Notably. Also, the data structure would have to be observable to work seamlessly with the UI&#8217;s sidebar TreeView. It was time consuming to experiment with a few design options before settling on wrapping JavaFX&#8217;s TreeItem objects.</p>
+</li>
+<li>
+<p>Credits:</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Refactored and created <code>Block</code> class with <code>Title</code> and <code>Body</code> classes</p>
+</li>
+<li>
+<p>Updated the <code>Storage</code> to store and access JSON data which supports nested <code>Blocks</code> as a result of the new Tree data structure</p>
+</li>
+<li>
+<p>Create sample Block data in the form of a first-time user tutorial walkthrough</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=firzanarmani&amp;tabRepo=AY1920S2-CS2103T-W17-2%2Fmain%5Bmaster%5D">Functional code</a>] [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false&amp;tabOpen=true&amp;tabType=authorship&amp;tabAuthor=firzanarmani&amp;tabRepo=AY1920S2-CS2103T-W17-2%2Fmain%5Bmaster%5D">Test code</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Set up GitHub repository</p>
+</li>
+<li>
+<p>Managed tags <code>v1.1</code> and <code>v1.3</code> (2 tags) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated <code>UserPrefs</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improvements to UG command information: <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/306">306</a></p>
+</li>
+<li>
+<p>Added section on tree data structure implementation and other improvements in DG</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/175">#175</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/429">#429</a>, <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/pull/443">#443</a></p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/AY1920S2-CS2103T-F10-2/main/issues/188">1</a>, <a href="https://github.com/AY1920S2-CS2103T-F10-2/main/issues/187">2</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="create-a-new-note-code-new-code"><a class="link" href="#create-a-new-note-code-new-code">Create a new note: <code>new</code></a></h3>
+<div class="paragraph">
+<p>If you want to add a new note to the current working directory (currently opened note), use the <code>new</code> command and specify the <code>TITLE</code> of the note.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>new -t TITLE [-o]</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>TITLE</code> for the note MUST be specified.</p>
+</li>
+<li>
+<p>The <code>TITLE</code> for the note can only contain alphabets, numbers, symbols (except ` and -) and whitespaces.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use the optional <code>-o</code> flag to immediately open the note after creating it.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-creating-new-notes"><a class="link" href="#example-creating-new-notes">Example: Creating new notes</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s first create a note (with a <code>TITLE</code>), and open it immediately after. <a href="#New1">(Step 1)</a> Type this command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>new -t Notably -o</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now the currently open note is <code>Notably</code>. Let&#8217;s add create a note to the currently opened note, <a href="#New2">(Step 2)</a> with a <code>TITLE</code> only as follows:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>new -t CS2103T</pre>
+</div>
+</div>
+</li>
+<li>
+<p>The new note <code>CS2103T</code> has been created successfully! <a href="#New3">(Step 3)</a><br></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Observe that the note <code>CS2103T</code> was not opened immediately</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="New1" class="imageblock">
+<div class="content">
+<img src="../images/demo/New1.png" alt="Demo">
+</div>
+<div class="title">Figure 1. Step 1 - Demo for the <code>new</code> command (with the <code>open</code> flag)</div>
+</div>
+<div id="New2" class="imageblock">
+<div class="content">
+<img src="../images/demo/New2.png" alt="New2">
+</div>
+<div class="title">Figure 2. Step 2 - Demo for the <code>new</code> command (without the <code>open</code> flag)</div>
+</div>
+<div id="New3" class="imageblock">
+<div class="content">
+<img src="../images/demo/New3.png" alt="New3">
+</div>
+<div class="title">Figure 3. Step 3 - Demo for the <code>new</code> command (after creating both notes)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="open-an-existing-note-code-open-code"><a class="link" href="#open-an-existing-note-code-open-code">Open an existing note: <code>open</code></a></h3>
+<div class="paragraph">
+<p>You can open an existing note by specifying its title (and optionally with its absolute or relative <a href="#paths">path</a>).<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>open [-t] [PATH/TO/]TITLE</code><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you want to save some keypresses, omit the optional <code>-t</code> flag. It still works fine!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-opening-a-note"><a class="link" href="#example-opening-a-note">Example: Opening a note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s open the note <code>Notably</code> that exists in the currently opened note <code>Workspace</code> <a href="#Open">(Step 1)</a> with the command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>open -t Notably</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Notably gives you some useful suggestions on other paths that are similar or related to your input!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="Open" class="imageblock">
+<div class="content">
+<img src="../images/demo/Open.png" alt="Open">
+</div>
+<div class="title">Figure 4. Step 1 - Demo for the <code>open</code> command (with suggestions)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-an-existing-note-code-edit-code"><a class="link" href="#edit-an-existing-note-code-edit-code">Edit an existing note: <code>edit</code></a></h3>
+<div class="paragraph">
+<p>If you want to change the <code>BODY</code> content of the currently opened note, use the <code>edit</code> command. This command <strong>opens</strong> an editing window where you can update the existing <code>BODY</code> of the note.
+<strong>Format:</strong> <code>edit</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You are not allowed to <code>edit</code> the root note, i.e the currently opened path is <code>"/"</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-editing-the-currently-opened-note"><a class="link" href="#example-editing-the-currently-opened-note">Example: Editing the currently opened note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s update the <code>BODY</code> content of the currently opened note <code>Workspace</code> with the command:<br></p>
+<div class="literalblock">
+<div class="content">
+<pre>edit</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Edit.png" alt="Edit">
+</div>
+<div class="title">Figure 5. Demo for the <code>edit</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">Delete a note: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>If you no longer need a note, or you accidentally created a wrong note, don&#8217;t worry! You can always delete That note. A slash <code>/</code> character can be used to denote a filesystem-like hierarchy.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>delete [-t] [PATH/TO/]TITLE</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting a note will also delete its child notes. Be very careful! You can refer to the example below for an illustration</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-deleting-an-existing-note"><a class="link" href="#example-deleting-an-existing-note">Example: Deleting an existing note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s delete the <code>Notably</code> note using this command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>delete -t Notably</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>Another Note</code>, <code>CS2103</code> and <code>ST2334</code> are immediately deleted as well since they are child notes of <code>Notably</code></p>
+</li>
+<li>
+<p>The above example uses <code>RelativePath</code>. You can achieve the same result as above by using an <code>AbsolutePath</code> instead by executing <code>delete -t /Workspace/Notably</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete1.png" alt="Delete1">
+</div>
+<div class="title">Figure 6. Demo for the <code>delete</code> command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete2.png" alt="Delete2">
+</div>
+<div class="title">Figure 7. Demo for the <code>delete</code> command (after deletion)</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-a-note-based-on-certain-keywords-code-search-code"><a class="link" href="#find-a-note-based-on-certain-keywords-code-search-code">Find a note based on certain keywords: <code>search</code></a></h3>
+<div class="paragraph">
+<p>If you need to look for a note that contain a specific keyword, use the <code>search</code> command and Notably when show you the result sorted by the number of matches in the note. <br>
+<strong>Format:</strong> <code>search [-s] KEYWORD</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>search</code> looks through <strong>all</strong> the notes that you have</p>
+</li>
+<li>
+<p>Partial matches work as well!</p>
+</li>
+<li>
+<p>Matches are case insensitive, meaning it will find the word no matter if it is in uppercase or lowercase or even mixed-case</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-searching-for-the-keyword-computer-science"><a class="link" href="#example-searching-for-the-keyword-computer-science">Example: Searching for the keyword "Computer science"</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s look through all the notes that we have saved, for the keyword "Computer science"<br></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>search -s Computer science</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Search.png" alt="Search">
+</div>
+<div class="title">Figure 8. Demo for the <code>search</code> command</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="save-the-data"><a class="link" href="#save-the-data">Save the data</a></h3>
+<div class="paragraph">
+<p>Notes data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need for you to save manually.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-suggestions"><a class="link" href="#auto-suggestions">Auto suggestions</a></h3>
+<div class="paragraph">
+<p>As you type, Notably will provide you suggestions. You can then press <kbd>Enter</kbd> to select the first suggestion.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Suggestions.png" alt="Suggestions">
+</div>
+<div class="title">Figure 9. Demo for the suggestions feature</div>
+</div>
+<div class="sect3">
+<h4 id="coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note"><a class="link" href="#coming-in-v2-0-suggestion-response-text-when-opening-or-deleting-a-parent-note">(Coming in v2.0) Suggestion response text when opening or deleting a parent note</a></h4>
+<div class="paragraph">
+<p>Variations of path with <code>../</code> (e.g. <code>open ../</code>, <code>open Note/../Note</code>, etc.) will not generate a comprehensive response text.
+Currently, typing <code>open ../</code> will generate a response text of <code>Open a note titled "../"</code> instead of <code>Open a parent note</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-correct"><a class="link" href="#auto-correct">Auto correct</a></h3>
+<div class="paragraph">
+<p>Even if you mistype, Notably tries its best to correct the typo automatically, as long as the mistyped input command is not too far away from Notably&#8217;s available commands. This provides you with a more fluid typing experience.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Correction.png" alt="Correction">
+</div>
+<div class="title">Figure 10. Demo for the auto-correction feature</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="markdown-github-flavored-markdown"><a class="link" href="#markdown-github-flavored-markdown">Markdown (GitHub Flavored Markdown)</a></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+We use the term Markdown and GitHub Flavored Markdown interchangably in this document.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Notably supports basic <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown (GFM)</a> as the <code>BODY</code> content of a note. By supporting Markdown, we hope to enhance your typing experience even further!</p>
+</div>
+<div class="paragraph">
+<p>Currently supported syntax of GitHub Flavored Markdown in Notably consists of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#atx-heading">ATX headings</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Level 1 header
+## Level 2 header
+### Level 3 header
+#### Level 4 header
+##### Level 5 header
+###### Level 6 header</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#list">Lists</a> and <a href="https://github.github.com/gfm/#list-items">List items</a><br></p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Currently, only unordered lists are supported. In addition, only the hyphen <code>-</code> symbol is supported to be used as the list bullets.<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>- List item
+- Another list item
+  - A nested list item
+    - A deeper nested list item
+- Last list item</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#paragraph">Paragraphs</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Proin dictum accumsan nunc sed feugiat.</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="coming-in-v2-0-more-complete-support-of-markdown-syntax"><a class="link" href="#coming-in-v2-0-more-complete-support-of-markdown-syntax">(Coming in v2.0) More complete support of Markdown syntax</a></h4>
+<div class="paragraph">
+<p>In our v2.0 release, we&#8217;ll be supporting the following additional Markdown syntax:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#emphasis-and-strong-emphasis">Emphasis and strong emphasis</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>*This text will get italicised*
+**This text will get bold**</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#strikethrough-extension-">Strikethrough</a><br></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~~This text will get a strikethrough treatment~~</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Notably folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>View help</strong>: <code>help</code></p>
+</li>
+<li>
+<p><strong>Exit the program</strong>: <code>exit</code></p>
+</li>
+<li>
+<p><strong>Create a new note</strong>: <code>new -t TITLE [-o]</code></p>
+</li>
+<li>
+<p><strong>Open an existing note</strong>: <code>open [-t] [PATH/TO/]TITLE</code></p>
+</li>
+<li>
+<p><strong>Opens an editing window to edit the currently opened note</strong>: <code>edit</code></p>
+</li>
+<li>
+<p><strong>Delete a note</strong>: <code>delete [-t] [PATH/TO/]TITLE</code></p>
+</li>
+<li>
+<p><strong>Find a note based on certain keywords</strong>: <code>search [-s] KEYWORD</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 11. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/model/Model.java"><code>Model.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores and manipulates the <code>BlockTree</code> data that represents a tree of Blocks, through BlockModel</p>
+</li>
+<li>
+<p>stores and manipulates a list of suggestions based on the user&#8217;s input, through SuggestionModel</p>
+</li>
+<li>
+<p>stores the current state of the <code>View</code>, through ViewStateModel</p>
+<div class="ulist">
+<ul>
+<li>
+<p>stores the command input given by the user, through CommandInputModel</p>
+</li>
+<li>
+<p>stores the state of the <code>help</code> modal being open, through HelpFlagModel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>stores <code>UserPref</code> data that represents the user&#8217;s preferences, through UserPrefModel</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
+</div>
+<div class="title">Figure 12. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/src/main/java/com/notably/storage/Storage.java"><code>Storage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in JSON format and read it back.</p>
+</li>
+<li>
+<p>can save the Block data in JSON format and read it back.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Implementation-DataStructure"><a class="link" href="#Implementation-DataStructure">Tree Data Structure</a></h3>
+<div class="paragraph">
+<p>Notably aims to provide end user a neat and well-organized workspace to store their notes. This is done by creating a tree structure; allowing users to create folder-like paths to organize their notes and group them into categories to their own liking.</p>
+</div>
+<div class="sect3">
+<h4 id="rationale"><a class="link" href="#rationale">Rationale</a></h4>
+<div class="paragraph">
+<p>While this can be done with a linear data structure (a simple list), a linear list of notes would require more work to establish the relationship between groups of notes. A tree data structure supports this better, giving a clearer distinction while also establishing a form of hierarchy (as seen in the design example below).</p>
+</div>
+<div class="paragraph">
+<p>On top of that, observability must be ensured so that the UI can update with any changes that happen on the tree (and its nodes) and also the data within each node.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="current-implementation"><a class="link" href="#current-implementation">Current Implementation</a></h4>
+<div class="paragraph">
+<p>A custom tree data structure that supports observability has been implemented. The tree (referred to as <code>BlockTree</code>) is made up of tree nodes (referred to as <code>BlockTreeItem</code>). The tree is observable such that if any change occurs on any of the tree&#8217;s nodes, the change event will bubble upwards to the root node. Hence, the root node serves as the entry point for the <code>BlockTree</code>.</p>
+</div>
+<div class="paragraph">
+<p>Each BlockTreeItem contains 3 primary components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a reference to its parent</p>
+</li>
+<li>
+<p>an ObservableList of its children</p>
+</li>
+<li>
+<p>User&#8217;s note data (referred to as <code>Block</code> data) consisting of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Title</code> of the note</p>
+</li>
+<li>
+<p><code>Body</code> content of the note (optional)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When manipulating the <code>BlockTree</code>, the execution of any operation is always split in this order:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the specfied path</p>
+</li>
+<li>
+<p>Open the block at the specified path</p>
+</li>
+<li>
+<p>Execute the operation on the block that is currently open</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure"><a class="link" href="#aspect-code-blocktreeitem-code-vs-folders-to-represent-path-structure">Aspect: <code>BlockTreeItem</code> vs Folders to represent path structure</a></h5>
+<div class="paragraph">
+<p>Current choice: <code>BlockTreeItem</code>
+Pros: No need for an additional class. Having a separate <code>folder</code> object would also require a separate UI View since folders should not contain any block data.
+Cons: Somewhat unconventional design. User might be unfamiliar with the intention on first use, without proper explanation</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-root-should-also-be-a-code-blocktreeitem-code"><a class="link" href="#aspect-root-should-also-be-a-code-blocktreeitem-code">Aspect: Root should also be a <code>BlockTreeItem</code></a></h5>
+<div class="paragraph">
+<p>Pros: Seamless transition to JSON storage
+Cons: Need to add constraint  to ensure that the root <code>BlockTreeItem</code> does not contain any <code>Body</code> and is also unmodifiable</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/TreeDataStructureDesign.png" alt="TreeDataStructureDesign">
+</div>
+<div class="title">Figure 13. Tree Data Structure Design Example</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:24:23 UTC</div></div></div></body></html>
