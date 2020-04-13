@@ -151,7 +151,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>Paths</code> are used to specify the directory you want <code>Commands</code> to be executed.</p>
+<p><code>Paths</code> are used to specify the location of a note you want the <code>Command</code> to be pointed at.</p>
 </li>
 <li>
 <p>There are 2 types of  <code>Path</code> namely:</p>
@@ -161,24 +161,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>AbsolutePath (which takes reference from the root)</p>
 </li>
 <li>
-<p>RelativePath (which takes reference from the current directory)</p>
+<p>RelativePath (which takes reference from the current note)</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The Relative Path operates similarly to the command line input that you may be familiar with.
-Listed below are the notations used to define a relative path.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>..</code> (Move to parent note)</p>
-</li>
-<li>
-<p><code>exampleNote</code> (Move to child node titled "exampleNote")</p>
 </li>
 </ul>
 </div>
@@ -189,10 +175,63 @@ Listed below are the notations used to define a relative path.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The title of a Note can take in alphanumeric variables, symbols (except ` and -) and spaces.
+<code>/</code> represents a root note
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The <code>RelativePath</code> operates similarly to the command line input that you may be familiar with.
+Listed below are the notations used to define a <code>RelativePath</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>.</code> (Point to current note)</p>
+</li>
+<li>
+<p><code>..</code> (Point to parent note)</p>
+</li>
+<li>
+<p><code>exampleNote</code> (Point to child node)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Validity of Paths</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AbsolutePath</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Must start with the root note.</p>
+</li>
+<li>
+<p>After every <code>/</code> you can provide a <code>Title</code> <a href="#TitleValidity">(Valid Title)</a>.</p>
+</li>
+<li>
+<p><code>/Workspace/2103T</code> is a valid <code>AbsolutePath</code>, <code>Workspace/2103T</code> is not.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Relative Path</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Starts with <code>.</code> or <code>..</code> or a Title <a href="#TitleValidity">(Valid Title)</a>.</p>
+</li>
+<li>
+<p><code>./CS2103T/../CS2101</code>  is a valid <code>RelativePath</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Example</strong></p>
@@ -202,15 +241,15 @@ The title of a Note can take in alphanumeric variables, symbols (except ` and -)
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PathExample1.png" alt="PathExample1" width="790">
+<img src="images/UGPathDiagram.png" alt="UGPathDiagram" width="790">
 </div>
 <div class="title">Figure 2. DataStructure example to illustrate Path</div>
 </div>
 <div class="paragraph">
-<p>The <code>AbsolutePath</code> <code>/CS2101</code> is equivalent to <code>RelativePath</code> <code>../CS2101</code></p>
+<p>The <code>AbsolutePath</code> <code>/Workspace/CS2101</code> is equivalent to <code>RelativePath</code> <code>../CS2101</code></p>
 </div>
 <div class="paragraph">
-<p>Thus <code>open /CS2101</code> and <code>open ../CS2101</code> would yield the same result.</p>
+<p>Thus <code>open /Workspace/CS2101</code> and <code>open ../CS2101</code> would yield the same result.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -231,7 +270,8 @@ Paths are used by the <code>open</code> and <code>delete</code> command
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-We cannot open or delete the parent of the root note because it does not exist. e.g <code>Delete /../</code> will result in an error.
+We cannot open or delete the parent of the root note because it does not exist.
+Taking example from Figure 2 above, <code>Delete ../..</code> will result in an error.
 </td>
 </tr>
 </table>
@@ -276,7 +316,7 @@ We cannot open or delete the parent of the root note because it does not exist. 
 <div class="paragraph">
 <p><strong>Format:</strong> <code>new -t TITLE [-o]</code></p>
 </div>
-<div class="admonitionblock important">
+<div id="TitleValidity" class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
@@ -799,4 +839,4 @@ Proin dictum accumsan nunc sed feugiat.</pre>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:24:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:09:15 UTC</div></div></div></body></html>
