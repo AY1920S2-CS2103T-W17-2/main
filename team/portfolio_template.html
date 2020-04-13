@@ -136,6 +136,231 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="delete-a-note-code-delete-code"><a class="link" href="#delete-a-note-code-delete-code">Delete a note: <code>delete</code></a></h3>
+<div class="paragraph">
+<p>If you no longer need a note, or if you have accidentally created a wrong note, don&#8217;t worry! You can always delete that note.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>delete [-t] AbsolutePath/RelativePath</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Requires prior understanding of <code>AbsolutePath</code> and <code>RelativePath</code>. You can refer <a href="#paths">here</a> for an explanation</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting a note will also delete its child notes. Be very careful! You can refer to the example below for an illustration</p>
+</li>
+<li>
+<p>Deleting the root note (i.e. <code>delete /</code>) is prohibited.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>You can delete the currently open note using the command <code>delete .</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Refer to <a href="#deleteCurrent">example 3.6.2</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Want to save some time? Drop the optional <code>-t</code> flag and use the <code>d</code> shorthand instead of <code>delete</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>d AbsolutePath/RelativePath</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="example-deleting-a-note-under-the-currently-open-note"><a class="link" href="#example-deleting-a-note-under-the-currently-open-note">Example: Deleting a note under the currently open note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Let&#8217;s delete the <code>Notably</code> note using this command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>delete -t Notably</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The currently open note is <code>Workspace</code></p>
+</li>
+<li>
+<p>The above example uses <code>RelativePath</code>. You can achieve the same result as above by using an <code>AbsolutePath</code> instead by executing <code>delete -t /Workspace/Notably</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Not sure about <code>AbsolutePath</code> and <code>RelativePath</code>? You can refer <a href="#paths">here</a> for a clearer explanation</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The note with the title <code>Notably</code> is deleted successfully since it exists!</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>Another Note</code>, <code>CS2103</code> and <code>ST2334</code> are immediately deleted as well since they are notes under <code>Notably</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete1.png" alt="Delete1">
+</div>
+<div class="title">Figure 1. Step 1 - Key in the example command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete2.png" alt="Delete2">
+</div>
+<div class="title">Figure 2. Final state after deletion</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleteCurrent"><a class="link" href="#deleteCurrent">Deleting the currently open note</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In this example, <code>Notably</code> is the currently open note. Let&#8217;s delete it using the command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>delete .</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>.</code> in the command is a <code>RelativePath</code> that points to the path of the currently open note</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><code>Notably</code> note is deleted and the currently open note is now <code>Workspace</code></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>This will change the currently open note to the deleted note&#8217;s parent note</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete3.png" alt="Delete3">
+</div>
+<div class="title">Figure 3. Step 1 - Key in the example command</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/demo/Delete2.png" alt="Delete2">
+</div>
+<div class="title">Figure 4. Final state after deletion</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -161,4 +386,4 @@
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:30:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:38:05 UTC</div></div></div></body></html>
