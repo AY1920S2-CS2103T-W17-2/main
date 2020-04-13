@@ -82,21 +82,23 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 <div class="sect3">
 <h4 id="design-pattern-and-data-flow"><a class="link" href="#design-pattern-and-data-flow">2.1.1. Design pattern and data flow</a></h4>
 <div class="paragraph">
-<p>The App is built following the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller</a> design pattern.</p>
+<p>The App is built following the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller design pattern</a>.</p>
 </div>
 <div class="paragraph">
-<p>In addition, the App&#8217;s data flow is unidirectional. That is, all user interactions in <code>View</code> will trigger an appropriate handler in <code>Logic</code>, which in turn updates <code>Model</code> and <code>Storage</code>.
-Any data/state changes in <code>Model</code> will then propagate back to <code>View</code> automatically through <a href="https://docs.oracle.com/javafx/2/binding/jfxpub-binding.htm">JavaFX&#8217;s Property and Binding</a>.</p>
+<p>In addition, the App&#8217;s data flow is unidirectional. That is, all user interactions in <a href="#Design-View"><strong><code>View</code></strong></a> will trigger an appropriate handler in <a href="#Design-Logic"><strong><code>Logic</code></strong></a>, which in turn updates <a href="#Design-Model"><strong><code>Model</code></strong></a> and <a href="#Design-Storage"><strong><code>Storage</code></strong></a>.</p>
+</div>
+<div class="paragraph">
+<p>Any data/state changes in <a href="#Design-Model"><strong><code>Model</code></strong></a> will then propagate back to <a href="#Design-View"><strong><code>View</code></strong></a> automatically through <a href="https://docs.oracle.com/javafx/2/binding/jfxpub-binding.htm">JavaFX&#8217;s Property and Binding</a>. In other words, the <a href="https://en.wikipedia.org/wiki/Observer_pattern">Observer design pattern</a> is employed; <a href="#Design-Model"><strong><code>Model</code></strong></a> is the observable while <a href="#Design-View"><strong><code>View</code></strong></a> is the observer.</p>
 </div>
 <div class="paragraph">
 <p>In short, the App&#8217;s data flow can be summarized as:<br>
-<code>View</code> &#8594; <code>Logic</code> &#8594; <code>Model</code> + <code>Storage</code> &#8594; <code>View</code></p>
+<a href="#Design-View"><strong><code>View</code></strong></a> &#8594; <a href="#Design-Logic"><strong><code>Logic</code></strong></a> &#8594; <a href="#Design-Model"><strong><code>Model</code></strong></a> + <a href="#Design-Storage"><strong><code>Storage</code></strong></a> &#8594; <a href="#Design-View"><strong><code>View</code></strong></a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="architecture-level-components"><a class="link" href="#architecture-level-components">2.1.2. Architecture-level components</a></h4>
 <div class="paragraph">
-<p>Overall, the App consists of four components:</p>
+<p>Overall, the App consists of five main components:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -112,46 +114,48 @@ Any data/state changes in <code>Model</code> will then propagate back to <code>V
 <li>
 <p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
 </li>
+<li>
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a>: A collection of classes used by multiple other components.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>In addition, <a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
-The following class plays an important role at the architecture level:</p>
+<p>The first four components, namely <a href="#Design-View"><strong><code>View</code></strong></a>, <a href="#Design-Logic"><strong><code>Logic</code></strong></a>, <a href="#Design-Model"><strong><code>Model</code></strong></a> and <a href="#Design-Storage"><strong><code>Storage</code></strong></a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the itself, e.g. <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/Logic.java"><code>Logic.java</code></a></p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class, e.g. <a href="https://github.com/AY1920S2-CS2103T-W17-2/main/src/main/java/com/notably/logic/LogicManager.java"><code>LogicManager.java</code></a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following classes from <a href="#Design-Commons"><strong><code>Commons</code></strong></a> plays an important role at the architecture level:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Each of the four components:</p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
-</li>
-<li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+<p><a href="#Design-Compiler"><strong><code>Compiler</code></strong></a> : Used mainly by the <a href="#Design-View"><strong><code>View</code></strong></a> to compile Markdown to HTML for displaying notes.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>For example, the <code>Logic</code> component defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="how-the-architecture-components-interact-with-each-other"><a class="link" href="#how-the-architecture-components-interact-with-each-other">2.1.3. How the architecture components interact with each other</a></h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>new -t Notably -b Lorem ipsum</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>new -t Notably</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 2. Component interactions for the <code>new -t Notably -b Lorem ipsum</code> command</div>
+<div class="title">Figure 2. Component interactions for the <code>new -t Notably</code> command</div>
 </div>
 </div>
 </div>
@@ -1226,4 +1230,4 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:55:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:14:29 UTC</div></div></div></body></html>
